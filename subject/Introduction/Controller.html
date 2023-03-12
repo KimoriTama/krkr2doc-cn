@@ -14,10 +14,12 @@
     <link href="mailto:dee@kikyou.info" rev="Made" />
 </head>
 <body>
-<h1><a id="id90" name="id90">关于主控制台（Controller）</a>
+<h1><a id="id90" name="id90">关于控制器（Controller）</a>
 </h1><div class="para"><div>
-　コントローラは、実行中に Shift + F1 を押すことにより表示することができます。<br />
-　コントローラでは、各デバッグ支援ウィンドウを開いたり、イベント発生の停止や TJS コンテキストのダンプ、メッセージマップファイルの作成、システムの強制終了をすることができます。<br />
+	（注意与控制台(console)作区分）<br/>
+	　可在执行过程中按Shift+F1显示主控制器。<br />
+	　在主控制器中，可以打开各调试辅助窗口，停止事件发生、转储TJS上下文、生成消息映射文件、强制结束系统。
+　<!-- コントローラでは、各デバッグ支援ウィンドウを開いたり、イベント発生の停止や TJS コンテキストのダンプ、メッセージマップファイルの作成、システムの強制終了をすることができます。 --><br />
 </div></div>
 <h1><a id="id91" name="id91">界面说明</a>
 </h1><div class="para"><div>
@@ -25,22 +27,22 @@
 <br />
 <dl>
 <dt><img width="16" height="16" alt="ScriptEditorIcon.png" src="../../images/ScriptEditorIcon.png" /> スクリプトエディタ</dt>
-<dd>　<a target="main" class="jump" href="ScriptEditor.html">スクリプトエディタ</a> を開きます。</dd>
-<dt><img width="16" height="16" alt="ExprWatchIcon.png" src="../../images/ExprWatchIcon.png" /> 監視式</dt>
-<dd>　<a target="main" class="jump" href="ExprWatch.html">監視式</a> を開きます。</dd>
-<dt><img width="16" height="16" alt="ConsoleIcon.png" src="../../images/ConsoleIcon.png" /> コンソール</dt>
-<dd>　<a target="main" class="jump" href="Console.html">コンソール</a> を開きます。</dd>
-<dt><img width="16" height="16" alt="EventIcon.png" src="../../images/EventIcon.png" /> イベント発生</dt>
-<dd>　イベントの発生を制御します。押し込まれた状態ではシステムにイベントが発生し、押し込まれてない状態ではイベントは発生しません。吉里吉里は基本的にイベント駆動型のプログラミングモデルですので、イベントが発生しない状態ではプログラムが停止することになります。例外がどこにも捕捉されなかった場合、自動的にイベントは発生しなくなります。<br />
-　このボタンは <a target="main" class="jump" href="../Class Reference/System/Properties/f_System_eventDisabled.html">System.eventDisabled</a> プロパティと連動しています。</dd>
-<dt>TJS コンテキストのダンプ (コンテキストメニュー内)</dt>
-<dd>　TJS2 スクリプトエンジンが保持している各コンテキストのダンプ ( 主に逆アセンブル ) がファイルに出力されます。<a target="main" class="jump" href="../Class Reference/Scripts/f_Scripts_dump.html">Scripts.dump</a> メソッドと同様の動作をします。</dd>
-<dt>メッセージマップファイルの作成 (コンテキストメニュー内)</dt>
-<dd>　吉里吉里に内蔵されている各メッセージのリストと、それに対応するメッセージの現在の設定を出力します。このファイルは吉里吉里本体と同じ場所に置くことで、吉里吉里の起動時に自動的に読み込ませてメッセージの再設定を行えるものです。デフォルトの名前は msgmap.tjs になります。</dd>
-<dt>スクリプトエンジンの再起動 (コンテキストメニュー内)</dt>
-<dd>　TJS2スクリプトエンジンを再起動します。これによりTJS2が初期化されますが、これによりシステム全体や内部状態が再起動するわけではありません。場合によっては再起動の際にエラーが発生します。</dd>
-<dt><img width="16" height="16" alt="ExitIcon.png" src="../../images/ExitIcon.png" /> プログラムの強制終了</dt>
-<dd>　プログラムを強制的に終了します。</dd></dl><br />
+<dd>　打开<a target="main" class="jump" href="ScriptEditor.html">脚本编辑器</a>。</dd>
+<dt><img width="16" height="16" alt="ExprWatchIcon.png" src="../../images/ExprWatchIcon.png" /> 表达式监视器</dt>
+<dd>　打开<a target="main" class="jump" href="ExprWatch.html">表达式监视器</a>。</dd>
+<dt><img width="16" height="16" alt="ConsoleIcon.png" src="../../images/ConsoleIcon.png" /> 控制台</dt>
+<dd>　打开<a target="main" class="jump" href="Console.html">控制台</a>。</dd>
+<dt><img width="16" height="16" alt="EventIcon.png" src="../../images/EventIcon.png" /> 事件发生</dt>
+<dd>　控制事件的发生。按下的状态下系统会发生事件，在没有按下的状态下不会发生事件。吉里吉里基本上是事件驱动型的编程模型，所以在没有发生事件的状态下程序会停止。如果任何地方都没有捕获异常，则不会自动发生事件。<!-- イベントの発生を制御します。押し込まれた状態ではシステムにイベントが発生し、押し込まれてない状態ではイベントは発生しません。吉里吉里は基本的にイベント駆動型のプログラミングモデルですので、イベントが発生しない状態ではプログラムが停止することになります。例外がどこにも捕捉されなかった場合、自動的にイベントは発生しなくなります。 --><br />
+	　此按钮与<a target="main" class="jump" href="../Class Reference/System/Properties/f_System_eventDisabled.html">System.eventDisabled</a>属性关联。</dd>
+<dt>转储TJS上下文（在右键菜单中）<!-- TJS コンテキストのダンプ (コンテキストメニュー内) --></dt>
+<dd>　TJS2脚本引擎保存的每个上下文的转储（主要是反汇编）将输出到文件。<!-- TJS2 スクリプトエンジンが保持している各コンテキストのダンプ ( 主に逆アセンブル ) がファイルに出力されます。 -->与<a target="main" class="jump" href="../Class Reference/Scripts/f_Scripts_dump.html">Scripts.dump</a> 方法类似。</dd>
+<dt>生成消息映射文件(在右键菜单中)<!-- メッセージマップファイルの作成 --> </dt>
+<dd>　输出吉里吉里内置的各消息的列表和与之对应的消息的当前设定。这个文件和吉里吉里可执行文件本体放在同一个地方，吉里吉里启动时可以自动读取并重新设定信息。默认名称为msgmap.tjs。<!-- 吉里吉里に内蔵されている各メッセージのリストと、それに対応するメッセージの現在の設定を出力します。このファイルは吉里吉里本体と同じ場所に置くことで、吉里吉里の起動時に自動的に読み込ませてメッセージの再設定を行えるものです。デフォルトの名前は msgmap.tjs になります。 --></dd>
+<dt> 重新启动脚本引擎(在右键菜单中)<!-- スクリプトエンジンの再起動 --></dt>
+<dd>　重新启动TJS2脚本引擎。这将初始化TJS2，但不会重新启动整个系统或内部状态。在某些情况下，重新启动时会出现错误。<!-- TJS2スクリプトエンジンを再起動します。これによりTJS2が初期化されますが、これによりシステム全体や内部状態が再起動するわけではありません。場合によっては再起動の際にエラーが発生します。 --></dd>
+<dt><img width="16" height="16" alt="ExitIcon.png" src="../../images/ExitIcon.png" /> 强制终止程序</dt>
+<dd>　强制退出程序。</dd></dl><br />
 </div></div>
 	<script type="text/javascript" charset="UTF-8" src="../../js/documentid.js" ></script>
 	<script type="text/javascript" charset="UTF-8" src="../../js/postcontent.js" ></script>

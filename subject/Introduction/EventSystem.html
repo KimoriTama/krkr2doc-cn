@@ -14,32 +14,48 @@
     <link href="mailto:dee@kikyou.info" rev="Made" />
 </head>
 <body>
-<h1><a id="id97" name="id97">イベントシステムについて</a></h1>
+<h1><a id="id97" name="id97">关于事件系统</a></h1>
 <div class="para"><div>
-　吉里吉里で TJS スクリプトを記述する場合、イベント駆動型のプログラミングモデルを採る必要があります。<br />
-　イベントは「何かが起こった」ときに、他のオブジェクトや、自分のオブジェクト内にそれを通知するために発生します。イベントハンドラにはこれに応答する処理を書くことになります。<br />
-　吉里吉里では一つのイベントハンドラで必要以上に長い時間がかかることは好ましくありません。時間を待ちたいときは <a target="main" class="jump" href="../Class Reference/Timer/f_Timer.html">Timer</a> クラスを用いることをおすすめします。<br />
+	　在吉里吉里编写TJS脚本时，必须采用事件驱动型编程模型。<!-- 吉里吉里で TJS スクリプトを記述する場合、イベント駆動型のプログラミングモデルを採る必要があります。 --><br />
+	　事件是指当”发生了什么事“时，将发生事件通知给其他或自己的对象。而在事件处理器中写下响应此事件的操作。<!-- イベントは「何かが起こった」ときに、他のオブジェクトや、自分のオブジェクト内にそれを通知するために発生します。イベントハンドラにはこれに応答する処理を書くことになります。 --><br />
+	　吉里吉里不希望在一个活动处理程序需要长时间的等待。如果想等待一定时间的时候推荐使用<!-- 吉里吉里では一つのイベントハンドラで必要以上に長い時間がかかることは好ましくありません。時間を待ちたいときは --> <a target="main" class="jump" href="../Class Reference/Timer/f_Timer.html">Timer</a>类。 <!-- クラスを用いることをおすすめします。 --><br />
 </div></div>
 
-<h1><a id="id98" name="id98">同期イベントと非同期イベント</a></h1>
+<h1><a id="id98" name="id98">同步事件与异步事件</a></h1>
 <div class="para"><div>
-　同期イベントとは、たとえばサウンドバッファで再生を開始した場合に、その play メソッド内で onStatusChanged イベントが発生するように、オブジェクトの操作を行うとすぐにその場で発生するイベントです。<br />
+<!-- 　同期イベントとは、たとえばサウンドバッファで再生を開始した場合に、その play メソッド内で onStatusChanged イベントが発生するように、オブジェクトの操作を行うとすぐにその場で発生するイベントです。<br />
 　これに対し、非同期イベントとは、吉里吉里内部にあるイベントキュー ( 発生させるイベントを一時保管している場所 ) に一時的に蓄積されます。このイベントはすべての他のイベントハンドラの処理が終わるまで発生せず、他のイベントハンドラ内では発生しません(ただし例外があるので下記 note を参照してください)。タイマー周期が来て発生する onTimer イベントなどや、ユーザからの入力により発生するすべてのイベントは非同期イベントです。
+<br/><br /> -->
+　同步事件是指，例如在声音缓冲区中开始播放时，在其play方法中发生onStatusChanged事件，即在对对象进行操作时立即发生的事件事件<br />
+　相反，异步事件临时存储在吉里吉里内部的事件队列（临时存储要发生的事件的位置）中。在处理完所有其他事件处理程序之前不会发生该事件，在其他事件处理程序中不会发生该事件（但有例外，请参阅下面的note）。当计时器周期到来时发生的onTimer事件等，以及用户输入时发生的所有事件都是异步事件。
+<br/><br />
+<br/><br />
 
-<br /><br />
 
-<div class="note"><div class="notehead"><span class="noteheadspan">Note</span></div>
-　Window.showModal のような一部の、ユーザからの入力を得ようとするような機能は、イベントキューを動作させる (イベントを配信する) ことがあります。これにより、イベントハンドラ中で別の非同期イベントが発生する可能性はあります。</div><br />
-　非同期イベントをスクリプトの操作で発生させるために <a target="main" class="jump" href="../Class Reference/AsyncTrigger/f_AsyncTrigger.html">AsyncTrigger</a> クラスがあります。<br />
+<div class="note"><div class="notehead"><span class="noteheadspan">Note</span>
+<!-- </div>
+　Window.showModal のような一部の、ユーザからの入力を得ようとするような機能は、イベントキューを動作させる (イベントを配信する) ことがあります。これにより、イベントハンドラ中で別の非同期イベントが発生する可能性はあります。
+</div> -->
+</div>
+　某些功能，如window.showModal，可以操作事件队列（分发事件）来获得用户输入。这可能会在事件处理器中发生另一个异步事件。
+</div><br />
+
+<!-- 　非同期イベントをスクリプトの操作で発生させるために <a target="main" class="jump" href="../Class Reference/AsyncTrigger/f_AsyncTrigger.html">AsyncTrigger</a> クラスがあります。 -->
+　有一个<a target="main" class="jump" href="../Class Reference/AsyncTrigger/f_AsyncTrigger.html">AsyncTrigger</a> 类，用于在脚本操作中发生异步事件。
+<br />
 </div></div>
-<h1><a id="id99" name="id99">画面反映のタイミング</a>
+<h1><a id="id99" name="id99">画面渲染的时机</a>
 </h1><div class="para"><div>
-　ウィンドウにレイヤを表示するための画面反映のタイミングは非同期イベントと同じで、すべての他のイベントハンドラの処理が行われたあとです。一つのイベントハンドラ内で何度描画を行っても、内部的な画像バッファには描画されていますが、画面にはすぐに反映はされません。イベントハンドラからぬけて、吉里吉里が描画のタイミングを得たときに初めてウィンドウに内容が描画され、反映されます。<br />
+<!-- 　ウィンドウにレイヤを表示するための画面反映のタイミングは非同期イベントと同じで、すべての他のイベントハンドラの処理が行われたあとです。一つのイベントハンドラ内で何度描画を行っても、内部的な画像バッファには描画されていますが、画面にはすぐに反映はされません。イベントハンドラからぬけて、吉里吉里が描画のタイミングを得たときに初めてウィンドウに内容が描画され、反映されます。 -->
+　窗口中显示层的屏幕渲染的时间与异步事件相同，在所有其他事件处理器都已处理之后。无论在一个事件处理器中进行多少次绘制，都会在内部图像缓冲区中绘制，但不会立即反映在屏幕上。从事件处理器中脱离，吉里吉里得到描绘的时机时，第一次在窗口中描绘并反映内容。
+<br />
 </div></div>
-<h1><a id="id100" name="id100">クラス内でのイベントハンドラ</a>
+<h1><a id="id100" name="id100">类中的事件处理器</a>
 </h1><div class="para"><div>
-　クラス内で発生したイベントはそのクラス内で、スーパークラスのイベントハンドラをオーバーライドすることによりハンドリングする事ができます。<br />
-　たとえば、Timer クラスからサブクラスを作成し、以下のようにイベントハンドラを作成することができます。<br />
+<!-- 　クラス内で発生したイベントはそのクラス内で、スーパークラスのイベントハンドラをオーバーライドすることによりハンドリングする事ができます。<br />
+　たとえば、Timer クラスからサブクラスを作成し、以下のようにイベントハンドラを作成することができます。<br /> -->
+　可以通过覆盖超类的事件处理程序来处理类中发生的事件。<br />
+　例如，可以从Timer类创建子类，并创建事件处理程序，如下所示：<br />
 
 <br />
 <code class="bq">class&nbsp;MyTimer&nbsp;extends&nbsp;Timer<br />
@@ -51,21 +67,26 @@
 <br />
 &nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;onTimer()<br />
 &nbsp;&nbsp;&nbsp;&nbsp;{<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;(&nbsp;ここに&nbsp;onTimer&nbsp;の処理&nbsp;)</span><br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onTimer(...);&nbsp;<span class="comment">//&nbsp;スーパークラスのメソッドは一応呼び出す</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;(&nbsp;在这里进行&nbsp;onTimer&nbsp;的处理&nbsp;)</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.onTimer(...);&nbsp;<span class="comment">//&nbsp;先调用超类方法</span><br />
 &nbsp;&nbsp;&nbsp;&nbsp;}<br />
 }<br />
 </code>
 <br />
 
-　スーパークラスのメソッドは呼び出す必要はありませんが、一般的には呼び出します。また、スーパークラスのメソッドは呼ばないと後述の action メソッドによるイベントハンドリングができません。<br />
+　<!-- スーパークラスのメソッドは呼び出す必要はありませんが、一般的には呼び出します。また、スーパークラスのメソッドは呼ばないと後述の action メソッドによるイベントハンドリングができません。 -->
+超类方法不需要调用，但通常会调用。另外，如果不调用超类方法，则无法通过后述的action方法进行事件处理。<br />
 </div></div>
-<h1><a id="id101" name="id101">actionメソッド</a>
+<h1><a id="id101" name="id101">action方法</a>
 </h1><div class="para"><div>
-　<a target="main" class="jump" href="../Class Reference/Layer/f_Layer.html">Layer</a> クラスや <a target="main" class="jump" href="../Class Reference/WaveSoundBuffer/f_WaveSoundBuffer.html">WaveSoundBuffer</a> クラスなどは、コンストラクタに指定したオーナーの action メソッドにイベントを発生する機能があります。<br />
+<!-- 　<a target="main" class="jump" href="../Class Reference/Layer/f_Layer.html">Layer</a> クラスや <a target="main" class="jump" href="../Class Reference/WaveSoundBuffer/f_WaveSoundBuffer.html">WaveSoundBuffer</a> クラスなどは、コンストラクタに指定したオーナーの action メソッドにイベントを発生する機能があります。<br />
 　action メソッドには辞書配列オブジェクトの引数が一つ渡され、ここにイベントの情報が入っています。<br />
 　辞書配列のメンバのうち、 target はイベントの発生元オブジェクトを表しています。type はイベント名を表しています。<br />
-　その他のメンバはイベントによって異なります。たとえば、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_onClick.html">Layer.onClick</a> イベントならば、x と y というメンバがあり、レイヤ上をクリックされた場所を表します。<br />
+　その他のメンバはイベントによって異なります。たとえば、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_onClick.html">Layer.onClick</a> イベントならば、x と y というメンバがあり、レイヤ上をクリックされた場所を表します。<br /> -->
+　<a target="main" class="jump" href="../Class Reference/Layer/f_Layer.html">Layer</a> 类和 <a target="main" class="jump" href="../Class Reference/WaveSoundBuffer/f_WaveSoundBuffer.html">WaveSoundBuffer</a> 类等具有在构造函数中指定的对象的action方法中发生事件的功能。<br />
+　action方法传递一个词典对象的参数，其中包含事件信息。<br />
+　词典的成员中，target表示事件的源对象。type表示事件名称。<br />
+　其他成员因事件而异。例如，<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_onClick.html">Layer.onClick</a> 事件包含一个名为x和y的成员，表示在层上单击的位置。<br />
 
 <br />
 <code class="bq">例:<br />
@@ -76,7 +97,7 @@ class&nbsp;MyWindow&nbsp;extends&nbsp;Window<br />
 &nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;MyWindow()<br />
 &nbsp;&nbsp;&nbsp;&nbsp;{<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super.Window(...);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add(layer&nbsp;=&nbsp;new&nbsp;Layer(this&nbsp;<span class="comment">/*&nbsp;this&nbsp;=&nbsp;オーナー&nbsp;*/</span>,&nbsp;null));<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;add(layer&nbsp;=&nbsp;new&nbsp;Layer(this&nbsp;<span class="comment">/*&nbsp;this&nbsp;=&nbsp;事件触发的对象&nbsp;*/</span>,&nbsp;null));<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;layer.visible&nbsp;=&nbsp;true;<br />
 &nbsp;&nbsp;&nbsp;&nbsp;}<br />
 &nbsp;&nbsp;&nbsp;&nbsp;(略)<br />
@@ -84,7 +105,7 @@ class&nbsp;MyWindow&nbsp;extends&nbsp;Window<br />
 &nbsp;&nbsp;&nbsp;&nbsp;{<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(ev.type&nbsp;==&nbsp;&quot;onClick&quot;&nbsp;&amp;&amp;&nbsp;ev.target&nbsp;==&nbsp;layer)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;layer&nbsp;がクリックされた</span><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="comment">//&nbsp;layer&nbsp;被点击了</span><br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.inform(ev.x,&nbsp;ev.y);<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />
 &nbsp;&nbsp;&nbsp;&nbsp;}<br />

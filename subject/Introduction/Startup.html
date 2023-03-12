@@ -77,7 +77,7 @@
 <br />
 <dl>
 <dt>「不选择」按钮</dt>
-<dd>　按下这个按钮，将不会选择项目目录。但<a target="main" class="jump" href="Controller.html">吉里吉里主控制台（Controller）</a>还是会启动的。虽然是未指定项目目录的状态，不过使用debug控制台（Console）和脚本编辑器（ScriptEditor）还是可以对简单的脚本进行测试的。</dd>
+<dd>　按下这个按钮，将不会选择项目目录。但<a target="main" class="jump" href="Controller.html">吉里吉里控制器（Controller）</a>还是会启动的。虽然是未指定项目目录的状态，不过使用debug控制台（Console）和脚本编辑器（ScriptEditor）还是可以对简单的脚本进行测试的。</dd>
 <dt>「OK」按钮</dt>
 <dd>　用吉里娘内核运行当前选中的目录或文件。</dd>
 <dt>「取消」按钮</dt>
@@ -93,7 +93,7 @@
 以及，在这里还需要注意一点，如果你只是放一个裸的内核exe、别的什么都没有的话，是打不开任何东西的，吉里娘会报错说：找不到krdevui.dll。<br />
 这是因为构建「选择 文件/文件包」这个界面的代码并没有被嵌在kr的内核里，所以如果没有这个dll文件，那「选择 文件/文件包」界面的UI就无法被载入出来了，然后就会报错。（然而这句报错的代码却是嵌在内核里的……）<br /><br />
 综上所述，如果想要直接启动吉里吉里内核，途径有以下两种：<br />
-　　1.只把krkr.eXe跟krdevui.dll放在一起，然后运行，会启动文件检索界面，可以选择直接打开主控制台或者打开想要运行的文件；<br />
+　　1.只把krkr.eXe跟krdevui.dll放在一起，然后运行，会启动文件检索界面，可以选择直接打开控制器或者打开想要运行的文件；<br />
 　　2.只把krkr.eXe跟命名为data或者content-data的文件夹放在一起，并且在这个文件夹里需要有一个名为startup.tjs的文件，然后运行，会执行startup.tjs中的代码。<br /><br />
 上述的两种是方法是涉及文件最少、也是最基本的启动吉里吉里内核的方法了。其中第二种是最根本的kr程序的启动方法。<br />
 不过一般做开发的时候都是搭KAG启动就是啦w<br />
@@ -101,7 +101,7 @@
 </div></div>
 <h1><a id="id259" name="id259">吉里吉里内核最初执行的文件</a>
 </h1><div class="para"><div>
-　在决定了项目的目录后，最初被吉里吉里内核执行的文件是位于项目目录下的 startup.tjs 文件。如果在项目的顶层目录内找不到这个文件、或者它压根就不存在的话，吉里娘就会报（ao）错（jiao）w <br /><br />
+　在决定了项目的目录后，最初被吉里吉里内核执行的文件是位于项目目录下的 startup.tjs 文件。如果在项目的顶层目录内找不到这个文件、或者它压根就不存在的话，吉里吉里就会报错 <br /><br />
 <b class="uko"><div class="note">
 	<div class="notehead"><span class="noteheadspan">U子注</span></div>
 	关于“为什么一定是startup.tjs这个文件”、以及“能不能根据自己的喜好命名一个最初执行的文件”之类的问题，其实理论上是可以的，只不过由于定义这个文件名的代码是被写在内核里的，所以需要拆开内核来改内核的源代码，所以不像KAG最初执行的first.ks那样，一般都懒得去改它。<br /><br />
@@ -112,7 +112,7 @@
 </div></div>
 <h1><a id="id260" name="id260">消息映射表文件（Massage_Map file）</a>
 </h1><div class="para"><div>
-　吉里吉里内核会在启动后，紧接着会扫描自身所在目录下是否存在 msgmap.tjs 这个文件，如果存在的话就会对它进行加载。与上面提到的关于项目目录在封包时的操作相同，如果在封包工具中的“可执行文件设定”选项卡下勾选了「不读取信息映射文件」选项，内核则不会再对它进行读取（详细请参考<a target="main" class="jump" href="../Tools Reference/Configure.html">吉里吉里设定工具</a> 页面）。所谓的 msgmap.tjs 文件，是使用 <a target="main" class="jump" href="../Class Reference/System/Methods/f_System_assignMessage.html">System.assignMessage</a> 方法，实现提示消息重新分配的效果。 msgmap.tjs 文件也可以使用 <a target="main" class="jump" href="Controller.html">吉里吉里主控制台（Controller）</a> 生成。<br />
+　吉里吉里内核会在启动后，紧接着会扫描自身所在目录下是否存在 msgmap.tjs 这个文件，如果存在的话就会对它进行加载。与上面提到的关于项目目录在封包时的操作相同，如果在封包工具中的“可执行文件设定”选项卡下勾选了「不读取信息映射文件」选项，内核则不会再对它进行读取（详细请参考<a target="main" class="jump" href="../Tools Reference/Configure.html">吉里吉里设定工具</a> 页面）。所谓的 msgmap.tjs 文件，是使用 <a target="main" class="jump" href="../Class Reference/System/Methods/f_System_assignMessage.html">System.assignMessage</a> 方法，实现提示消息重新分配的效果。 msgmap.tjs 文件也可以使用 <a target="main" class="jump" href="Controller.html">吉里吉里控制器（Controller）</a> 生成。<br />
 <br />
 <b class="uko">
 <div class="note"><div class="notehead"><span class="noteheadspan">U子注</span></div>
@@ -124,7 +124,7 @@
 如果用的是原版的内核，那这些消息就都会是日文的。<br />
 就像刚才提到的，类似这样定义的提示消息，并不止 msgmap.tjs 里写的这些，不过唯独 msgmap.tjs 这个文件可以摘出来重新改，具体原因U子也没搞明白，总之只要存放内核的目录下有这个 msgmap.tjs ，内核就会忽视原先嵌入在内核里的内容并读取它里面定义的内容。<br />
 如果是使用没有翻译过的原版内核、又想要给用户塑造一个良好的体验，就可以尝试导出它然后手动翻译一下，在封包的时候记得带上它就好。<br /><br />
-关于如何导出，只要把主控制台的面板调出来，然后在面板上的任意位置右键，下拉菜单里就可以找到相关的一个选项，在汉化版内核里是“创建消息映射文件（M）”，点选之后选择一个保存位置就可以导出了。
+关于如何导出，只要把控制器的面板调出来，然后在面板上的任意位置右键，下拉菜单里就可以找到相关的一个选项，在汉化版内核里是“创建消息映射文件（M）”，点选之后选择一个保存位置就可以导出了。
 </div>
 </b><br />
 </div></div>
