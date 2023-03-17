@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-コンソールへ重要なメッセージを出力</dd>
+	输出重要信息到控制台（console）</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Debug.html">Debug类</a>的成员方法<br />
@@ -32,20 +32,21 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="notice の引数">
 <tr><td valign="top"><span class="argname">message</span></td>
-<td>				　出力するメッセージを指定します。<br />
+<td>				　指定输出的消息。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-なし (void)<br />
+无 (void)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　<a class="targanchor" name="id14" id="id14">コンソール</a>へメッセージを出力します。<br />
-		<a class="jump" href="f_Debug_message.html">Debug.message</a> と違い、ここで出力したメッセージは ログファイルへの書き出しを途中から開始したとしても、
+		　像<a class="targanchor" name="id14" id="id14">控制台（console）</a>输出消息。<br />
+		<!-- <a class="jump" href="f_Debug_message.html">Debug.message</a> と違い、ここで出力したメッセージは ログファイルへの書き出しを途中から開始したとしても、
 		必ずログファイルに書き出されます ( Debug.message で出力したメッセージは、ある程度さかのぼってまでしか
-		書き込まれません )。ログファイルを回収したときに有用になるような重要な情報を出力するために使います。<br />
+		書き込まれません )。ログファイルを回収したときに有用になるような重要な情報を出力するために使います。<br /> -->
+		与<a class="jump" href="f_Debug_message.html">Debug.message</a> 不同，如果您从中途开始将输出的消息输出到日志文件，则输出的消息将始终导出到日志文件（在Debug.message中输出的消息只能回溯到一定程度）。用于输出在回收日志文件时有用的重要信息。<br />
 	</dd>
 </dl>
 </div></div>

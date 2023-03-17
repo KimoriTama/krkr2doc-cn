@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-ストレージ上のスクリプトの実行</dd>
+	运行storage中的脚本</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Scripts.html">Scripts类</a>的成员方法<br />
@@ -32,24 +32,26 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="execStorage の引数">
 <tr><td valign="top"><span class="argname">storage</span></td>
-<td>				　実行するストレージを指定します。<br />
+<td>				　指定需要执行的storage。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">mode</span></td>
-<td>				　ファイルを読み込む際のモード文字列を指定します。&quot;o&quot; に続いてオフセットを10進で指定するとファイルのそのバイト位置からの読み込みになります。<br />
+<td>				指定导入文件时的模式字符串。以&quot;o&quot; 开头，之后以十进制指定偏移量，从文件的该字节位置开始读取。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">context</span></td>
-<td>				　実行コンテキストを指定します。<br />
+<td>				　指定执行上下文。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>スクリプトを実行した結果が戻ります。</result></dd>
+<result>返回执行脚本的结果。</result></dd>
 <dt>说明</dt>
 <dd>
-		　指定されたストレージを読み込み、その内容を TJS2 スクリプトとして実行します。<br />
+		　<!-- 指定されたストレージを読み込み、その内容を TJS2 スクリプトとして実行します。<br />
 		　スクリプトを実行中に発生した例外はこのメソッド内では捕捉されませんので、このメソッドの
-		呼び出し側で捕捉することができます。<br />
+		呼び出し側で捕捉することができます。<br /> -->
+		　读取指定的storage并将其内容作为TJS2脚本执行。<br />
+		　执行脚本时发生的异常不会在此方法中捕获，因此可以在该方法的调用上下文捕获。。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

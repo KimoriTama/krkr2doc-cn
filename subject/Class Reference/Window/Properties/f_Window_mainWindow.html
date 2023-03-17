@@ -19,15 +19,25 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-メインウィンドウ</dd>
+主窗口</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Window.html">Window类</a>的成员属性 (只读)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　メインウィンドウ ( 最初に作成されたウィンドウ ) を表します。<br />
+		　代表主窗口(第一次创建的窗口)。<br />
 	</dd>
+	<b class="uko"><div class="note">
+		<div class="notehead"><span class="noteheadspan">译注</span></div>
+		这个属性在任何上下文均指向一个变量，它会被赋值为第一个创建的Window类的对象，见如下日志。<br />
+		控制台 Window.mainWindow  = (object)(object 0x00000000:0x00000000)<br />
+		控制台 : global.a = new  Window() = (object)(object 0x028DF8F0[instance of class Window]:0x028DF8F0[instance of class Window])<br />
+		控制台 : Window.mainWindow  = (object)(object 0x028DF8F0[instance of class Window]:0x028DF8F0[instance of class Window])<br />
+		可以看到新建了名称为a的Windows对象后，Window.mainWindow自动被赋值了。<br />
+		
+		
+	</div></b>
 </dl>
 </div></div>
 	<script type="text/javascript" charset="utf-8" src="../../../../js/documentid.js" ></script>

@@ -32,7 +32,7 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="popup の引数">
 <tr><td valign="top"><span class="argname">flags</span></td>
-<td>				メニューの挙動を表すフラグです。以下の値のビット論理和を指定してください。<br />
+<td>				以下为代表菜单行为的标志。请指定以下值得按位与运输的结果。<br />
 				<a class="targanchor" name="id291" id="id291">tpmLeftButton</a><br />
 				<a class="targanchor" name="id292" id="id292">tpmRightButton</a><br />
 				<a class="targanchor" name="id293" id="id293">tpmLeftAlign</a><br />
@@ -51,27 +51,29 @@
 				<a class="targanchor" name="id306" id="id306">tpmVerPosAnimation</a><br />
 				<a class="targanchor" name="id307" id="id307">tpmVerNegAnimation</a><br />
 				<a class="targanchor" name="id308" id="id308">tpmNoAnimation</a><br />
-				これらのフラグの詳細については<a target="_blank" class="jump" href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms648002">MSDNの該当ページ</a>を参照してください。
+				这些标志的详细说明请参考<a target="_blank" class="jump" href="https://msdn.microsoft.com/en-us/library/windows/desktop/ms648002">MSDNの該当ページ</a>。
 				
 			</td></tr>
 <tr><td valign="top"><span class="argname">x</span></td>
-<td>				ウィンドウのクライアント座標上でのx位置を表します。
+<td>				表示窗口的客户端坐标上的x位置。
 			</td></tr>
 <tr><td valign="top"><span class="argname">y</span></td>
-<td>				ウィンドウのクライアント座標上でのy位置を表します。
+<td>				表示窗口的客户端坐标上的y位置。
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>flagsにtpmReturnCmdが指定されていた場合は、
+<result>flags指定为tpmReturnCmd的情况下、
 		選択されたメニュー項目のIDを整数で返します(ただし、現バージョンではこのIDを吉里吉里側から設定することができないため、flagsにtpmReturnCmdを指定することは意味がありません)。
 		何も選択されずにキャンセルされた場合は0を返します。
 	</result></dd>
 <dt>说明</dt>
 <dd>
-		メニュー項目をポップアップ表示します。このメソッドは、メニューが閉じられるまで帰ってきません。<br />
-		メニューが閉じられるまでの間に他の非同期イベントが発生する可能性があるので注意してください。<br />
+		<!-- メニュー項目をポップアップ表示します。このメソッドは、メニューが閉じられるまで帰ってきません。<br />
+		メニューが閉じられるまでの間に他の非同期イベントが発生する可能性があるので注意してください。<br /> -->
+		将菜单项弹出表示。此方法在菜单项关闭前会保持阻塞状态。<br />
+		在菜单关闭前的时间内，请注意存在其他异步事件发生的可能性。<br />
 		<a class="jump" href="../../Window/Properties/f_Window_menu.html">Window.menu</a>そのものはポップアップできません。<br />
 		非表示状態のメニュー項目はポップアップできません。<br />
 		<a class="jump" href="../../Window/Properties/f_Window_menu.html">Window.menu</a>の子でないメニューはポップアップできません。<br />

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
@@ -14,13 +14,13 @@
     <link href="mailto:dee@kikyou.info" rev="Made" />
 </head>
 <body>
-<h1><a id="id149" name="id149">グラフィックシステムについて</a>
+<h1><a id="id149" name="id149">关于图形图像系统</a>
 </h1><div class="para"><div>
 　吉里吉里は、レイヤによるグラフィックの表示機構を持っています。<br />
 　各レイヤはアルファブレンドによる透過重ね合わせや階層構造管理機能を持っています。また、レイヤを GUI 部品 (ウィジット) として動作させることができるように、ユーザからの入力を受け取るための機構 ( フォーカス ) を持っています。<br />
 <br />
 　重ね合わされたレイヤは、描画デバイスと呼ばれる機構にて、ウィンドウに描画されます。デフォルトでは PassThroughと呼ばれる、単純にレイヤの出力をウィンドウに描画するだけのデバイスが使用されます。描画デバイスは<a target="main" class="jump" href="../Class Reference/Window/f_Window_drawDevice.html">Window.drawDevice</a>プロパティを操作することで自由に差し替えられるようになっており、用途に応じた演出効果などをユーザが独自に(プラグインの形式で)定義することとができますが、吉里吉里２が内蔵しているのは前述のPassThroughデバイスのみです。</div></div>
-<h1><a id="id150" name="id150">読み込み可能な画像形式</a>
+<h1><a id="id150" name="id150">可以读取的图像类型</a>
 </h1><div class="para"><div>
 　標準状態の吉里吉里で、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_loadImages.html">Layer.loadImages</a> でレイヤに読み込むことのできる形式は以下の通りです。<br />
 <br />
@@ -45,7 +45,7 @@
 　Susie Plug-in から 32bpp のビットマップが渡された場合は、アルファチャネル付きビットマップと見なされます。<br />
 <br />
 </div></div>
-<h1><a id="id151" name="id151">レイヤタイプ</a>
+<h1><a id="id151" name="id151">图层类型</a>
 </h1><div class="para"><div>
 　吉里吉里のレイヤは様々な合成モード(レイヤタイプ)で表示することができます。<br />
 　以下の合成モードがあり、lt で始まるレイヤタイプ定数を <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> プロパティに指定することができます。<br />
@@ -231,47 +231,63 @@ ltTransparent でも同じ意味になりますが、2.23 beta 2 未満におけ
 
 
 
-<h1><a id="id180" name="id180">アルファ合成と加算アルファ合成</a>
+<h1><a id="id180" name="id180">alpha混合与加法alpha混合</a>
 </h1><div class="para"><div>
-　吉里吉里は、二つのアルファ合成モードを持っています。<br />
+	　吉里吉里有两种alpha通道的混合模式。<br />
 <dl>
-<dt>アルファ合成</dt>
-<dd><a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> プロパティで <a id="id181" name="id181" class="targanchor"><dfn>ltAlpha</dfn></a> を指定するとこの表示タイプになります。<br />
-ltAlphaは多くのグラフィックソフトが採用しているアルファ合成モードです。他のグラフィックソフトで出力したデータをそのまま読み込む場合はこのモードが適しています。<br />
+<dt>alpha混合</dt>
+<dd>将<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> 属性指定为<a id="id181" name="id181" class="targanchor"><dfn>ltAlpha</dfn></a> 表示使用这种模式。<br />
+<!-- ltAlphaは多くのグラフィックソフトが採用しているアルファ合成モードです。他のグラフィックソフトで出力したデータをそのまま読み込む場合はこのモードが適しています。 -->
+ltAlpha是很多图形软件采用的alpha混合模式。如果直接读取在其他图形软件中输出的数据,则该模式很合适。<br />
 </dd>
-<dt>加算アルファ合成</dt>
-<dd><a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> プロパティで <a id="id182" name="id182" class="targanchor"><dfn>ltAddAlpha</dfn></a> を指定するとこの表示タイプになります。<br />
-　この形式はアルファ合成に比べて以下のメリット・デメリットがあります。<br />
-<ul><li>式がアルファ合成よりも単純なため、表示が高速に行え、多くの描画メソッドでも高速な描画が可能です</li><li>アルファ合成と一緒に加算合成も表現できます</li><li>この形式に対応しているグラフィックソフトがほとんどありません</li></ul><br />
-ltAddAlphaと同じ合成モードに対応しているグラフィックソフトはそうはないと思いますので、他ソフトの出力を吉里吉里でこの形式で扱うには、<a target="main" class="jump" href="../Tools Reference/TPC.html">画像フォーマットコンバータ</a> でこのタイプの画像を出力するか、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_convertType.html">Layer.convertType</a> メソッドで ltAlpha からこの形式に変換する必要があります。<br />
-　画像フォーマットコンバータでは、Photoshop形式で、「通常」レイヤーと「覆い焼き(リニア)」レイヤーの組み合わさった入力を、加算アルファ合成用画像の入力として受け付けることができます。<br />
+<dt>加法alpha混合</dt>
+<dd>将<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> 属性指定为 <a id="id182" name="id182" class="targanchor"><dfn>ltAddAlpha</dfn></a> 表示使用这种模式。<br />
+　<!-- この形式はアルファ合成に比べて以下のメリット・デメリットがあります。 -->
+这个模式与alpha混合相比,有以下几点好处与缺点。<br />
+<ul><li>因为此模式比alpha混合更简单,所以显示速度更高,能进行大多数情况下的绘图。<!-- 式がアルファ合成よりも単純なため、表示が高速に行え、多くの描画メソッドでも高速な描画が可能です --></li>
+	<li>alpha混合可以和alpha加法混合一起进行。<!-- アルファ合成と一緒に加算合成も表現できます --></li>
+	<li>几乎没有与此模式对应的图形软件。<!-- この形式に対応しているグラフィックソフトがほとんどありません --></li>
+</ul><br />
+<!-- ltAddAlphaと同じ合成モードに対応しているグラフィックソフトはそうはないと思いますので、他ソフトの出力を吉里吉里でこの形式で扱うには、<a target="main" class="jump" href="../Tools Reference/TPC.html">图片格式转换器</a> でこのタイプの画像を出力するか、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_convertType.html">Layer.convertType</a> メソッドで ltAlpha からこの形式に変換する必要があります。<br />
+　图片格式转换器では、Photoshop形式で、「通常」レイヤーと「覆い焼き(リニア)」レイヤーの組み合わさった入力を、加算アルファ合成用画像の入力として受け付けることができます。<br /> -->
+因为与ltAddAlpha有同样的混合模式对应的图形软件是太会有的、从其他软件输出的图片要在吉里吉里以这种模式处理的情况下，请通过<a target="main" class="jump" href="../Tools Reference/TPC.html">图片格式转换器</a> 将图像输出，或者用<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_convertType.html">Layer.convertType</a> 方法从 ltAlpha 变换到这种模式。<br />
+图片格式转换器采用Photoshop格式,能够接受、“通常”图层和“线性覆盖”图层组合后、作为加法alpha混合用图像的输入。<br />
 </dd></dl></div></div>
 
 
 
 
 
-<h1><a id="id183" name="id183">レイヤタイプと描画方式と演算モード</a>
+<h1><a id="id183" name="id183">图层类型、绘图方式和运算模式</a>
 </h1><div class="para"><div>
-　吉里吉里にはレイヤタイプ (ltで始まる定数で指定)と、描画方式 (dfで始まる定数で指定) と、演算モード (omで始まる定数で指定)があります。<br />
-　それぞれ似たような名称を持っていますが、用途は以下のように分かれています。<br />
+　吉里吉里有图层类型 (由lt开头的常量指定)、绘图方式 (由df开头的常量指定) 和运算模式 (由om开头的常量指定)。<br />
+　虽然都有相似的名称,但各自的用途有以下的不同。<br />
 <dl>
-<dt>レイヤタイプ</dt>
-<dd>　レイヤタイプは <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> プロパティで指定する値で、レイヤがどのように表示されるかを指定します。</dd>
-<dt>描画方式</dt>
-<dd>　描画方式は <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_face.html">Layer.face</a> プロパティで指定する値で、レイヤにどのように描画するかを指定します。dfAutoを指定すると、レイヤタイプに従って適切な描画方式が決定されます。レイヤタイプに最適な描画方法とは異なる描画方式で描画することもできます。<br />
+<dt>图层类型</dt>
+	<!-- <dd>　レイヤタイプは <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> プロパティで指定する値で、レイヤがどのように表示されるかを指定します。</dd> -->
+	<dd>　图层类型是由 <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> 的值来指定、决定图层以何种形式来表示。</dd>
+<dt>绘图方式</dt>
+<!-- <dd>　描画方式は <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_face.html">Layer.face</a> プロパティで指定する値で、レイヤにどのように描画するかを指定します。dfAutoを指定すると、レイヤタイプに従って適切な描画方式が決定されます。レイヤタイプに最適な描画方法とは異なる描画方式で描画することもできます。<br />
 　<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_copyRect.html">Layer.copyRect</a> メソッドのようなレイヤ間のコピーを行うメソッドでは、どの情報をコピーするかの選択にも用いられます。dfBoth (あるいは dfAlpha あるいは dfAddAlpha の場合) は、メインとマスクの両方がコピーされます。dfMain (あるいは dfOpaque) の場合はメインのみがコピーされます。dfMask の場合はマスクのみ、dfProvince の場合は領域画像のみがコピーされます。<br />
-　同様に、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_fillRect.html">Layer.fillRect</a> メソッドでは、どの情報を塗りつぶすかの選択に用いられます。dfBoth (あるいは dfAlpha あるいは dfAddAlpha の場合) は、メインとマスクの両方が塗りつぶされます。dfMain (あるいは dfOpaque) の場合はメインのみがコピー塗りつぶされます。dfMask の場合はマスクのみ、dfProvince の場合は領域画像のみが塗りつぶされます。<br />
+　同様に、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_fillRect.html">Layer.fillRect</a> メソッドでは、どの情報を塗りつぶすかの選択に用いられます。dfBoth (あるいは dfAlpha あるいは dfAddAlpha の場合) は、メインとマスクの両方が塗りつぶされます。dfMain (あるいは dfOpaque) の場合はメインのみがコピー塗りつぶされます。dfMask の場合はマスクのみ、dfProvince の場合は領域画像のみが塗りつぶされます。<br /> -->
+<dd>绘图方式是由 <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_face.html">Layer.face</a> 属性的值来指定，决定图层以何种方式来绘图。指定dfAuto的情况下、将依据图层类型来决定最合适的的绘图方式。也有可能使用并非对应图层类型的最佳绘图方式来绘图。<br />
+	　像<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_copyRect.html">Layer.copyRect</a>方法这样在不同图层间进行复制的方法，复制什么样的信息也取决于这个选项。 dfBoth (或dfAlpha 或 dfAddAlpha ) 的情况下，主图像与mask图两者都会被复制； dfMain (或dfOpaque) 的情况下，只有主图像会被复制；dfMask 的情况下只有mask图会被复制；dfProvince 的情况下只有领域图像会被复制。<br />
+	　同样的，对于<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_fillRect.html">Layer.fillRect</a> 方法，填充什么样的信息也取决于这个选项。 dfBoth (或dfAlpha 或 dfAddAlpha ) 的情况下，主图像与mask图两者都会被填充； dfMain (或dfOpaque) 的情况下，只有主图像会被填充；dfMask 的情况下只有mask图会被填充；dfProvince 的情况下只有领域图像会被填充。<br />
 </dd>
-<dt>演算モード</dt>
-<dd>　演算モードは <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_operateRect.html">Layer.operateRect</a> メソッドなどの引数で指定する値で、演算元(重ね合わせるレイヤ) をどのように扱うかを指定する値です。omAuto を指定すると、演算元のレイヤタイプに従って適切なモードが決定されます。</dd></dl></div></div>
+<dt>运算模式</dt>
+<!-- <dd>　演算モードは <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_operateRect.html">Layer.operateRect</a> メソッドなどの引数で指定する値で、演算元(重ね合わせるレイヤ) をどのように扱うかを指定する値です。omAuto を指定すると、演算元のレイヤタイプに従って適切なモードが決定されます。</dd></dl></div></div> -->
+<dd>　运算模式是在<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_operateRect.html">Layer.operateRect</a> 中指定的值，是指定如何处理运算源（需要重叠的图层）的值。指定omAuto时，将根据运算源的层类型确定适当的模式。</dd></dl></div></div>
 
-<h1><a id="id184" name="id184">アルファチャンネルの保護</a>
+<h1><a id="id184" name="id184">alpha通道保留<!-- アルファチャンネルの保護 --></a>
 </h1><div class="para"><div>
-　<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_face.html">Layer.face</a> プロパティで指定する描画方式が <a id="id185" name="id185" class="targanchor"><dfn>dfOpaque</dfn></a> の場合、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_holdAlpha.html">Layer.holdAlpha</a> プロパティで、描画先 (メソッドを実行しようとするレイヤ)のアルファチャンネルを保護するかどうかを指定できます。<br />
+<!-- 　<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_face.html">Layer.face</a> プロパティで指定する描画方式が <a id="id185" name="id185" class="targanchor"><dfn>dfOpaque</dfn></a> の場合、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_holdAlpha.html">Layer.holdAlpha</a> プロパティで、描画先 (メソッドを実行しようとするレイヤ)のアルファチャンネルを保護するかどうかを指定できます。<br />
 　アルファチャンネルを保護すると、アルファチャンネル (不透明度) は保護され、透明な部分は透明なままになります。<br />
 　アルファチャンネルを保護しないと、アルファチャンネル (不透明度) は破壊されます。破壊されるとは、どのような状態になるか分からなくなると言うことです。<br />
-　しかし、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> プロパティが <a id="id186" name="id186" class="targanchor"><dfn>ltAlpha</dfn></a> でも <a id="id187" name="id187" class="targanchor"><dfn>ltAddAlpha</dfn></a> でも無い場合は、レイヤのアルファチャンネルは使われませんから、Layer.holdAlpha プロパティを偽にしても、通常は問題はありません。また、偽にすれば、多くのメソッドにおいて真の時よりも高速に描画できます。<br />
+　しかし、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> プロパティが <a id="id186" name="id186" class="targanchor"><dfn>ltAlpha</dfn></a> でも <a id="id187" name="id187" class="targanchor"><dfn>ltAddAlpha</dfn></a> でも無い場合は、レイヤのアルファチャンネルは使われませんから、Layer.holdAlpha プロパティを偽にしても、通常は問題はありません。また、偽にすれば、多くのメソッドにおいて真の時よりも高速に描画できます。<br /> -->
+　<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_face.html">Layer.face</a> 属性指定的绘图方式为 <a id="id185" name="id185" class="targanchor"><dfn>dfOpaque</dfn></a> 的情况下，通过<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性，能够指定是否保留绘图目标 (将要执行绘图方法的图层)的alpha通道。<br />
+　如果保留alpha通道，alpha通道(不透明度) 将会被保留、透明的部分仍然会保持透明。<br />
+　如果不保留alpha通道，、alpha通道(不透明度) 将会被破坏。破坏是指，无法确定alpha通道是何种状态。<br />
+　然而，<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> 属性既不为<a id="id186" name="id186" class="targanchor"><dfn>ltAlpha</dfn></a> 也不为 <a id="id187" name="id187" class="targanchor"><dfn>ltAddAlpha</dfn></a> 的情况下，图层的alpha通道并不会被使用，Layer.holdAlpha 属性指定为false、通常不会有问题。另外，指定为否的话，大多数的方法能够比为真时速度更快。<br />
 </div></div>
 
 	<script type="text/javascript" charset="UTF-8" src="../../js/documentid.js" ></script>

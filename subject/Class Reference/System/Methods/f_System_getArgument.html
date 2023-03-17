@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-コマンドラインオプションの取得</dd>
+获得命令行的选项参数</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_System.html">System类</a>的成员方法<br />
@@ -32,23 +32,21 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="getArgument の引数">
 <tr><td valign="top"><span class="argname">name</span></td>
-<td>				　取得するコマンドラインオプション名を指定します。最初に '-'
-				( ハイフン ) をつけてください ( 例 : <span class="script">'-nosplash'</span> )。<br />
+<td>				　指定需要获得的命令行参数的选项名。以 '-'
+				( 半角) 开头 ( 例 : <span class="script">'-nosplash'</span> )。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>コマンドラインオプションが指定されていればその値、指定されていなければ
-		void が返ります。</result></dd>
+<result>如果有指定此命令行选项的参数的话则返回参数的值，未指定的情况下则返回void。</result></dd>
 <dt>说明</dt>
 <dd>
-		　<a class="targanchor" name="id337" id="id337">コマンドラインオプション</a>は、<br />
+		　<a class="targanchor" name="id337" id="id337">命令行选项参数</a>需要以<br />
 		<span class="script">-name=value</span><br />
-		または<br />
+		或者<br />
 		<span class="script">-name</span><br />
-		　の形式で吉里吉里に渡されている必要があります。前者の場合は値として <span class="script">value</span> が
-		返り、前者の場合は値として <span class="script">'yes'</span> が返ります。<br />
+		　的形式传递给吉里吉里内核。前者的情况下值会以 <span class="script">value</span> 返回、而后者的情况值会以 <span class="script">'yes'</span> 返回。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

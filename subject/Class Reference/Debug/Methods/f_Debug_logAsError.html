@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-エラー時と同じようにログをファイルに出力開始する</dd>
+	像发生错误时一样输出错误到日志文件 </dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Debug.html">Debug类</a>的成员方法<br />
@@ -28,23 +28,20 @@
 <dd>
 <span class="funcdecl">logAsError()</span><br />
 </dd>
-<dt>引数</dt>
+<dt>参数</dt>
 <dd>
-なし<br />
+无<br />
 </dd>
 <dt>返回值</dt>
 <dd>
-なし (void)<br />
+无(void)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　エラーログファイルに関し、吉里吉里がエラーが発生したときと同じ動作をさせます。
-		つまり、
-		<a class="jump" href="../Properties/f_Debug_logToFileOnError.html">Debug.logToFileOnError</a> が真ならばファイルにコンソールのログの出力を
-		開始します。その際、<a class="jump" href="../Properties/f_Debug_clearLogFileOnError.html">Debug.clearLogFileOnError</a> が真ならばファイルを
-		クリアします。<br />
-		　これに対し、<a class="jump" href="f_Debug_startLogToFile.html">Debug.startLogToFile</a> は無条件でコンソールのログの
-		ファイルへの出力を開始します。<br />
+	　对于错误日志文件，使其与吉里吉里发生异常时的动作相同。
+		也就是说,
+		<a class="jump" href="../Properties/f_Debug_logToFileOnError.html">Debug.logToFileOnError</a>为真时将开始把控制台（console）的内容输出到日志文件, 同时<a class="jump" href="../Properties/f_Debug_clearLogFileOnError.html">Debug.clearLogFileOnError</a> 为真时将清空控制台(console)。<br />
+		　相对的、<a class="jump" href="f_Debug_startLogToFile.html">Debug.startLogToFile</a> 无条件开始将控制台（console）的内容输出到日志文件。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

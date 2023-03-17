@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-自動検索パスへの追加</dd>
+	添加自动检索路径</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Storages.html">Storages类</a>的成员方法<br />
@@ -32,24 +32,34 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="addAutoPath の引数">
 <tr><td valign="top"><span class="argname">path</span></td>
-<td>				　自動検索パスに追加するパスを指定します。<br />
+<!-- <td>				　自動検索パスに追加するパスを指定します。<br />
 				　パスの最後は、アーカイブ内のルートフォルダを指定するときは '&gt;'、通常のフォルダを
 				指定するときは '/' で終わる必要があります
 				( 例 : <span class="script">&quot;Archive/arc.xp3&gt;&quot;</span> や <span class="script">&quot;System/&quot;</span> ) 。<br />
 				　2.19 beta 14 よりアーカイブの区切り文字が '#' から '&gt;' に変わりました。<br />
-			</td></tr>
+			</td> -->
+<td>				　指定要添加到自动搜索路径的路径。<br />
+	　在指定存档文件中的根文件夹时，路径的结尾必须以'&gt;'结尾，一般的文件夹则以'/'来结尾。
+				( 例如: <span class="script">&quot;Archive/arc.xp3&gt;&quot;</span> 或 <span class="script">&quot;System/&quot;</span> ) 。<br />
+				　2.19beta14将存档文件分隔符从’#‘更改为'&gt;'。<br />
+			</td>
+		</tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-なし (void)<br />
+无(void)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　<a class="targanchor" name="id318" id="id318">自動検索パス</a>に、指定したパスを追加します。吉里吉里は、利用可能なストレージを
+		<!-- 　<a class="targanchor" name="id318" id="id318">自動検索パス</a>に、指定したパスを追加します。吉里吉里は、利用可能なストレージを
 		検索するとき、この自動検索パスに登録されたパスを探します。<br />
 		　自動検索パスは、後に指定したものがより優先されて検索されます。<br />
-		　また、プロジェクトフォルダはもっとも優先されて検索されます。<br />
+		　また、プロジェクトフォルダはもっとも優先されて検索されます。<br /> -->
+		　将指定的路径添加到<a class="targanchor" name="id318" id="id318">自动搜索路径</a>。
+		吉里吉里在搜索可用storage时，会找到注册在此自动搜索路径中的路径。<br />
+		　自动搜索路径将优先搜索后指定的路径。<br />
+		　此外，将优先搜索项目文件夹。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

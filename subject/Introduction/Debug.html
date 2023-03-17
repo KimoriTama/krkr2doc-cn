@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html  xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
@@ -14,85 +14,109 @@
     <link href="mailto:dee@kikyou.info" rev="Made" />
 </head>
 <body>
-<h1><a id="id94" name="id94">アプリケーションのデバッグについて</a>
+<h1><a id="id94" name="id94">关于程序的debug</a>
 </h1><div class="para"><div>
-　デバッグとは、アプリケーション内にあるバグ(機能不全や想定しない動作の原因)を特定し、修正する作業です。<br />
-　吉里吉里はいくつかのデバッグ支援機能を持っていますので、その機能を用い、アプリケーションをデバッグします。その方法について説明します。</div></div>
-<h1><a id="id95" name="id95">デバッグ支援ウィンドウ</a>
+	　debug是指定位在应用程序内的故障(功能不全以及未预想的操作等原因),进行修改的工作。<br />
+	　吉里吉里内含有数个debug辅助功能，使用这些功能,能够对程序进行debug，接下来说明debug的方法。</div></div>
+<h1><a id="id95" name="id95">debug辅助窗口</a>
 </h1><div class="para"><div>
-吉里吉里はデバッグを支援するためのウィンドウをいくつか提供しています。詳しくは各リンクの説明を参照してください。<br />
+	吉里吉里为支持debug而提供了几个辅助窗口。请详细各参考链接的说明。<br />
 <dl>
-<dt><a target="main" class="jump" href="Controller.html">コントローラ</a></dt>
-<dd>各デバッグ支援ウィンドウを開いたり、イベント発生の停止や TJS コンテキストのダンプ、メッセージマップファイルの作成、システムの強制終了をすることができます。</dd>
-<dt><a target="main" class="jump" href="ScriptEditor.html">スクリプトエディタ</a></dt>
-<dd>簡単な TJS スクリプトの編集とその実行をすることができます。また、例外が発生したとき、その例外の発生位置を指し示すために「スクリプトエディタ (例外通知)」というスクリプトエディタのウィンドウが開く場合があります。</dd>
-<dt><a target="main" class="jump" href="ExprWatch.html">監視式</a></dt>
-<dd>多くの式の結果を一度に確認することができます。</dd>
-<dt><a target="main" class="jump" href="Console.html">コンソール</a></dt>
-<dd>吉里吉里のシステムや、ユーザスクリプトが出力する様々なデバッグ用メッセージを表示することができます。また、TJS2 式を入力してその場で実行し、式の結果を表示させる事もできます。</dd></dl><br />
-　特にコンソールでは、<a target="main" class="jump" href="../Class Reference/Debug/f_Debug_message.html">Debug.message</a> によってユーザプログラムがプログラム中で出力したメッセージが表示されます。プログラムの任意の場所でメソッドを呼び出し、変数の内容をコンソールに表示させ、実行中の変数の内容を見ることができます。<br />
+<dt><a target="main" class="jump" href="Controller.html">控制器</a></dt>
+<dd>能够打开各个辅助窗口、停止事件发生、转储TJS上下文、生成消息映射文件、强制结束系统。 　</dd>
+<dt><a target="main" class="jump" href="ScriptEditor.html">脚本编辑器</a></dt>
+<dd>可以用来编写并执行简单的 TJS 脚本。当异常发生时时，为了指出异常发生的位置，有时会启动一个名为「脚本编辑器 (异常通知)」的脚本编辑器窗口。(译注：汉化的吉里吉里内核就是使用‘例外通知’的字样，实际异常通知更合情理)</dd>
+<dt><a target="main" class="jump" href="ExprWatch.html">表达式监视器</a></dt>
+<dd>可以轻松地一次查看许多表达式的结果。</dd>
+<dt><a target="main" class="jump" href="Console.html">控制台</a></dt>
+<!-- <dd>吉里吉里のシステムや、ユーザスクリプトが出力する様々なデバッグ用メッセージを表示することができます。また、TJS2 式を入力してその場で実行し、式の結果を表示させる事もできます。</dd> -->
+<dd>可以显示吉里吉里的系统和用户脚本输出的各种调试用消息。另外，也可以输入TJS2式并当场执行，显示公式的结果。</dd>
+</dl><br />
+<!-- 　特にコンソールでは、<a target="main" class="jump" href="../Class Reference/Debug/f_Debug_message.html">Debug.message</a> によってユーザプログラムがプログラム中で出力したメッセージが表示されます。プログラムの任意の場所でメソッドを呼び出し、変数の内容をコンソールに表示させ、実行中の変数の内容を見ることができます。<br />
 　また、コンソールの下部の入力欄にTJS2式を入力し、Enterキーを押すことでその式をその場で実行することができます。これは、実行中のオブジェクトのメソッドを直接呼び出したり、オブジェクトのプロパティや変数に値を代入する際に便利です。<br />
-　コンソールへメッセージを表示する方法やログをファイルに記述する方法については、<a target="main" class="jump" href="CommandLine.html">コマンドラインオプション</a> の 「デバッグ関連のオプション」や <a target="main" class="jump" href="f_Debug.html">Debug クラス</a> を参照してください。<br />
+　コンソールへメッセージを表示する方法やログをファイルに記述する方法については、<a target="main" class="jump" href="CommandLine.html">命令行选项</a> の 「デバッグ関連のオプション」や <a target="main" class="jump" href="f_Debug.html">Debug クラス</a> を参照してください。<br/> -->
+　特别是在控制台上，通过<a target="main" class="jump" href="../Class Reference/Debug/f_Debug_message.html">Debug.message</a> 显示用户程序在程序中输出的消息。在程序的任意位置调用方法，将变量的内容显示在控制台上，可以看到正在执行的变量的内容。<br />
+　另外，在控制台底部的输入栏中输入TJS2式，按下Enter键，可以当场执行该式。这对于直接调用正在运行的对象的方法或将值赋值给对象的属性或变量非常有用。<br />
+　有关向控制台显示消息的方法和在文件中记述日志的方法，请参照 <a target="main" class="jump" href="CommandLine.html">命令行选项</a> 的「debug相关的选项」以及 <a target="main" class="jump" href="f_Debug.html">Debug</a> 类。<br/>
 </div></div>
 
-<h1><a id="id96" name="id96">デバッグモード</a>
+<h1><a id="id96" name="id96">debug模式</a>
 </h1><div class="para"><div>
-　<a target="main" class="jump" href="CommandLine.html">コマンドラインオプション</a> で '-debug' を指定する (「デバッグモード」を'有効'にする) と、吉里吉里をデバッグモードで動作させることができます。<br />
-　デバッグモードではTJS2の動作は低速になりますが、デバッグに便利ないくつかの機能が有効になります。<br />
+	　在<a target="main" class="jump" href="CommandLine.html">命令行选项</a> 中指定 '-debug' (将“debug模式”设为“有效”) 后、可以使吉里吉里在调试模式下动作。<br />
+	　在调试模式下，TJS2的动作会变慢，但会启用一些便于调试的功能。<br />
 <br />
 <dl>
-<dt>型情報追跡機能</dt>
-<dd>　TJS2のオブジェクトに関する情報が強化されます。<br />
-　デバッグモードではない場合は、たとえば KAG で kag.saveSystemVariables の情報を得ようとしてコンソールに <code class="inlinecode">kag.saveSystemVariables</code> と入力しても
+<dt>类信息追加功能</dt>
+<dd>　加强关于tjs2的对象相关信息。<br />
+　非debug模式下、为了获得kag.saveSystemVariables的信息，在控制台中输入<code class="inlinecode">kag.saveSystemVariables</code>，仅有
 <br />
-<code class="bq">コンソール&nbsp;:&nbsp;kag.saveSystemVariables&nbsp;=&nbsp;(object)(object&nbsp;0x0279E130:0x01EB0BD4)</code>
-<br />
-
-　と表示されるだけですが、デバッグモードが有効の場合は
-<br />
-<code class="bq">コンソール&nbsp;:&nbsp;kag.saveSystemVariables&nbsp;=&nbsp;(object)(object&nbsp;0x0279E130[(function)&nbsp;KAGWindow.saveSystemVariables]:0x01EB0BD4[instance&nbsp;of&nbsp;class&nbsp;KAGWindow])</code>
+<code class="bq">console&nbsp;:&nbsp;kag.saveSystemVariables&nbsp;=&nbsp;(object)(object&nbsp;0x0279E130:0x01EB0BD4)</code>
 <br />
 
-　のように型の情報が表示されます (':' で区切られた２つの部分のうち、前の部分はオブジェクトの型、後ろの部分はそのオブジェクトが動作するコンテキストです )。<br />
-　この機能は、コンソールで値を表示させる場合にとどまらず、(現バージョンでは)オブジェクトが文字列に変換される過程すべてで有効になります。<br />
+　会显示出来、而debug模式下
+<br />
+<code class="bq">console&nbsp;:&nbsp;kag.saveSystemVariables&nbsp;=&nbsp;(object)(object&nbsp;0x0279E130[(function)&nbsp;KAGWindow.saveSystemVariables]:0x01EB0BD4[instance&nbsp;of&nbsp;class&nbsp;KAGWindow])</code>
+<br />
+
+<!-- 　のように型の情報が表示されます (':' で区切られた２つの部分のうち、前の部分はオブジェクトの型、後ろの部分はそのオブジェクトが動作するコンテキストです )。<br />
+　この機能は、コンソールで値を表示させる場合にとどまらず、(現バージョンでは)オブジェクトが文字列に変換される過程すべてで有効になります。<br /> -->
+　会以此种方式显示类型信息（在“：”分隔的两个部分中，前一部分是对象的类型，后一部分是对象运行的上下文）。<br />
+　此功能不仅在控制台中显示值时有效，而且在所有对象（在当前版本中）转换为字符串的过程中都有效。<br />
 </dd>
-<dt>オブジェクトリーク検出機能</dt>
-<dd>　削除されていない(解放されていない)オブジェクトを終了時に警告する機能が有効になります。<br />
+<dt>对象内存泄漏检测功能</dt>
+<!-- <dd>　削除されていない(解放されていない)オブジェクトを終了時に警告する機能が有効になります。<br />
 　TJS2は本来、ガベージコレクション機能により、作成されたオブジェクトは自動的に削除され、明示的な削除の指示は必要ありません。しかし、プラグインや吉里吉里本体のバグ、循環参照が原因で、オブジェクトが削除されないままになる(リークする)可能性があります。<br />
 　デバッグモードでは、終了時になってもまだ解放されていないオブジェクトがコンソールのログファイルに書き出されます。<br />
-　たった一個のオブジェクトが解放されなかっただけでも、そのオブジェクトに関連するオブジェクトが全て検出されるため、ログファイルが巨大になる可能性がありますので注意してください。<br />
+　たった一個のオブジェクトが解放されなかっただけでも、そのオブジェクトに関連するオブジェクトが全て検出されるため、ログファイルが巨大になる可能性がありますので注意してください。<br /> -->
+<dd>　启用退出时警告未删除（未释放）对象的功能。<br />
+	　TJS2本来是由垃圾收集功能自动删除创建的对象，不需要明确的删除指示。但是，由于插件、吉里吉里本体的错误、循环引用等原因，对象有留在内存中而不被删除（泄漏）的可能性。<br />
+	　在调试模式下，退出时尚未释放的对象将导出到控制台日志文件中。<br />
+	　请注意，即使只有一个对象没有被释放，也会搜索与该对象相关的所有对象，因此日志文件可能会变得十分巨大。<br />
 <br />
-　<a target="main" class="jump" href="../Class Reference/System/Methods/f_System_exit.html">System.exit</a> メソッドは、アプリケーションを強制終了に近い形で終了させるもので、このメソッドでアプリケーションを終了させると多くのオブジェクトがリークし、大量のログが記録されますので注意してください。<br />
+　<!-- <a target="main" class="jump" href="../Class Reference/System/Methods/f_System_exit.html">System.exit</a> メソッドは、アプリケーションを強制終了に近い形で終了させるもので、このメソッドでアプリケーションを終了させると多くのオブジェクトがリークし、大量のログが記録されますので注意してください。<br /> -->
+　请注意，<a target="main" class="jump" href="../Class Reference/System/Methods/f_System_exit.html">System.exit</a> 方法会以接近强制退出的形式退出应用程序，如果使用该方法退出应用程序，会泄漏很多对象，记录大量日志。<br />
 <br /><div class="note"><div class="notehead"><span class="noteheadspan">Note</span></div>
-循環参照とは、A は B を参照している、B は A を参照しているという状況の事です。<br />
-たとえば、以下のスクリプトは循環参照を生成します。
-<br />
+循环引用是指A引用B，B引用A的状况。<br />
+例如，以下脚本生成循环引用：<br />
 <code class="bq">var&nbsp;a&nbsp;=&nbsp;%[],&nbsp;b&nbsp;=&nbsp;%[];<br />
 a.b&nbsp;=&nbsp;b;&nbsp;b.a&nbsp;=&nbsp;a;</code>
 <br />
 
-このような状況では、オブジェクト a は b を必要とし、オブジェクト b は a を必要としています。TJS2が採用しているガベージコレクションの方法(参照カウンタ)はこのような状況を検出してオブジェクトを解放するのは困難であるため、TJS2ではこのような状況を検出しません。そのため、いつまで経ってもこれらのオブジェクトが削除されることはありません (明示的に invalidate 演算子でどちらかのオブジェクトを無効化すると循環参照を断ち切ることができます)。<br />
+<!-- このような状況では、オブジェクト a は b を必要とし、オブジェクト b は a を必要としています。TJS2が採用しているガベージコレクションの方法(参照カウンタ)はこのような状況を検出してオブジェクトを解放するのは困難であるため、TJS2ではこのような状況を検出しません。そのため、いつまで経ってもこれらのオブジェクトが削除されることはありません (明示的に invalidate 演算子でどちらかのオブジェクトを無効化すると循環参照を断ち切ることができます)。 -->
+在这种情况下，对象a需要b，对象b需要a。TJS2所采用的垃圾收集方法（引用计数法）很难检测到这种情况并释放对象，因此TJS2不会检测到这种情况。因此，永远不会删除这些对象（可以通过invalidate运算符显示禁用其中一个对象来截断循环引用）。<br />
 <br />
-プラグインでは、参照カウンタの扱いを誤るとオブジェクトがリークする可能性があります。プラグインを作成して、その中でTJS2オブジェクトを扱う場合は、参照カウンタの扱いに十分注意してください。<br />
+<!-- プラグインでは、参照カウンタの扱いを誤るとオブジェクトがリークする可能性があります。プラグインを作成して、その中でTJS2オブジェクトを扱う場合は、参照カウンタの扱いに十分注意してください。<br /> -->
+在插件中，如果错误地使用引用计数器，则对象可能会泄漏。创建插件并操作其中的TJS2对象时，请充分注意引用计数器的处理。<br />
 </div><br />
 </dd>
-<dt>削除中のオブジェクトでのスクリプト実行の警告</dt>
-<dd>　オブジェクトは、削除あるいは無効化されるときに finalize メソッドが呼ばれます。<br />
+<dt>在删除对象上执行脚本的警告</dt>
+<!-- <dd>　オブジェクトは、削除あるいは無効化されるときに finalize メソッドが呼ばれます。<br />
 　オブジェクトが削除されるタイミングは、TJS2では「いつになるかわからない」ため、変なタイミングで finalize メソッドがよばれ、予期しない挙動を示す場合があります。デバッグモードでは、このような「不安定なタイミング」、つまり無効化されなかったオブジェクトがガベージコレクションによって削除され、finalizeメソッドが呼ばれたときに、警告がコンソールに表示されるようになります。<br />
-　警告は以下のような物です。<br />
+　警告は以下のような物です。<br /> -->
+<dd>　删除或禁用对象时，将调用finalize方法。<br />
+	　删除对象的时间在TJS2中无法确定，因此在奇怪的时间点会调用finalize方法，以导致意外的行为。在调试模式下，会在这种不稳定的时间节点，即垃圾收集器删除未销毁的对象并调用finalize方法的时候，在控制台上显示警告。<br />
+	　警告如下。<br />
 
 <br />
-<code class="bq">警告:&nbsp;anonymous@0x016DFA7C(9)[(function)&nbsp;finalize]:&nbsp;削除中のオブジェクト&nbsp;0x0167DD44[instance&nbsp;of&nbsp;class&nbsp;A]&nbsp;上でコードが実行されています。このオブジェクトの作成時の呼び出し履歴は以下の通りです:<br />
+<code class="bq">警告:&nbsp;anonymous@0x016DFA7C(9)[(function)&nbsp;finalize]:&nbsp;正在删除的对象：&nbsp;0x0167DD44[instance&nbsp;of&nbsp;class&nbsp;A]&nbsp;上运行代码。创建此对象时的调用历史记录如下：:<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;anonymous@0x016DFA7C(13)[(top&nbsp;level&nbsp;script)&nbsp;global]</code>
 <br />
 
-　このような状況を防ぐため、new で作成したオブジェクトは、使用し終わったら明示的に invalidate 演算子で無効化することを推奨します。<br />
+　<!-- このような状況を防ぐため、new で作成したオブジェクトは、使用し終わったら明示的に invalidate 演算子で無効化することを推奨します。<br />
 　ただし、Array や Dictionary、Date のように finalize メソッドがない、あるいは finalize メソッドでは特に問題を起こすような動作を起こさないクラスのオブジェクトについては、明示的な無効化は必要ない場合があります。<br />
-　上記の警告は、明示的な無効化が無いままオブジェクトが削除されようとし、そのコンテキスト上でTJS2スクリプトが実行されようとした場合に表示されます。</dd>
-<dt>呼び出し履歴の取得機能</dt>
-<dd>　TJS2 の関数/メソッド呼び出し履歴をスクリプトから取得できるようになります。<br />
-　これには <a target="main" class="jump" href="../Class Reference/Scripts/f_Scripts_getTraceString.html">Scripts.getTraceString</a> メソッドを用います。<br />
+　上記の警告は、明示的な無効化が無いままオブジェクトが削除されようとし、そのコンテキスト上でTJS2スクリプトが実行されようとした場合に表示されます。</dd> -->
+　为了避免这种情况，建议您在new中创建的对象在使用完后显式使用invalidate运算符无效化对象。<br />
+　但是，对于没有finalize方法（如Array、Dictionary或Date）或finalize方法不会引起特别问题的类对象，可能不需要显式禁用。<br />
+　如果对象在没有显式禁用的情况下被删除，并且TJS2脚本将在该上下文中运行，则会显示上述警告。</dd>
+
+<dt>检索调用历史记录功能</dt>
+<!-- <dd>　TJS2 の関数/メソッド呼び出し履歴をスクリプトから取得できるようになります。<br />
+　これには <a target="main" class="jump" href="../Class Reference/Scripts/Methods/f_Scripts_getTraceString.html">Scripts.getTraceString </a> メソッドを用います。<br />
 　プログラムの途中に何か問題があり、そのメソッドがどこから呼ばれたのか分からない場合に、このメソッドを使って、呼び出し履歴をコンソールに出力したりができるようになります。<br />
+</dd> -->
+<dd>　可以从脚本中获取TJS2的函数/方法调用历史记录。<br />
+　需要使用 <a target="main" class="jump" href="../Class Reference/Scripts/Methods/f_Scripts_getTraceString.html">Scripts.getTraceString </a> 方法。<br />
+　如果在程序过程中有任何问题，并且不知道该方法是从哪里调用的，则可以使用该方法将调用历史记录输出到控制台。<br />
 </dd>
 </dl></div></div>
 	<script type="text/javascript" charset="UTF-8" src="../../js/documentid.js" ></script>
