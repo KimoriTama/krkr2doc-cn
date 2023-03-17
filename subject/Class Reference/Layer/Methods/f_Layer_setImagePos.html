@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-レイヤ画像オフセットの設定</dd>
+设定图层画像的偏移量</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,12 +32,12 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="setImagePos の引数">
 <tr><td valign="top"><span class="argname">left</span></td>
-<td>				　レイヤに表示する画像の左端位置 ( x オフセット ) をピクセル単位で指定します。<br />
-				　この値は <a class="jump" href="../Properties/f_Layer_imageLeft.html">Layer.imageLeft</a> プロパティでも取得や設定ができます。<br />
+<td>				　将图层的左端显示偏移量（x偏移量）以像素为单位表示。<br />
+				　此值可以通过<a class="jump" href="../Properties/f_Layer_imageLeft.html">Layer.imageLeft</a>属性来获取或者设定。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">top</span></td>
-<td>				　レイヤに表示する画像の上端位置 ( y オフセット ) をピクセル単位で指定します。<br />
-				　この値は <a class="jump" href="../Properties/f_Layer_imageTop.html">Layer.imageTop</a> プロパティでも取得や設定ができます。<br />
+<td>				　将图层的顶端显示偏移量（y偏移量）以像素为单位表示。<br />
+	　此值可以通过 <a class="jump" href="../Properties/f_Layer_imageTop.html">Layer.imageTop</a> 属性来获取或者设定。<br />
 			</td></tr>
 </table>
 </dd>
@@ -47,10 +47,13 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　レイヤ画像オフセットを指定します。<br />
+		<!-- レイヤ画像オフセットを指定します。<br />
 		　レイヤ画像サイズはレイヤ表示サイズより大きくすることができますが、すべてを表示する
 		ことはできませんので、このメソッドや <a class="jump" href="../Properties/f_Layer_imageLeft.html">Layer.imageLeft</a> や <a class="jump" href="../Properties/f_Layer_imageTop.html">Layer.imageTop</a>		プロパティで表示オフセットを指定することになります。<br />
-		　オフセットは、 0 か、負の数値になります。<br />
+		　オフセットは、 0 か、負の数値になります。<br /> -->
+		　指定图层画像的偏移量。<br />
+		　图层图像尺寸可能比图层显示尺寸大,而出现不能显示全的情况,因此,使用该方法、<a class="jump" href="../Properties/f_Layer_imageLeft.html">Layer.imageLeft</a> 和 <a class="jump" href="../Properties/f_Layer_imageTop.html">Layer.imageTop</a>属性来设定显示的偏移量。<br />
+		　偏移量可以为0或者负数值。<br />
 	</dd>
 </dl>
 </div></div>

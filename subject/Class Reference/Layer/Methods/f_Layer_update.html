@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-画像の更新</dd>
+更新图层显示</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,16 +32,16 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="update の引数">
 <tr><td valign="top"><span class="argname">left</span></td>
-<td>				　更新する矩形の左端位置を表示座標におけるピクセル単位で指定します。<br />
+<td>				　以像素为单位指定要更新的矩形的左端的坐标中。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">top</span></td>
-<td>				　更新する矩形の上端位置を表示座標におけるピクセル単位で指定します。<br />
+<td>				　以像素为单位指定要更新的矩形的顶端的坐标中。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">width</span></td>
-<td>				　更新する矩形の横幅を表示座標におけるピクセル単位で指定します。<br />
+<td>				　以像素为单位指定要更新的矩形的宽度。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">height</span></td>
-<td>				　更新する矩形の縦幅を表示座標におけるピクセル単位で指定します。<br />
+<td>				　以像素为单位指定要更新的矩形的高度。<br />
 			</td></tr>
 </table>
 </dd>
@@ -51,13 +51,18 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　このメソッドはレイヤを強制的に画面に描画させます。<br />
+		<!-- 　このメソッドはレイヤを強制的に画面に描画させます。<br />
 		　描画系のメソッドなどを実行すると自動的に画面更新が発生しますが、
 		このメソッドで画面への描画を強制的に起こさせることができます。<br />
 		　引数をすべて省略するとレイヤ全体が再描画されます。<br />
 		　このメソッドは、<a class="jump" href="../Properties/f_Layer_callOnPaint.html">Layer.callOnPaint</a> プロパティを真に設定します。<br />
 		　実際に画面に描画されるまでは、何度このメソッドを実行しても画面描画が
-		発生するのは１回のみです ( キャッシュされます )。<br />
+		発生するのは１回のみです ( キャッシュされます )。<br /> -->
+		　此方法强制在图层上绘制图像。<br />
+		　执行绘图系统的方法等时会自动发生画面更新，但可以通过该方法强制在图层上进行绘图。<br />
+		　如果省略所有参数，则会重新绘制整个层。<br />
+		　此方法将<a class="jump" href="../Properties/f_Layer_callOnPaint.html">Layer.callOnPaint</a> 属性设置为true。<br />
+		　在实际在屏幕上绘制之前，无论执行多少次此方法，只会进行一次屏幕绘制（缓存）。<br />
 	</dd>
 </dl>
 </div></div>
@@ -65,3 +70,4 @@
 	<script type="text/javascript" charset="utf-8" src="../../../../js/postcontent.js" ></script>
 </body>
 </html>
+

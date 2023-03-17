@@ -15,10 +15,18 @@
 </head>
 <body>
 <h1><a name="top" id="top">Debug</a></h1><div class="para"><div>
-　Debug クラスは 吉里吉里のデバッグに関する機能を提供するクラスです。このクラスからオブジェクトを作成することはできません。<br />
+　<!-- Debug クラスは 吉里吉里のデバッグに関する機能を提供するクラスです。このクラスからオブジェクトを作成することはできません。<br />
 　吉里吉里のコンソールのログの名前は krkr.console.log になります。また、ハードウェア例外が発生したときに作成されるファイルは hwexcept.log となります。<br />
 　これらのログファイルは、デフォルトではプロジェクトディレクトリになります。ただし、プロジェクトディレクトリがアーカイブなど、書き込みができないディレクトリの場合は出力されません。<br />
-　ログファイルの出力先は logLocation プロパティで変更することができます (KAGの場合は栞データの保存先に設定されます)。<br />
+　ログファイルの出力先は logLocation プロパティで変更することができます (KAGの場合は栞データの保存先に設定されます)。<br /> -->
+　debog类是提供关于吉里吉里的debug的功能的类。无法从这个类构造对象。<br />
+　吉里吉里的控制台的log文件名为krkr.console.log 。另外，硬件异常发生时生成的文件为hwexcept.log。<br />
+　这些文件的默认目录为项目的目录，但是，项目目录为归档文件之类的情况，导致无法在该目录中写入的情况下则不会输出。 <br />
+　log日志文件的输出目标可以通过 logLocation 属性来变更 (使用KAG的情况下，设定为存档数据的保存目录)。<br />
+<b class="uko"><div class="note">
+	<div class="notehead"><span class="noteheadspan">译注</span></div>
+	本类的所有属性和方法均为静态方法，可以像这样使用： Debug.notice("...");
+</div></b>
 </div></div>
 <h1>成员</h1><div class="para"><div>
 <dl>
@@ -26,14 +34,14 @@
 <dd>
 <span class="weak">无</span>
 </dd>
-<dt>成员方法</dt>
+<dt>静态方法</dt>
 <dd>
-<a class="jump" href="Methods/f_Debug_logAsError.html">logAsError</a> ( 发生错误时同时输出错误到日志文件 )<br />
+<a class="jump" href="Methods/f_Debug_logAsError.html">logAsError</a> ( 像发生错误时一样输出错误到日志文件 )<br />
 <a class="jump" href="Methods/f_Debug_message.html">message</a> ( 输出信息到debug控制台 )<br />
 <a class="jump" href="Methods/f_Debug_notice.html">notice</a> ( 输出重要信息到debug控制台 )<br />
 <a class="jump" href="Methods/f_Debug_startLogToFile.html">startLogToFile</a> ( 开始将debug控制台内的信息输出到日志文件 )<br />
 </dd>
-<dt>成员属性</dt>
+<dt>静态属性</dt>
 <dd>
 <a class="jump" href="Properties/f_Debug_clearLogFileOnError.html">clearLogFileOnError</a> ( 发生错误时是否先将debug控制台的日志文件清空 )<br />
 <a class="jump" href="Properties/f_Debug_console.html">console</a> ( debug控制台（Console）对象 )<br />

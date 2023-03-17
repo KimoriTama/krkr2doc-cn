@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-使用自定义的错误事件处理函数（错误事件句柄）、或本属性默认的操作针对未捕获的异常进行处理</dd>
+使用自定义的错误事件处理器（处理函数）、或本属性默认的操作针对未捕获的异常进行处理</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_System.html">System类</a>的成员属性（可读写）<br />
@@ -35,14 +35,14 @@
         </ol>
         
 		　自定义处理函数的书写规范：<br />
-		　　　处理函数接收一个参数，这个参数为发生异常的对象。（一般写作 e 代表element的含义。）<br />
+		　　　处理函数接收一个参数，这个参数为发生异常的对象。（一般写作 e 代表exception的含义。）<br />
 		　　　处理函数未指定、或是将属性值指定为 null 、又或者处理函数返回了 false 等这些情况下，程序都会将处理函数视为未定义，从而执行本属性默认操作。<br />
 		　　　处理函数返回 true 时，则不会执行上述的默认操作。<br />
 		　　　这里需要注意的是，程序在执行处理函数的过程中，某些与处理函数非同步执行的事件也许不会停止发生。这样一来，吉里吉里本体在处理这些异步事件的过程中就有可能再次遇到意料之外的异常。（也就是说，如果与错误处理函数在执行的过程中同时发生的异步事件本身存在问题的话，就会引发交叉错误）为了避免这种情况的发生，通常情况下会在处理函数内部事先排除异步事件发生的可能性。（即：利用 System.eventDisabled 属性，提前将事件发生功能冻结掉。）<br />
 		<code class="bq"><span class="weak">例:</span><br />System.exceptionHandler&nbsp;=&nbsp;function&nbsp;(e)<br />
 {<br />
 &nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;当没有在任何一个外部程序中被捕获的异常被吉里吉里本体捕获时，<br />
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;系统就会调用此函数。e&nbsp;为发生异常的对象。<br />
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;系统就会调用此函数。e&nbsp;为记录异常的对象。<br />
 &nbsp;&nbsp;&nbsp;&nbsp;if(e&nbsp;instanceof&nbsp;&quot;ConductorException&quot;)<br />
 &nbsp;&nbsp;&nbsp;&nbsp;{<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;如果错误信息在 Conductor.tjs 中定义过<br />

@@ -32,7 +32,7 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="addContinuousHandler の引数">
 <tr><td valign="top"><span class="argname">callback</span></td>
-<td>				　指定需要添加的函数句柄。<br />
+<td>				　指定需要添加的函数。<br />
 			</td></tr>
 </table>
 </dd>
@@ -42,12 +42,11 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　注册<a class="targanchor" name="id332" id="id332">Continuous 句柄</a>。<br />
-		　所谓的 Continuous 句柄，是指那些需要「尽可能频繁地」被调用的事件句柄。<br />
-		　在没有其他需要处理的事务时，吉里吉里会自动调用 Continuous 处理函数（就是我们通过addContinuousHandler所指定的函数句柄）。<br />
+		　注册<a class="targanchor" name="id332" id="id332">Continuous 处理器</a>。<br />
+		　所谓的 Continuous 处理器，是指那些需要「尽可能频繁地」被调用的事件函数。<br />
+		　在没有其他需要处理的事务时，吉里吉里会自动调用 Continuous 处理函数（就是我们通过addContinuousHandler所指定的函数）。<br />
 		　当有其他事件发生时，则会优先处理那些当前正在发生的事件。<br />
-		　但这里要注意的是，コマンドラインオプションの -contfreq で呼び出しの頻度が指定されている
-		場合はそれに従います。<br />
+		　但这里要注意的是，可以通过命令行选项的 -contfreq 来指定呼叫此函数的频率。<br />
 	</dd>
 </dl>
 </div></div>

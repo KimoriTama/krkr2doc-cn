@@ -1,0 +1,9 @@
+krkrz能否和KAG兼容？
+能否支持UTF-8 等多编码
+插件的加载
+gif
+config.tjs 的分号
+tjs的覆盖 多态 属性和方法
+闭包
+复制是传值还是传引用
+事件系统的action

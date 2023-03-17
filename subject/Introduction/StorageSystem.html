@@ -15,7 +15,7 @@
 </head>
 <body>
 <h1>
-	<a id="id262" name="id262">关于程序的目录结构系统（Storage System）</a>
+	<a id="id262" name="id262">关于程序的存储结构系统（Storage System）</a>
 </h1>
 <div class="para">
 <div>
@@ -46,17 +46,17 @@
 <code class="inlinecode">file://./c/program files/game/game.xp3&gt;image/base.jpg</code>。<br />
 　2.19 beta 14 开始存档存储的区分字符从 '#' 变为了 '&gt;' 。<br />
 <br />
-　吉里吉里标准可以处理XP3这种吉里吉里独特形式的存档存储（因为是XPK的第三代形式XP3）。如何创建XP3格式的存档文件请参考<a target="main" class="jump" href="Releaser.html">Releaser</a> 。<br />
+　吉里吉里标准可以处理XP3这种吉里吉里独特形式的存档存储（因为是XPK的第三代形式XP3）。如何创建XP3格式的存档文件请参考<a target="main" class="jump" href="../Tools Reference/Releaser.html">Releaser</a> 。<br />
 　XP3存档可以与可执行文件结合。在这种情况下，吉里吉里可以将可执行文件视为一个存档文件（Releaser只支持与吉里吉里本体的结合）。<!-- XP3 アーカイブは実行可能ファイルと結合することができます。この場合は吉里吉里は実行可能ファイルを一つのアーカイブファイルとして見なすことができます ( Releaser は 吉里吉里本体との結合しかサポートしていません )。 --><br />
 </div></div>
 <h1><a id="id266" name="id266">项目目录（Project Folder）</a>
 </h1><div class="para"><div>
-　一般情况下，在用吉里吉里制作游戏和工具等的时候，会把必要的文件全部归档到「项目文件夹」来进行开发。吉里吉里在启动时将当前文件夹设置为项目文件夹。<!-- 吉里吉里でゲームやツールなどを作る場合、必要なファイルはすべて「プロジェクトフォルダ」にまとめて開発を行うのが一般的です。吉里吉里は、起動時にプロジェクトフォルダを現在のカレントフォルダに設定します -->。<br />
+　一般情况下，在用吉里吉里制作游戏和工具等的时候，会把必要的文件全部归档到「项目文件夹」来进行开发。吉里吉里在启动时将当前文件夹设置为项目文件夹。<!-- 吉里吉里でゲームやツールなどを作る場合、必要なファイルはすべて「プロジェクトフォルダ」にまとめて開発を行うのが一般的です。吉里吉里は、起動時にプロジェクトフォルダを現在のカレントフォルダに設定します --><br />
 　如果在项目文件夹内指定了相对路径，则即使在Releaser中指定了单个可执行文件，也不需要更改路径指定。<!-- プロジェクトフォルダ内の相対パスですべてを指定しておけば、Releaser で単一の実行可能ファイルなどにしてもパス指定を変える必要はありません。 --><br />
 </div></div>
 <h1><a id="id267" name="id267">数据（data）保存位置</a>
 </h1><div class="para"><div>
-　数据（data）的保存位置为使用 <a target="main" class="jump" href="CommandLine.html">命令行选项</a> 中的 -datapath 选项指定的目录。其值可以使用<a target="main" class="jump" href="f_System_dataPath.html">System.dataPath</a> 属性进行获取。
+　数据（data）的保存位置为使用 <a target="main" class="jump" href="CommandLine.html">命令行选项</a> 中的 -datapath 选项指定的目录。其值可以使用<a target="main" class="jump" href="../Class Reference/System/Properties/f_System_dataPath.html">System.dataPath</a> 属性进行获取。
 <br />
 　吉里吉里输出的各种日志（log）或者用户自定义的设置文件等都会输出到这里。<br />
 　同时，也推荐开发者在进行游戏或者工具开发时，将数据（data）保存在这里。<br />
