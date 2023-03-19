@@ -19,16 +19,28 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-描画方式</dd>
+绘制方式</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　レイヤへの描画方式を表します。値を設定することもできます。<br />
+		<!-- 　レイヤへの描画方式を表します。値を設定することもできます。<br />
 		　吉里吉里 2.23 beta 1 以前では「描画面」と呼ばれていました。<br />
-		<ul>		<li><span class="script"><a class="targanchor" name="id264" id="id264">dfAlpha</a></span> または <span class="script"><a class="targanchor" name="id265" id="id265">dfBoth</a></span> を指定すると、画像はアルファチャンネルつき画像と見なされ、描画されます。<span class="script">dfBoth</span> でも <span class="script">dfAlpha</span> でも同じになります。この描画方法に対応するレイヤタイプは <span class="script">ltTransparent</span> または <span class="script">ltAlpha</span> です。</li>		<li><span class="script"><a class="targanchor" name="id266" id="id266">dfAddAlpha</a></span> を指定すると、画像は加算アルファチャンネルつき画像として見なされ、描画されます。この描画方法に対応するレイヤタイプは <span class="script">ltAddAlpha</span> です。</li>		<li> <span class="script"><a class="targanchor" name="id267" id="id267">dfOpaque</a></span> または <span class="script"><a class="targanchor" name="id268" id="id268">dfMain</a></span> を指定すると、レイヤの画像はすべて完全不透明であると見なされ、描画されます。この描画方法に対応するレイヤタイプは <span class="script">ltOpaque</span> または <span class="script">ltCoverRect</span>、または <span class="script">ltAdditive</span> のような算術/論理演算を行うレイヤタイプです。</li>		<li><span class="script"><a class="targanchor" name="id269" id="id269">dfMask</a></span> を指定すると、マスク画像(アルファチャンネル)を描画の対象にします。</li>		<li><span class="script"><a class="targanchor" name="id270" id="id270">dfProvince</a></span> を指定すると、領域画像を描画の対象にします。</li>		<li><span class="script"><a class="targanchor" name="id271" id="id271">dfAuto</a></span> を指定すると、現在の <a class="jump" href="f_Layer_type.html">Layer.type</a> プロパティに従って描画方式が自動的に決定されます。作成された直後のレイヤの描画方式は dfAuto です。</li>		</ul>		　このプロパティの値によっては操作できないメソッドがあります。<br />
+		<ul>		<li><span class="script"><a class="targanchor" name="id264" id="id264">dfAlpha</a></span> または <span class="script"><a class="targanchor" name="id265" id="id265">dfBoth</a></span> を指定すると、画像はアルファチャンネルつき画像と見なされ、描画されます。<span class="script">dfBoth</span> でも <span class="script">dfAlpha</span> でも同じになります。この描画方法に対応するレイヤタイプは <span class="script">ltTransparent</span> または <span class="script">ltAlpha</span> です。</li>		<li><span class="script"><a class="targanchor" name="id266" id="id266">dfAddAlpha</a></span> を指定すると、画像は加算アルファチャンネルつき画像として見なされ、描画されます。この描画方法に対応するレイヤタイプは <span class="script">ltAddAlpha</span> です。</li>		<li> <span class="script"><a class="targanchor" name="id267" id="id267">dfOpaque</a></span> または <span class="script"><a class="targanchor" name="id268" id="id268">dfMain</a></span> を指定すると、レイヤの画像はすべて完全不透明であると見なされ、描画されます。この描画方法に対応するレイヤタイプは <span class="script">ltOpaque</span> または <span class="script">ltCoverRect</span>、または <span class="script">ltAdditive</span> のような算術/論理演算を行うレイヤタイプです。</li>		<li><span class="script"><a class="targanchor" name="id269" id="id269">dfMask</a></span> を指定すると、マスク画像(アルファチャンネル)を描画の対象にします。</li>		<li><span class="script"><a class="targanchor" name="id270" id="id270">dfProvince</a></span> を指定すると、領域画像を描画の対象にします。</li>		<li><span class="script"><a class="targanchor" name="id271" id="id271">dfAuto</a></span> を指定すると、現在の <a class="jump" href="f_Layer_type.html">Layer.type</a> プロパティに従って描画方式が自動的に決定されます。作成された直後のレイヤの描画方式は dfAuto です。</li>		</ul>		　このプロパティの値によっては操作できないメソッドがあります。<br /> -->
+		　表示层的绘制方式。值可写。<br />
+		　吉里吉里2.23beta1以前被称为“描绘面”。<br />
+
+		<ul>		
+			<li>如果指定<span class="script"><a class="targanchor" name="id264" id="id264">dfAlpha</a></span> 或 <span class="script"><a class="targanchor" name="id265" id="id265">dfBoth</a></span> 则图像将被视为带有阿尔法通道的图像并进行绘制。。<span class="script">dfBoth</span> 和 <span class="script">dfAlpha</span> 都一样。与此绘制方法相对应的层类型是l<span class="script">ltTransparent</span> 或 <span class="script">ltAlpha</span> 。</li>		
+			<li>指定<span class="script"><a class="targanchor" name="id266" id="id266">dfAddAlpha</a></span>后，图像将被视为带有加法alpha通道的图像并进行绘制。与此绘制方法相对应的层类型是 <span class="script">ltAddAlpha</span> 。</li>
+			<li> 如果指定为<span class="script"><a class="targanchor" name="id267" id="id267">dfOpaque</a></span> 或 <span class="script"><a class="targanchor" name="id268" id="id268">dfMain</a></span> ，则层中的所有图像都将被视为完全不透明并被绘制。与此绘制方法相对应的层类型是 <span class="script">ltOpaque</span> 或<span class="script">ltCoverRect</span>、或 <span class="script">ltAdditive</span> 之类执行算术/逻辑运算的层类型。</li>
+			<li>指定为<span class="script"><a class="targanchor" name="id269" id="id269">dfMask</a></span> 时，将遮罩图像（alpha通道）作为绘制对象。</li>		
+			<li>指定为<span class="script"><a class="targanchor" name="id270" id="id270">dfProvince</a></span> 时，将领域图像作为绘制对象。</li>		
+			<li>指定为<span class="script"><a class="targanchor" name="id271" id="id271">dfAuto</a></span> 时，将根据当前的 <a class="jump" href="f_Layer_type.html">Layer.type</a> 属性自动确定绘制方式。刚创建的层的绘制方法是dfAuto。</li>		
+		</ul>		
+		　依此属性的值不同，某些方法无法正常使用。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

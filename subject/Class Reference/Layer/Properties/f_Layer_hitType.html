@@ -19,20 +19,25 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-当たり判定のタイプ</dd>
+碰撞判断的类型</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　マウスイベントの当たり判定のタイプを表します。値を設定することもできます。<br />
+	<!-- 	　マウスイベントの当たり判定のタイプを表します。値を設定することもできます。<br />
 		　<span class="script"><a class="targanchor" name="id275" id="id275">htProvince</a></span> を指定すると、領域画像において 0 以外の領域のみマウスイベントを受け取る
 		ようになります。<br />
 		　<span class="script"><a class="targanchor" name="id276" id="id276">htMask</a></span> を指定すると、マスク(不透明度)画像の値が、<a class="jump" href="f_Layer_hitThreshold.html">Layer.hitThreshold</a> プロパティで指
 		定した値以上の場合のみマウスイベントを受け取るようになります。<br />
 		　受け取られなかったマウスイベントは、より奥のレイヤで処理されます。<br />
-		　初期状態では <span class="script">htMask</span> となっています。<br />
+		　初期状態では <span class="script">htMask</span> となっています。<br /> -->
+		　表示每鼠标事件的判定类型，值可写。<br />
+		　如果指定为<span class="script"><a class="targanchor" name="id275" id="id275">htProvince</a></span> 则仅接收在区域图像中0以外的区域的鼠标事件。<br />
+		　如果指定为<span class="script"><a class="targanchor" name="id276" id="id276">htMask</a></span> 则仅当遮罩（不透明度）图像的值大于或等于在<a class="jump" href="f_Layer_hitThreshold.html">Layer.hitThreshold</a> 属性中指定的值时，才会接收鼠标事件。<br />
+		　未接收到的鼠标事件将在更深层处理。<br />
+		　初始状态为 <span class="script">htMask</span>。<br />
 	</dd>
 </dl>
 </div></div>

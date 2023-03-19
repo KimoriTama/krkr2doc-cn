@@ -32,18 +32,25 @@ Layer对象的构造</dd>
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="Layer の引数">
 <tr><td valign="top"><span class="argname">window</span></td>
-<td>				　このレイヤを保有することになるウィンドウ ( <a class="jump" href="../../Window/f_Window.html">Window</a> クラスの
-				オブジェクト ) を指定します。<br />
+<td>				<!-- このレイヤを保有することになるウィンドウ ( <a class="jump" href="../../Window/f_Window.html">Window</a> クラスの
+				オブジェクト ) を指定します。<br /> -->
+				　指定拥有该图层的窗口。 ( <a class="jump" href="../../Window/f_Window.html">Window</a> 类对象) 。<br />
 				　窗口一旦决定就不能更改。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">parent</span></td>
-<td>				　このレイヤの親となるレイヤを指定します。<br />
+<!-- <td>				　このレイヤの親となるレイヤを指定します。<br />
 				　null を指定するとプライマリレイヤになります。<br />
 				　プライマリレイヤはウィンドウに一つのみ存在することができ、また、レイヤを用いる場合は
 				かならず一つ存在しなければならない、すべてのレイヤの親となるレイヤです。<br />
 				　ただし、描画デバイス ( <a class="jump" href="../../Window/Properties/f_Window_drawDevice.html">Window.drawDevice</a> で設定可能) によっては、ウィンドウが
 				複数のプライマリレイヤを持つことができる物があります。<br />
 				　レイヤの親は、<a class="jump" href="../Properties/f_Layer_parent.html">Layer.parent</a> プロパティで変更することができます。<br />
+			</td></tr> -->
+<td>				　指定此图层的父层。<br />
+	　如果为空，则为主图层。<br />
+	　主图层是所有层的父层，在窗口中能存在一个主图层，并且在使用时必须存在一个主图层。<br />
+	　但是，根据绘制设备 ( 可在<a class="jump" href="../../Window/Properties/f_Window_drawDevice.html">Window.drawDevice</a> 中设置) 的不同，窗口可以具有多个主图层。<br />
+	　可以在<a class="jump" href="../Properties/f_Layer_parent.html">Layer.parent</a> 属性中更改层的父对象。<br />
 			</td></tr>
 </table>
 </dd>
@@ -53,8 +60,8 @@ Layer对象的构造</dd>
 </dd>
 <dt>说明</dt>
 <dd>
-		　Layer クラスのオブジェクトを構築します。<br />
-		　Layer クラスは非表示の状態で構築されます。<br />
+	　构造Layer类的对象。<br />
+	　Layer类以隐藏状态构造。<br />
 	</dd>
 </dl>
 </div></div>
