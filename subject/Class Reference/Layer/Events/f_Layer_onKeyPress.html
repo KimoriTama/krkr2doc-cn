@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-文字が入力された</dd>
+当有文字输入时</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的事件<br />
@@ -32,19 +32,18 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onKeyPress の引数">
 <tr><td valign="top"><span class="argname">key</span></td>
-<td>				　入力された文字です。<br />
+<td>				　输入的文字<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">process</span></td>
-<td>				　親クラスのonKeyPressを呼ぶ際、この引数に偽を渡すと、親クラスでは
-				そのキーに対するデフォルトの処理(フォーカスの移動など)を行わなくなります。<br />
+<td>				<!-- 　親クラスのonKeyPressを呼ぶ際、この引数に偽を渡すと、親クラスでは
+				そのキーに対するデフォルトの処理(フォーカスの移動など)を行わなくなります。<br /> -->
+				　调用父类的时候onKeyPress时，此参数传入虚拟键码，父类则会进行对应键的默认处理（移动焦点之类）。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		　文字が入力されたときに発生します。<a class="jump" href="f_Layer_onKeyDown.html">Layer.onKeyDown</a> と異なるのは、onKeyDown が
-		仮想キーコードを扱うのに対し、このイベントは文字そのものを扱います。押されたキーが
-		文字とは関係のないキー (ファンクションキーなど) の場合はこのイベントは発生しません。<br />
+		　输入文字时发生。与<a class="jump" href="f_Layer_onKeyDown.html">Layer.onKeyDown</a> 不同，onKeyDown处理的是虚拟键盘码，而此事件处理的是输入的文字本身。按下的键与文字无关联时（虚拟键之类）此事件不会发生。<br />
 	</dd>
 </dl>
 </div></div>
