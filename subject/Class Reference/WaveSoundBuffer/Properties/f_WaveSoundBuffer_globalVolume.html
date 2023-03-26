@@ -19,17 +19,21 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-大域音量</dd>
+全局音量</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_WaveSoundBuffer.html">WaveSoundBuffer类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　大域音量 (マスターボリューム)を表します。値を設定することもできます。<br />
+		<!-- 　大域音量 (マスターボリューム)を表します。値を設定することもできます。<br />
 		　この音量は、すべての WaveSoundBuffer に影響します。<br />
 		　0 ～ 100000 の数値で指定し、 0 が完全ミュート、100000 が 100% の音量となります。デフォルトの値は 100000 です。<br />
-		　このプロパティは WaveSoundBuffer クラス上にしか存在しません (WaveSoundBufferから作られたオブジェクト上にこのプロパティはありません)。使用する際は WaveSoundBuffer.globalVolume としてください。<br />
+		　このプロパティは WaveSoundBuffer クラス上にしか存在しません (WaveSoundBufferから作られたオブジェクト上にこのプロパティはありません)。使用する際は WaveSoundBuffer.globalVolume としてください。<br /> -->
+　表示全局音量（主音量）。也可以设置值。<br />
+　此音量影响所有WaveSoundBuffer的对象。<br />
+　指定0到100000之间的数字，0为完全静音，100000为100%音量。默认值为100000。<br />
+　此属性仅存在于 WaveSoundBuffer 类上（该属性不存在于由WaveSoundBuffer创建的对象上）。使用时请使用WaveSoundBuffer.globalVolume。<br />
 	</dd>
 </dl>
 </div></div>

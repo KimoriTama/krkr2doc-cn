@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-Periodイベントが発生した</dd>
+Period事件发生时</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_VideoOverlay.html">VideoOverlay类</a>的事件<br />
@@ -32,20 +32,23 @@ Periodイベントが発生した</dd>
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onPeriod の引数">
 <tr><td valign="top"><span class="argname">type</span></td>
-<td>				　Periodイベントのタイプを表します。<br />
-				　以下のいずれかです。<br />
-				<span class="script"><a class="targanchor" name="id356" id="id356">perLoop</a>    : </span> (通常の)ループの終端に達した<br />
-				<span class="script"><a class="targanchor" name="id357" id="id357">perSegLoop</a> : </span> セグメントループの終端に達した<br />
-				<span class="script"><a class="targanchor" name="id358" id="id358">perPeriod</a>  : </span> setPeriodEvent メソッドで指定されたフレームに達した<br />
-				<span class="script"><a class="targanchor" name="id359" id="id359">perPrepare</a> : </span> prepare メソッドによる再生準備が完了した<br />
+<td>				　表示Period事件的类型。<br />
+				　为以下之一。<br />
+				<span class="script"><a class="targanchor" name="id356" id="id356">perLoop</a>    : </span> 已到达（正常）循环的末端<br />
+				<span class="script"><a class="targanchor" name="id357" id="id357">perSegLoop</a> : </span> 已到达分段循环的末端<br />
+				<span class="script"><a class="targanchor" name="id358" id="id358">perPeriod</a>  : </span> 已到达setPeriodEvent方法中指定的帧<br />
+				<span class="script"><a class="targanchor" name="id359" id="id359">perPrepare</a> : </span> prepare方法已完成播放的准备<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		ループの終端や、 setPeriodEventによって指定されたフレームに達した場合、または prepare メソッドにより再生準備が完了した場合に呼び出されるメソッドです。<br />
+		<!-- ループの終端や、 setPeriodEventによって指定されたフレームに達した場合、または prepare メソッドにより再生準備が完了した場合に呼び出されるメソッドです。<br />
 		ループの終端や、 setPeriodEvent によって指定されたフレームに達した場合にこのイベントが呼ばれる時点では、再生状況によっては、すでに再生位置が指定された位置を超えている場合があります。現在の実際の再生位置を取得するには frame プロパティを参照してください。<br />
-		この機能は、SWF再生時には利用できません。
+		この機能は、SWF再生時には利用できません。 -->
+		当循环结束或到达setPeriodEvent指定的帧或prepare方法完成播放准备时调用的方法。<br />
+		当循环结束或到达setPeriodEvent指定的帧后调用该事件方法时，根据播放时的状态，播放位置可能已经超过指定的位置。若要获取当前实际播放位置，请参见frame属性。<br />
+		此功能在SWF播放时不可用。
 	</dd>
 <dt>参照</dt>
 <dd>

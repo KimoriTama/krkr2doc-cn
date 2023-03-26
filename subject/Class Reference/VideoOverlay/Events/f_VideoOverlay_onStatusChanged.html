@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-ステータスが変更された</dd>
+状态变更时</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_VideoOverlay.html">VideoOverlay类</a>的事件<br />
@@ -31,20 +31,21 @@
 <dt>参数</dt>
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onStatusChanged の引数">
+	
 <tr><td valign="top"><span class="argname">status</span></td>
-<td>				　ステータス文字列を表します。<br />
-				　以下のいずれかです。<br />
-				<span class="script">&quot;<a class="targanchor" name="id352" id="id352">unload</a>&quot;   : </span> メディアが開かれてない<br />
-				<span class="script">&quot;<a class="targanchor" name="id353" id="id353">play</a>&quot;     : </span> メディアは再生中である<br />
-				<span class="script">&quot;<a class="targanchor" name="id354" id="id354">stop</a>&quot;     : </span> メディアは停止中である<br />
-				<span class="script">&quot;<a class="targanchor" name="id355" id="id355">pause</a>&quot;    : </span> メディアは一時停止中である<br />
+<td>				　表示状态字符串。<br />
+	　以下之一：<br />
+				<span class="script">&quot;<a class="targanchor" name="id352" id="id352">unload</a>&quot;   : </span> 视频未加载<br />
+				<span class="script">&quot;<a class="targanchor" name="id353" id="id353">play</a>&quot;     : </span> 视频播放中<br />
+				<span class="script">&quot;<a class="targanchor" name="id354" id="id354">stop</a>&quot;     : </span> 视频已停止<br />
+				<span class="script">&quot;<a class="targanchor" name="id355" id="id355">pause</a>&quot;    : </span> 视频已暂停<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		このオブジェクトのステータスが変更されたときに発生します。<br />
-		SWF再生時には再生の停止や一時停止に関する機能は利用できません。
+此对象的状态更改时发生。<br />
+SWF播放时不能使用停止播放或暂停播放的功能。
 	</dd>
 </dl>
 </div></div>

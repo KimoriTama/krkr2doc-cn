@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-フレーム間ループの設定</dd>
+设定循环区间</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_VideoOverlay.html">VideoOverlay类</a>的成员方法<br />
@@ -32,10 +32,10 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="setSegmentLoop の引数">
 <tr><td valign="top"><span class="argname">comeFrame</span></td>
-<td>				　ループ移動先フレーム(ループの始端フレーム)。再生がgoFrameに達したとき、再生ヘッドはこのフレームに移動します。<br />
+<td>				　循环目标帧（循环的起始帧）。当播放达到goFrame时，播放头将移动到该帧<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">goFrame</span></td>
-<td>				　ループ終点フレーム(ループの終端フレーム)。このフレームの1つ前のフレームの表示が終了した時、再生ヘッドはcomeFrameへ移動します。<br />
+<td>				　循环终点帧（循环结束帧）。当此帧的前一帧显示结束时，播放头将移动到comeFrame。<br />
 			</td></tr>
 </table>
 </dd>
@@ -45,12 +45,17 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		指定されたフレーム間でループ処理を行います。<br />
+		<!-- 指定されたフレーム間でループ処理を行います。<br />
 		ループ終端(goFrame)では、onPeriodイベントが発生します。<br />
 		comeFrameのフレームにはムービーファイルにキーフレームを設定しておく必要があります。<br />
 		設定されていない場合は、
 		ループ終点から始点へ移動時に指定されたフレームに最も近いキーフレームへ再生位置が移動することになります。<br />
-		この機能は、SWF再生時には利用できません。
+		この機能は、SWF再生時には利用できません。 -->
+		在指定的帧之间循环。<br />
+		循环的终点（goFrame）将发生onPeriod事件。<br />
+		comeFrame的帧必须为视频文件的关键帧。<br />
+		如果未设置为关键帧，则循环从循环终点移动到起点时将定位到最接近指定帧的关键帧。<br />
+		播放SWF时无效。
 	</dd>
 <dt>参照</dt>
 <dd>
