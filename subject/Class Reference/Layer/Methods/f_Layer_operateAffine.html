@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-アフィン変換演算合成</dd>
+仿射变换运算合成</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -31,23 +31,37 @@
 <dt>参数</dt>
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="operateAffine の引数">
-<tr><td valign="top"><span class="argname">src</span></td>
-<td>				　重ね合わせ元のレイヤオブジェクトを指定します。<br />
+	<tr><td valign="top"><span class="argname">src</span></td>
+		<td>				　指定要复制的层对象。<br />
+					</td></tr>
+		<tr><td valign="top"><span class="argname">sleft</span></td>
+		<td>				　指定要复制的矩形的左端位置（在源图层的图像坐标上），以像素为单位。<br />
+					</td></tr>
+		<tr><td valign="top"><span class="argname">stop</span></td>
+		<td>				　指定要复制的矩形的上端位置（在源图层的图像坐标上），以像素为单位。<br />
+					</td></tr>
+		<tr><td valign="top"><span class="argname">swidth</span></td>
+		<td>				　指定要复制的矩形的宽度（在源图层的图像坐标上），以像素为单位。<br />
+					</td></tr>
+		<tr><td valign="top"><span class="argname">sheight</span></td>
+		<td>				　指定要复制的矩形的高度（在源图层的图像坐标上），以像素为单位。<br />
+					</td></tr>
+<td>				　指定要复制的层对象。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sleft</span></td>
-<td>				　重ね合わせる矩形の左端位置を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的左端位置（在源图层的图像坐标上），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">stop</span></td>
-<td>				　重ね合わせる矩形の上端位置を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的上端位置（在源图层的图像坐标上），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">swidth</span></td>
-<td>				　重ね合わせる矩形の横幅を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的宽度（在源图层的图像坐标上），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sheight</span></td>
-<td>				　重ね合わせる矩形の縦幅を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的高度（在源图层的图像坐标上），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">affine</span></td>
-<td>				　続く６つの引数 (A ～ F パラメータ)をどのように扱うかを指定します。<br />
+<!-- <td>				　続く６つの引数 (A ～ F パラメータ)をどのように扱うかを指定します。<br />
 				　真を指定すると、６つのパラメータはそれぞれ以下のように解釈されます。<br />
 				<span class="script">A   : 2Dアフィン変換行列の a</span><br />
 				<span class="script">B   : 2Dアフィン変換行列の b</span><br />
@@ -71,27 +85,53 @@
 				　偽を指定した場合、重ね合わせ元の右下隅に対応する、重ね合わせ先位置(x3, y3)は自動的に以下の式によって計算されます。<br />
 				x3 = x1 - x0 + x2<br />
 				y3 = y1 - y0 + y2<br />
+			</td></tr> -->
+			<td>			　指定如何处理接下来的6个参数（A-F参数）。<br />
+				　如果指定真值，则六个参数将按如下解释。<br />
+				<span class="script">A   : 2D仿射变换矩阵的a</span><br />
+				<span class="script">B   : 2D仿射变换矩阵的b</span><br />
+				<span class="script">C   : 2D仿射变换矩阵的c</span><br />
+				<span class="script">D   : 2D仿射变换矩阵的d</span><br />
+				<span class="script">E   : 2D仿射变换矩阵的tx</span><br />
+				<span class="script">F   : 2D仿射变换矩阵的ty</span><br />
+				<br />
+				　仿射变换将源图像位置（x，y）（其中，将源矩形的左上角设为（0,0））通过以下公式转换为目标图像位置（x’，y’）。<br />
+				x' =  a*x + c*y + tx<br />
+				y' =  b*x + d*y + ty<br />
+				<br />
+				　如果指定为假值，则六个参数分别解释如下。这些参数也接受实数。<br />
+				<span class="script">A   : 复制源矩形左上角的点在复制目标图像位置的X坐标位置（x0）</span><br />
+				<span class="script">B   : 复制源矩形左上角的点在复制目标图像位置的Y坐标位置（y0）</span><br />
+				<span class="script">C   : 复制源矩形右上角的点在复制目标图像位置的X坐标位置（x1）</span><br />
+				<span class="script">D   : 复制源矩形右上角的点在复制目标图像位置的Y坐标位置（y1）</span><br />
+				<span class="script">E   : 复制源矩形左下角的点在复制目标图像位置的X坐标位置（x2）</span><br />
+				<span class="script">F   : 复制源矩形左下角的点在复制目标图像位置的Y坐标位置（y2）</span><br />
+				<br />
+				　如果指定为假值，则复制目标位置（x3，y3）将自动通过以下公式计算：。<br />
+				x3 = x1 - x0 + x2<br />
+				y3 = y1 - y0 + y2<br />
 			</td></tr>
-<tr><td valign="top"><span class="argname">A</span></td>
-<td>				　A パラメータです。affine 引数によって解釈が変わります。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">B</span></td>
-<td>				　B パラメータです。affine 引数によって解釈が変わります。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">C</span></td>
-<td>				　C パラメータです。affine 引数によって解釈が変わります。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">D</span></td>
-<td>				　D パラメータです。affine 引数によって解釈が変わります。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">E</span></td>
-<td>				　E パラメータです。affine 引数によって解釈が変わります。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">F</span></td>
-<td>				　F パラメータです。affine 引数によって解釈が変わります。<br />
-			</td></tr>
+
+			<tr><td valign="top"><span class="argname">A</span></td>
+				<td>				　A参数。解释因affine参数而异。<br />
+							</td></tr>
+				<tr><td valign="top"><span class="argname">B</span></td>
+				<td>				　B参数。解释因affine参数而异。<br />
+							</td></tr>
+				<tr><td valign="top"><span class="argname">C</span></td>
+				<td>				　C参数。解释因affine参数而异<br />
+							</td></tr>
+				<tr><td valign="top"><span class="argname">D</span></td>
+				<td>				　D参数。解释因affine参数而异。<br />
+							</td></tr>
+				<tr><td valign="top"><span class="argname">E</span></td>
+				<td>				　E参数。解释因affine参数而异。<br />
+							</td></tr>
+				<tr><td valign="top"><span class="argname">F</span></td>
+				<td>				　F参数。解释因affine参数而异。<br />
+							</td></tr>
 <tr><td valign="top"><span class="argname">mode</span></td>
-<td>				　演算のモードを指定します。<br />
+<!-- <td>				　演算のモードを指定します。<br />
 				<span class="script"><a class="targanchor" name="id202" id="id202">omAuto</a></span> が指定された場合は演算元レイヤの<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>プロパティに従って演算の種類が自動的に決定されます。<br />
 				<span class="script"><a class="targanchor" name="id203" id="id203">omPsNormal</a></span> が指定された場合はPhotoshop互換のアルファ合成が行われます(現バージョンでは未実装です)。<br />
 				<span class="script"><a class="targanchor" name="id204" id="id204">omPsAdditive</a></span> が指定された場合はPhotoshop互換の覆い焼き(リニア)合成が行われます(現バージョンでは未実装です)。<br />
@@ -119,23 +159,47 @@
 				<span class="script"><a class="targanchor" name="id226" id="id226">omAlpha</a></span> が指定された場合はアルファ合成が行われます。<br />
 				<span class="script"><a class="targanchor" name="id227" id="id227">omAddAlpha</a></span> が指定された場合は加算アルファ合成が行われます。この場合は、転送先の <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティが dfOpaque かつ <a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> プロパティが偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<br />
 				<span class="script"><a class="targanchor" name="id228" id="id228">omOpaque</a></span> が指定された場合は src のアルファ情報は無視され、src は常に完全不透明であると見なされます。この場合は、転送先の <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティが dfOpaque かつ <a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> プロパティが偽のとき、type 引数に stFastLinear を指定することにより線形補間が可能です。<br />
+			</td></tr> -->
+<td>				　指定运算的模式。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id202" id="id202">omAuto</a></span> ，则会根据运算源层的<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>属性自动确定运算类型。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id203" id="id203">omPsNormal</a></span> ，则进行Photoshop兼容的alpha合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id204" id="id204">omPsAdditive</a></span> ，则会进行Photoshop兼容的颜色减淡（线性）合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id205" id="id205">omPsSubtractive</a></span>，则执行Photoshop兼容的颜色加深（线性）合成在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id206" id="id206">omPsMultiplicative</a></span> ，则执行Photoshop兼容的乘法合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id207" id="id207">omPsScreen</a></span> ，则会进行Photoshop兼容的屏幕合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id208" id="id208">omPsOverlay</a></span> ，则会进行Photoshop兼容的覆盖合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id209" id="id209">omPsHardLight</a></span> ，则会进行Photoshop兼容的硬灯光合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id210" id="id210">omPsSoftLight</a></span> ，则会进行Photoshop兼容的软光源合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id211" id="id211">omPsColorDodge</a></span> 则会进行Photoshop兼容的颜色减淡合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id212" id="id212">omPsColorDodge5</a></span> 则会进行与Photoshop版本5.x以下兼容的颜色减淡合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id213" id="id213">omPsColorBurn</a></span> 则会进行Photoshop兼容的颜色加深合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id214" id="id214">omPsLighten</a></span> ，则进行Photoshop兼容的比较（明）合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id215" id="id215">omPsDarken</a></span> ，则进行Photoshop兼容的比较（暗）合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id216" id="id216">omPsDifference</a></span> ，则会进行Photoshop兼容的差值合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id217" id="id217">omPsDifference5</a></span> ，则Photoshop的版本5.x以下会进行兼容的差值合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id218" id="id218">omPsExclusion</a></span> が指定された場合はPhotoshop互換の除外合成が行われます(現バージョンでは未実装です)。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id219" id="id219">omAdditive</a></span> ，则进行加法合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id220" id="id220">omSubtractive</a></span> ，则进行减法合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id221" id="id221">omMultiplicative</a></span> ，则执行乘法合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id222" id="id222">omDodge</a></span> ，则会进行颜色减淡合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id223" id="id223">omDarken</a></span> ，则进行变暗合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id224" id="id224">omLighten</a></span> ，则进行变亮合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id225" id="id225">omScreen</a></span>，则进行屏幕乘法合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id226" id="id226">omAlpha</a></span> ，则进行alpha合成。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id227" id="id227">omAddAlpha</a></span> 则进行加法alpha合成。在这种情况下，如果目标层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>属性为dfOpaque且 <a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为假值，则可以通过为type参数指定stFastLinear来进行线性插值。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id228" id="id228">omOpaque</a></span> ，则忽略src的alpha信息，src始终被视为完全不透明。在这种情况下，如果目标层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性为 dfOpaque 且 <a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为假值，则可以通过为type参数指定stFastLinear来进行线性插值。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">opa</span></td>
-<td>				　重ね合わせの不透明度 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定叠加的不透明度(0 ~ 255)。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">type</span></td>
-<td>				　アフィン変換のタイプを指定します。<br />
-				<span class="script"><a class="targanchor" name="id229" id="id229">stNearest</a>    </span> : 最近傍点法が用いられます<br />
-				<span class="script"><a class="targanchor" name="id230" id="id230">stFastLinear</a> </span> : 低精度の線形補間が用いられます(一部実装)<br />
-				<span class="script"><a class="targanchor" name="id231" id="id231">stLinear</a>     </span> : 線形補間が用いられます(未実装)<br />
-				<span class="script"><a class="targanchor" name="id232" id="id232">stCubic</a>      </span> : ３次元補間が用いられます(未実装)<br />
-				　速度は stNearest &gt; stFastLinear &gt; stLinear &gt; stCubic の順に高速ですが、画質は速度が
-				速ければ速いモードほど低画質になります。<br />
-				　stFastLinear や stLinear, stCubic に対しては、stRefNoClip をビット論理和で追加指定
-				することができ、この場合は、コピーするビットマップの領域外を参照して色を合成することを
-				許可します。これを指定しない場合は、転送元ビットマップの周囲に余裕があったとしても、
-				転送元ビットマップの範囲外を参照することはありません(範囲外の色はもっとも近い位置にある
-				範囲内のピクセルの色と見なされます)。<br />
+<td>				　指定仿射变换的类型。<br />
+				<span class="script"><a class="targanchor" name="id180" id="id180">stNearest</a>    </span> : 使用最邻近点法<br />
+				<span class="script"><a class="targanchor" name="id181" id="id181">stFastLinear</a> </span> : 使用低精度线性插值（部分实现）<br />
+				<span class="script"><a class="targanchor" name="id182" id="id182">stLinear</a>     </span> : 使用线性插值（未实现）<br />
+				<span class="script"><a class="targanchor" name="id183" id="id183">stCubic</a>      </span> : 使用三维插值（未实现）<br />
+				　速度按 stNearest &gt; stFastLinear &gt; stLinear &gt; stCubic 的顺序由高到低，而画质随速度提高而降低。<br />
+				　对于stFastLinear、stLinear、stCubic，可以和stRefNoClip进行按位或运算进行旗标追加，在这种情况下，允许参照要复制的位图的区域外的部分来合成颜色。如果未指定，则即使源位图周围有余量，也不会参照源位图的范围外（超出范围的颜色将被视为最接近的像素颜色）的颜色。<br />
 			</td></tr>
 </table>
 </dd>
@@ -145,10 +209,13 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定された重ね合わせ元レイヤの矩形を、重ね合わせ先 ( メソッドを実行するレイヤ ) に
+	<!-- 	　指定された重ね合わせ元レイヤの矩形を、重ね合わせ先 ( メソッドを実行するレイヤ ) に
 		アフィン変換を行いながら演算合成します。<br />
 		　アフィン変換については <a class="jump" href="f_Layer_affineCopy.html">Layer.affineCopy</a> も参照してください。<br />
-		　mode に omAuto を指定した場合は、演算元レイヤの<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>プロパティに従って演算の種類が自動的に決定されます。<br />
+		　mode に omAuto を指定した場合は、演算元レイヤの<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>プロパティに従って演算の種類が自動的に決定されます。 --><br />
+		　对指定的源层的矩形进行运算合成，同时对目标（执行方法的层）进行仿射变换。<br />
+　有关仿射变换的信息，请参见 <a class="jump" href="f_Layer_affineCopy.html">Layer.affineCopy</a> 。<br />
+　如果为mode指定了omAuto，则运算类型将根据运算源层的<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>属性自动确定。<br />
 	</dd>
 </dl>
 </div></div>

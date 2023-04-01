@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-アフィン変換コピー</dd>
+仿射变换复制</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,22 +32,22 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="affineCopy の引数">
 <tr><td valign="top"><span class="argname">src</span></td>
-<td>				　コピー元のレイヤオブジェクトを指定します。<br />
+<td>				　指定要复制的层对象。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sleft</span></td>
-<td>				　コピーする矩形の左端位置を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的左端位置（在源图层的图像坐标上），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">stop</span></td>
-<td>				　コピーする矩形の上端位置を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的上端位置（在源图层的图像坐标上），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">swidth</span></td>
-<td>				　コピーする矩形の横幅を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的宽度（在源图层的图像坐标上），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sheight</span></td>
-<td>				　コピーする矩形の縦幅を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的高度（在源图层的图像坐标上），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">affine</span></td>
-<td>				　続く６つの引数 (A ～ F パラメータ)をどのように扱うかを指定します。<br />
+<!-- <td>				　続く６つの引数 (A ～ F パラメータ)をどのように扱うかを指定します。<br />
 				　真を指定すると、６つのパラメータはそれぞれ以下のように解釈されます。<br />
 				<span class="script">A   : 2Dアフィン変換行列の a</span><br />
 				<span class="script">B   : 2Dアフィン変換行列の b</span><br />
@@ -71,27 +71,52 @@
 				　偽を指定した場合、コピー元の右下隅に対応する、コピー先位置(x3, y3)は自動的に以下の式によって計算されます。<br />
 				x3 = x1 - x0 + x2<br />
 				y3 = y1 - y0 + y2<br />
+			</td></tr> -->
+<td>			　指定如何处理接下来的6个参数（A-F参数）。<br />
+				　如果指定真值，则六个参数将按如下解释。<br />
+				<span class="script">A   : 2D仿射变换矩阵的a</span><br />
+				<span class="script">B   : 2D仿射变换矩阵的b</span><br />
+				<span class="script">C   : 2D仿射变换矩阵的c</span><br />
+				<span class="script">D   : 2D仿射变换矩阵的d</span><br />
+				<span class="script">E   : 2D仿射变换矩阵的tx</span><br />
+				<span class="script">F   : 2D仿射变换矩阵的ty</span><br />
+				<br />
+				　仿射变换将源图像位置（x，y）（其中，将源矩形的左上角设为（0,0））通过以下公式转换为目标图像位置（x’，y’）。<br />
+				x' =  a*x + c*y + tx<br />
+				y' =  b*x + d*y + ty<br />
+				<br />
+				　如果指定为假值，则六个参数分别解释如下。这些参数也接受实数。<br />
+				<span class="script">A   : 复制源矩形左上角的点在复制目标图像位置的X坐标位置（x0）</span><br />
+				<span class="script">B   : 复制源矩形左上角的点在复制目标图像位置的Y坐标位置（y0）</span><br />
+				<span class="script">C   : 复制源矩形右上角的点在复制目标图像位置的X坐标位置（x1）</span><br />
+				<span class="script">D   : 复制源矩形右上角的点在复制目标图像位置的Y坐标位置（y1）</span><br />
+				<span class="script">E   : 复制源矩形左下角的点在复制目标图像位置的X坐标位置（x2）</span><br />
+				<span class="script">F   : 复制源矩形左下角的点在复制目标图像位置的Y坐标位置（y2）</span><br />
+				<br />
+				　如果指定为假值，则复制目标位置（x3，y3）将自动通过以下公式计算：。<br />
+				x3 = x1 - x0 + x2<br />
+				y3 = y1 - y0 + y2<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">A</span></td>
-<td>				　A パラメータです。affine 引数によって解釈が変わります。<br />
+<td>				　A参数。解释因affine参数而异。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">B</span></td>
-<td>				　B パラメータです。affine 引数によって解釈が変わります。<br />
+<td>				　B参数。解释因affine参数而异。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">C</span></td>
-<td>				　C パラメータです。affine 引数によって解釈が変わります。<br />
+<td>				　C参数。解释因affine参数而异<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">D</span></td>
-<td>				　D パラメータです。affine 引数によって解釈が変わります。<br />
+<td>				　D参数。解释因affine参数而异。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">E</span></td>
-<td>				　E パラメータです。affine 引数によって解釈が変わります。<br />
+<td>				　E参数。解释因affine参数而异。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">F</span></td>
-<td>				　F パラメータです。affine 引数によって解釈が変わります。<br />
+<td>				　F参数。解释因affine参数而异。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">type</span></td>
-<td>				　アフィン変換のタイプを指定します。<br />
+<!-- <td>				　アフィン変換のタイプを指定します。<br />
 				<span class="script"><a class="targanchor" name="id180" id="id180">stNearest</a>    </span> : 最近傍点法が用いられます<br />
 				<span class="script"><a class="targanchor" name="id181" id="id181">stFastLinear</a> </span> : 低精度の線形補間が用いられます(一部実装)<br />
 				<span class="script"><a class="targanchor" name="id182" id="id182">stLinear</a>     </span> : 線形補間が用いられます(未実装)<br />
@@ -100,12 +125,21 @@
 				することができ、この場合は、コピーするビットマップの領域外を参照して色を合成することを
 				許可します。これを指定しない場合は、転送元ビットマップの周囲に余裕があったとしても、
 				転送元ビットマップの範囲外を参照することはありません(範囲外の色はもっとも近い位置にある
-				範囲内のピクセルの色と見なされます)。<br />
+				範囲内のピクセルの色と見なされます)。<br /> -->
+<td>				　指定仿射变换的类型。<br />
+				<span class="script"><a class="targanchor" name="id180" id="id180">stNearest</a>    </span> : 使用最邻近点法<br />
+				<span class="script"><a class="targanchor" name="id181" id="id181">stFastLinear</a> </span> : 使用低精度线性插值（部分实现）<br />
+				<span class="script"><a class="targanchor" name="id182" id="id182">stLinear</a>     </span> : 使用线性插值（未实现）<br />
+				<span class="script"><a class="targanchor" name="id183" id="id183">stCubic</a>      </span> : 使用三维插值（未实现）<br />
+				　对于stFastLinear、stLinear、stCubic，可以和stRefNoClip进行按位或运算进行旗标追加，在这种情况下，允许参照要复制的位图的区域外的部分来合成颜色。如果未指定，则即使源位图周围有余量，也不会参照源位图的范围外（超出范围的颜色将被视为最接近的像素颜色）的颜色。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">clear</span></td>
-<td>				　転送先レイヤの、アフィン変換された画像の周囲を<a class="jump" href="../Properties/f_Layer_neutralColor.html">Layer.neutralColor</a> プロパティで示された色・透明度でクリアするかどうかを指定します。真を指定するとクリアされ、この引数を省略するか偽を渡すとクリアされません。<br />
+<!-- <td>				　転送先レイヤの、アフィン変換された画像の周囲を<a class="jump" href="../Properties/f_Layer_neutralColor.html">Layer.neutralColor</a> プロパティで示された色・透明度でクリアするかどうかを指定します。真を指定するとクリアされ、この引数を省略するか偽を渡すとクリアされません。<br />
 				　クリアされる領域は <a class="jump" href="f_Layer_setClip.html">Layer.setClip</a> メソッドで制限することもできます。<br />
-				　このクリアの機能を使うと、いったん転送先レイヤをクリアしてからアフィン変換で画像を上書き転送する際の、上書きされる領域(クリアされた場所にアフィン変換で上書きされる部分)のクリアの無駄を省くことができます。<br />
+				　このクリアの機能を使うと、いったん転送先レイヤをクリアしてからアフィン変換で画像を上書き転送する際の、上書きされる領域(クリアされた場所にアフィン変換で上書きされる部分)のクリアの無駄を省くことができます。<br /> -->
+<td>				　指定目标层的仿射图像周围是否以<a class="jump" href="../Properties/f_Layer_neutralColor.html">Layer.neutralColor</a>属性所示的颜色和透明度进行清除。如果指定真值，则进行清除，如果省略该参数或传递假值，则不清除。<br />
+	　也可以通过 <a class="jump" href="f_Layer_setClip.html">Layer.setClip</a>方法限制清除的区域。<br />
+	　使用该清除功能，可以省去先清除了复制目标层之后，再进行仿射变换覆盖了清除的部分时，覆盖的区域（被仿射变换覆盖了清除的地方的部分）的清除浪费。<br />
 			</td></tr>
 </table>
 </dd>
@@ -115,7 +149,7 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定されたコピー元レイヤの矩形を、コピー先 ( メソッドを実行するレイヤ ) に
+		<!-- 　指定されたコピー元レイヤの矩形を、コピー先 ( メソッドを実行するレイヤ ) に
 		アフィン変換を行いながらコピーします。<br />
 		　affine 引数によって、変形パラメータとして二次元アフィン変換行列を指定するか、
 		あるいは変換後の点を直接指定するかを選ぶことができます。<br />
@@ -131,7 +165,19 @@
 		　二次元アフィン変換を行うことにより、拡大縮小、回転、せん断(傾け)、平行移動、反転、あるいはこれらの組み合わせすべての変形を行うことができます。<br />
 		　二次元アフィン変換を行うメソッドでは、二次元アフィン行列ではなく、変換後の各頂点を直接指定することでも変形を指定できますが、この場合でも二次元アフィン変換で定義できないような変形は行うことはできません。<br />
 		<br />
-		　アフィン変換においては、ピクセルは 1.0 × 1.0 のサイズを持っていると見なされます。つまり、(0, 0) の位置にあるピクセルは (-0.5, -0.5) - (0.5, 0.5) の範囲にあると見なされます。<br />
+		　アフィン変換においては、ピクセルは 1.0 × 1.0 のサイズを持っていると見なされます。つまり、(0, 0) の位置にあるピクセルは (-0.5, -0.5) - (0.5, 0.5) の範囲にあると見なされます。<br /> -->
+		　复制指定复制源层的矩形，同时对复制目标（执行方法）层进行仿射变换。<br />
+		　根据affine参数，可以选择指定二维仿射变换矩阵作为变形参数，或者直接指定变换后的点。<br />
+		　在当前版本中，stFastLinear指定的线性插值起作用的条件为，复制目标（执行方法）层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性为dfAlpha（或dfBoth）或dfAddAlpha时。此外，当Layer.face属性为dfOpaque且<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为假时，也可以进行线性插值。<br />
+		　如果目标（执行方法）层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性为dfAlpha（或dfBoth）或dfAddAlpha，则同时复制主图像和遮罩图像。<br />
+		　如果目标层（执行方法）层的 Layer.face属性为dfOpaque（或dfMain），则在<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为真时仅复制主图像，而在为假时则复制主图像和遮罩图像。<br />
+		<br />
+		　二维仿射变换矩阵的变换以复制源矩形的左上为原点（0,0），定义如下。<br />
+		<img width="222" height="77" src="../../../../images/2DAffineMatrix.png" /><br />
+		　通过进行二维仿射变换，可以进行缩放、旋转、剪切（倾斜）、平移、反转或所有这些组合的变形。<br />
+		　在执行二维仿射变换的方法中，可以通过直接指定变换后的各顶点而不是二维仿射矩阵来指定变形，但在这种情况下，也不能进行二维仿射变换中无法定义的变形。<br />
+		<br />
+		　在仿射变换中，像素被认为具有1.0x1.0的大小。也就是说，位于（0,0）位置的像素被认定（-0.5,0.5）-（0.5,0.5）的范围内。<br />
 	</dd>
 </dl>
 </div></div>

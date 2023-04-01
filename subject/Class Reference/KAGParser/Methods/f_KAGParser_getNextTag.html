@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-获取下一个标签</dd>
+获取下一条指令</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_KAGParser.html">KAGParser类</a>的成员方法<br />
@@ -34,7 +34,7 @@
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>标签信息的字典</result></dd>
+<result>指令信息的字典</result></dd>
 <dt>说明</dt>
 <dd>
 		<!-- 　次のタグを辞書配列で返します。(タグ内部にない)通常の文字は、ch タグと解釈されます。<br />
@@ -45,11 +45,11 @@
 		jump, call, return, iscript, endscript の各タグは組み込みタグです。
 		これらのタグに関する処理は、このメソッドの内部で自動的に行なわれます。
 		したがって、このメソッドはこれらのタグに関する情報を返しません。<br /> -->
-		　将下个标签信息以字典形式返回。(不在标记内)一般的字符被解释为ch标记。<br />
-		　在interrupted状态下，返回interrupt标记，解除interrupted状态。<br />
+		　将下个指令信息以字典形式返回。(不在指令内)一般的字符被解释为ch指令。<br />
+		　在interrupted状态下，返回interrupt指令，解除interrupted状态。<br />
 		　在storage的末尾，则返回void。<br />
-		　标记的名称存储在返回值字典的tagname键中。<br />
-		　if、ignore、endif、endignore、emb、macro、endmacro、erasemcro、jump、call、return、iscript和endscript标签都是内置标签。这些标签的处理将在该方法内部自动进行。因此，此方法不返回有关这些标签的信息。<br />
+		　指令的名称存储在返回值字典的tagname键中。<br />
+		　if、ignore、endif、endignore、emb、macro、endmacro、erasemcro、jump、call、return、iscript和endscript指令都是内置指令。这些指令的处理将在该方法内部自动进行。因此，此方法不返回有关这些指令的信息。<br />
 	</dd>
 <dt>参照</dt>
 <dd>
