@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-矩形コピー</dd>
+复制矩形</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,26 +32,26 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="copyRect の引数">
 <tr><td valign="top"><span class="argname">dleft</span></td>
-<td>				　コピー先の矩形の左端位置を ( コピー先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定目标矩形的左端位置（目标层的图像位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dtop</span></td>
-<td>				　コピー先の矩形の上端位置を ( コピー先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定目标矩形的上端位置（目标层的图像位置），以像素为单位。<br />
 			</td></tr>
-<tr><td valign="top"><span class="argname">src</span></td>
-<td>				　コピー元のレイヤオブジェクトを指定します。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">sleft</span></td>
-<td>				　コピーする矩形の左端位置を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">stop</span></td>
-<td>				　コピーする矩形の上端位置を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">swidth</span></td>
-<td>				　コピーする矩形の横幅を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">sheight</span></td>
-<td>				　コピーする矩形の縦幅を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
-			</td></tr>
+			<tr><td valign="top"><span class="argname">src</span></td>
+				<td>				　指定要复制的层对象。<br />
+							</td></tr>
+				<tr><td valign="top"><span class="argname">sleft</span></td>
+				<td>				　指定要复制的矩形的左端位置（在源图层的图像坐标上），以像素为单位。<br />
+							</td></tr>
+				<tr><td valign="top"><span class="argname">stop</span></td>
+				<td>				　指定要复制的矩形的上端位置（在源图层的图像坐标上），以像素为单位。<br />
+							</td></tr>
+				<tr><td valign="top"><span class="argname">swidth</span></td>
+				<td>				　指定要复制的矩形的宽度（在源图层的图像坐标上），以像素为单位。<br />
+							</td></tr>
+				<tr><td valign="top"><span class="argname">sheight</span></td>
+				<td>				　指定要复制的矩形的高度（在源图层的图像坐标上），以像素为单位。<br />
+							</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
@@ -60,16 +60,17 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定されたコピー元レイヤの矩形部分を自分のレイヤの指定位置にコピーします。<br />
-		　コピーされる画像は、コピー先レイヤ ( メソッドを実行するレイヤ  ) の
-		<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティの値によって変わります。<br />
-		<span class="script"><a class="targanchor" name="id85" id="id85">dfAlpha</a> (または dfBoth)    </span> : メイン画像とマスク画像がコピーされます<br />
-		<span class="script"><a class="targanchor" name="id86" id="id86">dfAddAlpha</a>             </span> : メイン画像とマスク画像がコピーされます<br />
-		<span class="script"><a class="targanchor" name="id87" id="id87">dfOpaque</a> (または dfMain)   </span> : <a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> プロパティが真の場合は、メイン画像のみがコピーされます ( マスク画像はコピーされません )。偽の場合はメイン画像とマスク画像がコピーされます<br />
-		<span class="script"><a class="targanchor" name="id88" id="id88">dfMask</a>                 </span> : マスク画像のみがコピーされます ( メイン画像はコピーされません )<br />
-		<span class="script"><a class="targanchor" name="id89" id="id89">dfProvince</a>             </span> : 領域画像のみがコピーされます ( マスク画像やメイン画像はコピーされません )<br />
-		　コピー元のレイヤの Layer.face プロパティは無視されます。<br />
-		　このメソッドは、<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> の影響は受けません (dfAlpha や dfAddAlpha の場合は holdAlpha に関わらずマスク画像もコピーされます)<br />
+	　将指定复制源层的矩形部分复制到本层的指定位置。<br />
+	　复制的图像将根据目标层（执行方法的层）的
+		<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性值而变化。<br />
+		<span class="script"><a class="targanchor" name="id85" id="id85">dfAlpha</a> (或 dfBoth)    </span> : 复制主图像和遮罩图像<br />
+		<span class="script"><a class="targanchor" name="id86" id="id86">dfAddAlpha</a>             </span> : 复制主图像和遮罩图像<br />
+		<span class="script"><a class="targanchor" name="id87" id="id87">dfOpaque</a> (或 dfMain)   </span> : 如果<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为真值，则仅复制主图像（不复制遮罩图像）。如果为假值，则复制主图像和遮罩图像<br />
+		<span class="script"><a class="targanchor" name="id88" id="id88">dfMask</a>                 </span> : 仅复制遮罩图像（不复制主图像）<br />
+		<span class="script"><a class="targanchor" name="id89" id="id89">dfProvince</a>             </span> : 仅复制区域图像（不复制遮罩图像或主图像）
+		<br />
+		　将忽略源层的Layer.face属性。<br />
+		　此方法不受<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 的影响（对于dfAlpha或dfAddAlpha，无论holdAlpha为何值，都会复制遮罩图像）<br />
 	</dd>
 </dl>
 </div></div>

@@ -46,20 +46,6 @@
 		<tr><td valign="top"><span class="argname">sheight</span></td>
 		<td>				　指定要复制的矩形的高度（在源图层的图像坐标上），以像素为单位。<br />
 					</td></tr>
-<td>				　指定要复制的层对象。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">sleft</span></td>
-<td>				　指定要复制的矩形的左端位置（在源图层的图像坐标上），以像素为单位。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">stop</span></td>
-<td>				　指定要复制的矩形的上端位置（在源图层的图像坐标上），以像素为单位。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">swidth</span></td>
-<td>				　指定要复制的矩形的宽度（在源图层的图像坐标上），以像素为单位。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">sheight</span></td>
-<td>				　指定要复制的矩形的高度（在源图层的图像坐标上），以像素为单位。<br />
-			</td></tr>
 <tr><td valign="top"><span class="argname">affine</span></td>
 <!-- <td>				　続く６つの引数 (A ～ F パラメータ)をどのように扱うかを指定します。<br />
 				　真を指定すると、６つのパラメータはそれぞれ以下のように解釈されます。<br />
@@ -167,17 +153,17 @@
 				<span class="script">如果指定为<a class="targanchor" name="id205" id="id205">omPsSubtractive</a></span>，则执行Photoshop兼容的颜色加深（线性）合成在当前版本中未实现）。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id206" id="id206">omPsMultiplicative</a></span> ，则执行Photoshop兼容的乘法合成（在当前版本中未实现）。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id207" id="id207">omPsScreen</a></span> ，则会进行Photoshop兼容的屏幕合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id208" id="id208">omPsOverlay</a></span> ，则会进行Photoshop兼容的覆盖合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id209" id="id209">omPsHardLight</a></span> ，则会进行Photoshop兼容的硬灯光合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id210" id="id210">omPsSoftLight</a></span> ，则会进行Photoshop兼容的软光源合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id208" id="id208">omPsOverlay</a></span> ，则会进行Photoshop兼容的叠加合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id209" id="id209">omPsHardLight</a></span> ，则会进行Photoshop兼容的硬光合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id210" id="id210">omPsSoftLight</a></span> ，则会进行Photoshop兼容的柔光合成（在当前版本中未实现）。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id211" id="id211">omPsColorDodge</a></span> 则会进行Photoshop兼容的颜色减淡合成（在当前版本中未实现）。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id212" id="id212">omPsColorDodge5</a></span> 则会进行与Photoshop版本5.x以下兼容的颜色减淡合成（在当前版本中未实现）。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id213" id="id213">omPsColorBurn</a></span> 则会进行Photoshop兼容的颜色加深合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id214" id="id214">omPsLighten</a></span> ，则进行Photoshop兼容的比较（明）合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id215" id="id215">omPsDarken</a></span> ，则进行Photoshop兼容的比较（暗）合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id216" id="id216">omPsDifference</a></span> ，则会进行Photoshop兼容的差值合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id214" id="id214">omPsLighten</a></span> ，则进行Photoshop兼容的变浅合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id215" id="id215">omPsDarken</a></span> ，则进行Photoshop兼容的变暗合成（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id216" id="id216">omPsDifference</a></span> ，则会进行Photoshop兼容的差值合成（Difference Blend Mode）（在当前版本中未实现）。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id217" id="id217">omPsDifference5</a></span> ，则Photoshop的版本5.x以下会进行兼容的差值合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id218" id="id218">omPsExclusion</a></span> が指定された場合はPhotoshop互換の除外合成が行われます(現バージョンでは未実装です)。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id218" id="id218">omPsExclusion</a></span> 则会执行与Photoshop兼容的排除合成（Exclusion Blend Mode）（当前版本尚未实现）。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id219" id="id219">omAdditive</a></span> ，则进行加法合成（在当前版本中未实现）。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id220" id="id220">omSubtractive</a></span> ，则进行减法合成（在当前版本中未实现）。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id221" id="id221">omMultiplicative</a></span> ，则执行乘法合成（在当前版本中未实现）。<br />
