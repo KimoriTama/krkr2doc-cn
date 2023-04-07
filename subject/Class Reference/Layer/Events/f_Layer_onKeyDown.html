@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-キーが押された</dd>
+键盘被按下了</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的事件<br />
@@ -32,30 +32,27 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onKeyDown の引数">
 <tr><td valign="top"><span class="argname">key</span></td>
-<td>				　押されたキーの<a class="targanchor" name="id52" id="id52">仮想キーコード</a>の値です。<br />
+<td>				　按下键的<a class="targanchor" name="id52" id="id52">虚拟键码</a>的值。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">shift</span></td>
-<td>				　キーが押された時に同時に押されていたシフト系のキーやマウスのボタンの状態です。
-				以下の値のビット OR による組み合わせになります。<br />
-				<span class="script"><a class="targanchor" name="id53" id="id53">ssAlt</a>     : </span>ALT キーが押されていた<br />
-				<span class="script"><a class="targanchor" name="id54" id="id54">ssShift</a>   : </span>SHIFT キーが押されていた<br />
-				<span class="script"><a class="targanchor" name="id55" id="id55">ssCtrl</a>    : </span>CTRL キーが押されていた<br />
-				<span class="script"><a class="targanchor" name="id56" id="id56">ssLeft</a>    : </span>マウスの左ボタンが押されていた<br />
-				<span class="script"><a class="targanchor" name="id57" id="id57">ssMiddle</a>  : </span>マウスの中ボタンが押されていた<br />
-				<span class="script"><a class="targanchor" name="id58" id="id58">ssRight</a>   : </span>マウスの右ボタンが押されていた<br />
-				　また、キーボードが長時間押され、キーリピートが発生している場合は
-				以下の値も組み合わされます。<br />
-				<span class="script"><a class="targanchor" name="id59" id="id59">ssRepeat</a>  : </span>キーリピートが発生した<br />
+<td>				　键盘按下时同时被按下的鼠标键和键盘转换键的的状态。为以下值的按位或之和。<br />
+				<span class="script"><a class="targanchor" name="id61" id="id61">ssAlt</a>     : </span>ALT 键被按下了<br />
+				<span class="script"><a class="targanchor" name="id62" id="id62">ssShift</a>   : </span>SHIFT 键被按下了<br />
+				<span class="script"><a class="targanchor" name="id63" id="id63">ssCtrl</a>    : </span>CTRL 键被按下了<br />
+				<span class="script"><a class="targanchor" name="id64" id="id64">ssLeft</a>    : </span>鼠标左键被按下<br />
+				<span class="script"><a class="targanchor" name="id65" id="id65">ssMiddle</a>  : </span>鼠标中键被按下<br />
+				<span class="script"><a class="targanchor" name="id66" id="id66">ssRight</a>   : </span>鼠标右键被按下<br />
+				　另外，长按键盘时、连续按键发生的情况下，以下的值也会出现在组合中。<br />
+				<span class="script"><a class="targanchor" name="id59" id="id59">ssRepeat</a>  : </span>长按键盘发生<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">process</span></td>
-<td>				　親クラスのonKeyDownを呼ぶ際、この引数に偽を渡すと、親クラスでは
-				そのキーに対するデフォルトの処理(フォーカスの移動など)を行わなくなります。<br />
+<td>				　调用父类的onKeyDown方法时，此参数传递假值时，父类不会对对应的键进行默认的处理（如移动焦点之类）。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		　キーが押された時に発生します。<br />
+		　键盘被按下时发生。<br />
 	</dd>
 </dl>
 </div></div>
