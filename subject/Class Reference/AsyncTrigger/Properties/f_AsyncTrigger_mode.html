@@ -19,20 +19,27 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-モード</dd>
-<dt>タイプ</dt>
+模式</dd>
+<dt>类型</dt>
 <dd>
-<a class="jump" href="../f_AsyncTrigger.html">AsyncTriggerクラス</a>のプロパティ (読み書き可能)<br />
+<a class="jump" href="../f_AsyncTrigger.html">AsyncTrigger类</a>的属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　動作のモードを表します。値を設定することもできます。<br />
+		<!-- 　動作のモードを表します。値を設定することもできます。<br />
 		　以下の値のいずれかを指定します。<br />
 		<span class="script"><a class="targanchor" name="id3" id="id3">atmNormal</a>    : </span> 通常のイベント配信の段階で発砲されます。<br />
 		<span class="script"><a class="targanchor" name="id4" id="id4">atmExclusive</a> : </span> 他の非同期イベントよりも優先されて発砲されます<br />
 		<span class="script"><a class="targanchor" name="id5" id="id5">atmAtIdle</a>    : </span> アイドル状態 ( 他に配信するイベントが無くなったとき ) に発砲されます。<br />
 		　同時にトリガを引いたときに発砲される順序は atmExclusive, atmNormal, atmIdle の順になります。<br />
-		　同じモードのトリガが複数引かれている場合は、トリガが引かれた順に発砲します。<br />
+		　同じモードのトリガが複数引かれている場合は、トリガが引かれた順に発砲します。<br /> -->
+		　表示行动的模式。值可写。<br />
+		　可指定为以下的值。<br />
+		<span class="script"><a class="targanchor" name="id3" id="id3">atmNormal</a>    : </span> 一般的事件分发阶段时触发。<br />
+		<span class="script"><a class="targanchor" name="id4" id="id4">atmExclusive</a> : </span> 相比其他的异步事件更优先触发。<br />
+		<span class="script"><a class="targanchor" name="id5" id="id5">atmAtIdle</a>    : </span> 空闲状态 ( 不存在其他分发的事件时 ) 触发。<br />
+		　同时指定trigger时，触发的顺序为 atmExclusive, atmNormal, atmIdle 。<br />
+		　同模式的trigger有多个时，以trigger的调用顺序触发。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

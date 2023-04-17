@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-iscript ブロックを通過した</dd>
+通过iscript块时</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_KAGParser.html">KAGParser类</a>的事件<br />
@@ -32,23 +32,21 @@ iscript ブロックを通過した</dd>
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onScript の引数">
 <tr><td valign="top"><span class="argname">script</span></td>
-<td>				　iscript タグと endscript タグで挟まれた部分が文字列として渡されます。<br />
+<td>				　传递字符串形式的iscript指令与 endscript 指令包裹的部分。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">storageShortName</span></td>
-<td>				　短いストレージ名が渡されます。<br />
+<td>				　传递短storage名称。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">scriptStart</span></td>
-<td>				　スクリプト開始行の行数が渡されます。<br />
+<td>				　传递脚本开始行的行数。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		　<a class="jump" href="../Methods/f_KAGParser_getNextTag.html">KAGParser.getNextTag</a> メソッドが、iscript ... endscript の部分を通過したときに呼ばれます。<br />
-		　eval タグでは呼ばれません。<br />
-		　<a class="jump" href="../Methods/f_KAGParser_getNextTag.html">KAGParser.getNextTag</a> メソッドは、iscript ... endscript の部分に関する情報は返さず、
-		この部分をスキップします。したがって、iscript ... endscript の中身の処理は、このイベント内で
-		する必要があります。<br />
+		　<a class="jump" href="../Methods/f_KAGParser_getNextTag.html">KAGParser.getNextTag</a> 方法读取到iscript ... endscript 的部分时被调用。<br />
+		　eval 指令并不会触发此事件。<br />
+		　<a class="jump" href="../Methods/f_KAGParser_getNextTag.html">KAGParser.getNextTag</a>方法不会返回iscript ... endscript 的部分相关的信息， 而会直接跳过此部分。因此，有必要在此方法中对iscript ... endscript 中的内容进行处理的必要。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

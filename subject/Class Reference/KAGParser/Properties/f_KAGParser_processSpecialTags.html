@@ -19,17 +19,21 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-特殊タグを処理するかどうか</dd>
+是否处理特殊指令</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_KAGParser.html">KAGParser类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　特殊タグを処理するかどうかを表わします。<br />
+		<!-- 　特殊タグを処理するかどうかを表わします。<br />
 		　真ならば改行を特殊タグを処理します。デフォルトは真です。<br />
 		　特殊タグとは  if ignore endif endignore else elsif emb macro endmacro macropop erasemacro jump call return の各タグです。このプロパティが偽の場合、これらのタグはそのまま getNextTag で取得することができます。<br />
-		　ただし、iscript ～ endscript は常に処理されます。<br />
+		　ただし、iscript ～ endscript は常に処理されます。<br /> -->
+		　表示是否处理特殊的指令。<br />
+		　为真时会将换行作为特殊的指令处理。默认为真。<br />
+		　特殊指令为  if ignore endif endignore else elsif emb macro endmacro macropop erasemacro jump call return 这些指令。此属性为假值的情况，这些指令将可直接被 getNextTag 方法获取。<br />
+		　只不过、iscript ～ endscript 会如常处理。<br />
 	</dd>
 </dl>
 </div></div>

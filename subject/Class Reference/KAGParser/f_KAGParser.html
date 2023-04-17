@@ -36,8 +36,8 @@
 <a class="jump" href="Methods/f_KAGParser_interrupt.html">interrupt</a> ( 设置中断状态 )<br />
 <a class="jump" href="Methods/f_KAGParser_loadScenario.html">loadScenario</a> ( 读取剧本文件 )<br />
 <a class="jump" href="Methods/f_KAGParser_resetInterrupt.html">resetInterrupt</a> ( 解除中断状态 )<br />
-<a class="jump" href="Methods/f_KAGParser_restore.html">restore</a> ( 用目标字典来回复本对象 )<br />
-<a class="jump" href="Methods/f_KAGParser_store.html">store</a> ( 将本对象的状态以字典模式返回 )<br />
+<a class="jump" href="Methods/f_KAGParser_restore.html">restore</a> ( 用目标字典来恢复此对象 )<br />
+<a class="jump" href="Methods/f_KAGParser_store.html">store</a> ( 将此对象的状态以字典模式返回 )<br />
 </dd>
 <dt>成员属性</dt>
 <dd>
@@ -45,24 +45,24 @@
 <a class="jump" href="Properties/f_KAGParser_curLabel.html">curLabel</a> ( 当前标签 )<br />
 <a class="jump" href="Properties/f_KAGParser_curLine.html">curLine</a> ( 当前行号 )<br />
 <a class="jump" href="Properties/f_KAGParser_curLineStr.html">curLineStr</a> ( 当前行的字符串 )<br />
-<a class="jump" href="Properties/f_KAGParser_curPos.html">curPos</a> ( 当前Tag的在当前行的位置 )<br />
+<a class="jump" href="Properties/f_KAGParser_curPos.html">curPos</a> ( 当前指令的在当前行的位置 )<br />
 <a class="jump" href="Properties/f_KAGParser_curStorage.html">curStorage</a> ( 当前的文件名 )<br />
 <a class="jump" href="Properties/f_KAGParser_debugLevel.html">debugLevel</a> ( debug等级 )<br />
 <a class="jump" href="Properties/f_KAGParser_ignoreCR.html">ignoreCR</a> ( 是否忽略换行符 )<br />
 <a class="jump" href="Properties/f_KAGParser_macroParams.html">macroParams</a> ( 当前执行的宏的参数 )<br />
-<a class="jump" href="Properties/f_KAGParser_macros.html">macros</a> ( 当前宏的字典 )<br />
-<a class="jump" href="Properties/f_KAGParser_processSpecialTags.html">processSpecialTags</a> ( 特殊タグを処理するかどうか )<br />
+<a class="jump" href="Properties/f_KAGParser_macros.html">macros</a> ( 读入的宏的字典 )<br />
+<a class="jump" href="Properties/f_KAGParser_processSpecialTags.html">processSpecialTags</a> ( 是否处理特殊指令 )<br />
 </dd>
 <dt>事件</dt>
 <dd>
-<a class="jump" href="Events/f_KAGParser_onAfterReturn.html">onAfterReturn</a> ( return タグで復帰した )<br />
-<a class="jump" href="Events/f_KAGParser_onCall.html">onCall</a> ( call タグが呼ばれた )<br />
-<a class="jump" href="Events/f_KAGParser_onJump.html">onJump</a> ( jump タグが呼ばれた )<br />
-<a class="jump" href="Events/f_KAGParser_onLabel.html">onLabel</a> ( ラベルを通過した )<br />
-<a class="jump" href="Events/f_KAGParser_onReturn.html">onReturn</a> ( return タグが呼ばれた )<br />
-<a class="jump" href="Events/f_KAGParser_onScenarioLoad.html">onScenarioLoad</a> ( シナリオ読み込みが開始した )<br />
-<a class="jump" href="Events/f_KAGParser_onScenarioLoaded.html">onScenarioLoaded</a> ( シナリオ読み込みが終了した )<br />
-<a class="jump" href="Events/f_KAGParser_onScript.html">onScript</a> ( iscript ブロックを通過した )<br />
+<a class="jump" href="Events/f_KAGParser_onAfterReturn.html">onAfterReturn</a> ( 从return指定返回时 )<br />
+<a class="jump" href="Events/f_KAGParser_onCall.html">onCall</a> ( call 指令被调用时 )<br />
+<a class="jump" href="Events/f_KAGParser_onJump.html">onJump</a> ( jump 指令被调用时 )<br />
+<a class="jump" href="Events/f_KAGParser_onLabel.html">onLabel</a> ( 通过标签时 )<br />
+<a class="jump" href="Events/f_KAGParser_onReturn.html">onReturn</a> ( return 指令被调用时 )<br />
+<a class="jump" href="Events/f_KAGParser_onScenarioLoad.html">onScenarioLoad</a> ( 剧本读入开始时 )<br />
+<a class="jump" href="Events/f_KAGParser_onScenarioLoaded.html">onScenarioLoaded</a> ( 剧本读入结束时 )<br />
+<a class="jump" href="Events/f_KAGParser_onScript.html">onScript</a> ( iscript 块通过时 )<br />
 </dd>
 </dl>
 </div></div>

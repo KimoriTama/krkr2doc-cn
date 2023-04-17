@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-シナリオ読み込みが開始した</dd>
+开始读入剧本时</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_KAGParser.html">KAGParser类</a>的事件<br />
@@ -32,15 +32,17 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onScenarioLoad の引数">
 <tr><td valign="top"><span class="argname">storage</span></td>
-<td>				　読み込まれるシナリオストレージの名前が渡されます。<br />
+<td>				　传递读入的剧本storage的名字。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		　シナリオ読み込みを開始する時に呼ばれます。<br />
+		<!-- 　シナリオ読み込みを開始する時に呼ばれます。<br />
 		　このイベントで文字列を返すと、ストレージ storage の中身の代わりに
-		その文字列をシナリオとして用います。<br />
+		その文字列をシナリオとして用います。<br /> -->
+		　剧本开始读入时被调用。<br />
+		　此事件返回字符串时，将用字符串的内容代替剧本storage中的内容作为剧本被读取。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

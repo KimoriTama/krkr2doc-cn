@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-call タグが呼ばれた</dd>
+call指令被调用时</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_KAGParser.html">KAGParser类</a>的事件<br />
@@ -32,14 +32,14 @@ call タグが呼ばれた</dd>
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onCall の引数">
 <tr><td valign="top"><span class="argname">dic</span></td>
-<td>				　call タグの情報を持つ辞書配列<br />
+<td>				　含有call 指令的信息的字典<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		　<a class="jump" href="../Methods/f_KAGParser_getNextTag.html">KAGParser.getNextTag</a> メソッドが call タグを読んだときに呼ばれます。<br />
-		　このイベントで偽を返すと、移動は行なわれません。<br />
+		　<a class="jump" href="../Methods/f_KAGParser_getNextTag.html">KAGParser.getNextTag</a> 方法读取到 call指令时被调用。<br />
+		　此事件返回假值时，将不会进行剧本跳转。<br />
 	</dd>
 <dt>参照</dt>
 <dd>
