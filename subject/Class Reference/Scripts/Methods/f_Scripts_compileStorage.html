@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-ストレージ上のスクリプトのコンパイル</dd>
+编译storage中的脚本文件</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Scripts.html">Scripts类</a>的成员方法<br />
@@ -32,19 +32,19 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="compileStorage の引数">
 <tr><td valign="top"><span class="argname">inputfile</span></td>
-<td>				　コンパイル対象ストレージを指定します。<br />
+<td>				　指定编译对象的storage名。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">outputfile</span></td>
-<td>				　出力バイトコードストレージを指定します。<br />
+<td>				　指定输出的二进制文件名。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">isresult</span></td>
-<td>				　戻り値が必要かどうかを指定します。<br />
+<td>				　指定是否返回值是否必要。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">outputdebug</span></td>
-<td>				　デバッグ情報を含めるかどうかを指定します。<br />
+<td>				　指定是否包含debug信息。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">isexpression</span></td>
-<td>				　式かどうかを指定します。<br />
+<td>				　指定是否为表达式。<br />
 			</td></tr>
 </table>
 </dd>
@@ -54,8 +54,8 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定されたストレージを読み込み、その内容をコンパイルしてバイトコードファイルとして出力します。<br />
-		　コンパイルされたバイトコードファイルは execStorage もしくは、evalStorage で通常のスクリプトと同じように実行できます。<br />
+		　读入指定的storage，将其内容作为二进制文件输出。<br />
+		　编译后的二进制文件可被 execStorage 或者是evalStorage 与一般的脚本文件一样执行。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

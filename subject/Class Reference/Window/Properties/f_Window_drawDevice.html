@@ -19,20 +19,25 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-描画デバイス</dd>
+绘制设备</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Window.html">Window类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　描画デバイスオブジェクトを表します。<br />
-		　値を設定することもできます。値を設定すると、以前このウィンドウに指定されていた描画デバイスは自動的に
+		<!-- 　描画デバイスオブジェクトを表します。<br />
+		　值可写。値を設定すると、以前このウィンドウに指定されていた描画デバイスは自動的に
 		無効になります (invalidateされます)。<br />
 		　デフォルトでは、Window.PassThroughDrawDevice というクラスのインスタンスが指定されています。<br />
 		　Window.PassThroughDrawDevice の詳細については、吉里吉里ソースの core/visual/win32/PassThroughDrawDevice.cpp 内の説明も参照してください。<br />
 		　独自の描画デバイス (プラグインで提供される物) を指定する場合は、そのプラグインのドキュメントに
-		従ってください。<br />
+		従ってください。<br /> -->
+		　表示绘制的设备对象。<br />
+		　值可写。设置值后，之前窗口指定的绘制设备会自动无效(被invalidate)。<br />
+		　默认指定为 Window.PassThroughDrawDevice 的类实例。<br />
+		　关于Window.PassThroughDrawDevice的详细信息，请参照吉里吉里源码的 core/visual/win32/PassThroughDrawDevice.cpp 内的说明。<br />
+		　如果要指定自己的绘图设备（插件提供的）情况下，请参照对应插件的文档<br />
 	</dd>
 </dl>
 </div></div>

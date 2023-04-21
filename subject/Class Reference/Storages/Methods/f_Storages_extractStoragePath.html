@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-ストレージ名のパスの抽出</dd>
+取出storage名的路径</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Storages.html">Storages类</a>的成员方法<br />
@@ -32,18 +32,17 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="extractStoragePath の引数">
 <tr><td valign="top"><span class="argname">storage</span></td>
-<td>				　パスを抽出したいストレージ名を指定します。<br />
+<td>				　指定需要取出路径的storage名。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>パスが返ります。パスがなかった場合は空文字列が返ります。</result></dd>
+<result>返回路径。不存在路径的情况下将返回空字符串。</result></dd>
 <dt>说明</dt>
 <dd>
-		　指定されたストレージ名から、パスの部分を抽出して返します。<br />
-		　たとえば <span class="script">&quot;file://home/dee/hoge.txt&quot;</span> を渡した場合、<span class="script">&quot;file://home/dee/&quot;</span> が
-		返ります。<br />
+		　从指定的storage名中，取出路径的部分并返回。<br />
+		　例如：输入<span class="script">&quot;file://home/dee/hoge.txt&quot;</span> 的情况下将返回<span class="script">&quot;file://home/dee/&quot;</span> 。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

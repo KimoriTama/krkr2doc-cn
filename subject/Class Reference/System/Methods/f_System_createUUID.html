@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-UUID 文字列の生成</dd>
+	生成UUID字符串 </dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_System.html">System类</a>的成员方法<br />
@@ -34,16 +34,19 @@ UUID 文字列の生成</dd>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>生成された UUID 文字列が &quot;e8b2a2b5-5ceb-4f75-a08b-1f1bdfdca4f1&quot; の形式
-	(ハイフンを除く各英数字は16進数の数字) で戻ります。</result></dd>
+<result>生成 UUID 字符串 并以&quot;e8b2a2b5-5ceb-4f75-a08b-1f1bdfdca4f1&quot; 的形式
+	(连字符以外的各字母数字为16进制的数字) 返回。</result></dd>
 <dt>说明</dt>
 <dd>
-		　UUID 文字列を生成して返します。このメソッドはランダムビット列を元に生成された
+		<!-- 　UUID 文字列を生成して返します。このメソッドはランダムビット列を元に生成された
 		128bitの UUID (universal unique identifier) を生成します。<br />
 		　吉里吉里に実装されている UUID 生成アルゴリズムは、
 		ある程度、環境ノイズを拾ってランダムビット列を生成しますが、
 		高度なセキュリティが要求されるような用途に使用することはおすすめしません。しかし、
-		他の UUID とは「非常に非常に高い確率で重ならない」と考えられます。<br />
+		他の UUID とは「非常に非常に高い確率で重ならない」と考えられます。<br /> -->
+		　生成UUID字符串并返回。此方法基于随机的比特列生成128位的UUID(universal unique identifier)。<br />
+		　吉里吉里的uuid生成算法,在某种程度上,依据环境噪音,生成随机比特列,但不推荐用于高度安全敏感的用途。
+		但是，可以认为与其他的UUID有【非常非常高的概率不会重复】。<br />
 	</dd>
 </dl>
 </div></div>

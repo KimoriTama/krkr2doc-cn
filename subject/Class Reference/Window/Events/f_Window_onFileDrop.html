@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-ファイルがドロップされた</dd>
+拖入文件时</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Window.html">Window类</a>的事件<br />
@@ -32,15 +32,17 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onFileDrop の引数">
 <tr><td valign="top"><span class="argname">files</span></td>
-<td>				　ドロップされたファイル名が格納された配列(Array)オブジェクトです。<br />
+<td>				　含有拖入文件名的数组(Array)对象。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		　ファイルがエクスプローラなどからウィンドウにドロップされたときに発生します。<br />
+		<!-- 　ファイルがエクスプローラなどからウィンドウにドロップされたときに発生します。<br />
 		　単一のファイルがドロップされた場合でも引数には配列オブジェクトが渡されます (最初の要素が
-		そのファイルになります )。<br />
+		そのファイルになります )。<br /> -->
+		　文件从资源管理器之类的窗口拖入时发生。<br />
+		　单个文件被拖入时也会把参数放入数组对象中传递(第一个元素即为那个文件)。<br />
 	</dd>
 </dl>
 </div></div>

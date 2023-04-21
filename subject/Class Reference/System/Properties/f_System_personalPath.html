@@ -19,17 +19,23 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-マイドキュメントのパス</dd>
+	我的文档路径</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_System.html">System类</a>的成员属性 (只读)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　ユーザのマイドキュメントのパスを表します。Windows の場合、レジストリの
+
+		<!-- 　ユーザのマイドキュメントのパスを表します。Windows の場合、レジストリの
 		HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders の
 		Personal で表されるフォルダが返されます。通常これは「マイドキュメント」フォルダを指します。これは、Windows 95/NT4.0 では Windows をインストールしたフォルダ下の &quot;Personal&quot; フォルダの場合があります。<br />
-		このフォルダがない場合(Windows 95 の初期のバージョンなど)は <a class="jump" href="f_System_exePath.html">System.exePath</a> と同じフォルダを返します。<br />
+		このフォルダがない場合(Windows 95 の初期のバージョンなど)は <a class="jump" href="f_System_exePath.html">System.exePath</a> と同じフォルダを返します。<br /> -->
+		
+		　表示用户的我的文档路径。在Windows的情况下，返回注册表的
+		HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell 文件夹中的
+		Personal 表示的文件夹。这通常是指“我的文档”文件夹。这在Windows 95/NT4.0 下，表示安装 Windows 的文件夹下的 &quot;Personal&quot; 文件夹。<br />
+		如果没有此文件夹（例如，Windows95的早期版本），则返回与 <a class="jump" href="f_System_exePath.html">System.exePath</a>相同的文件夹。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

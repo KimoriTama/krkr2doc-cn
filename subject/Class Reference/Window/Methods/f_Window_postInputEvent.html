@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-入力イベントの生成</dd>
+生成输入事件</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Window.html">Window类</a>的成员方法<br />
@@ -31,12 +31,30 @@
 <dt>参数</dt>
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="postInputEvent の引数">
-<tr><td valign="top"><span class="argname">eventname</span></td>
-<td>				　イベント名称を指定します。以下の文字列で指定します。<br />
-				<ul>				<li>&quot;<a class="targanchor" name="id413" id="id413">onKeyDown</a>&quot; は <a class="jump" href="../Events/f_Window_onKeyDown.html">Window.onKeyDown</a> イベントを生成します。</li>				<li>&quot;<a class="targanchor" name="id414" id="id414">onKeyPress</a>&quot; は <a class="jump" href="../Events/f_Window_onKeyPress.html">Window.onKeyPress</a> イベントを生成します。</li>				<li>&quot;<a class="targanchor" name="id415" id="id415">onKeyUp</a>&quot; は <a class="jump" href="../Events/f_Window_onKeyUp.html">Window.onKeyUp</a> イベントを生成します。onKeyDownとonKeyUpは対になるので、onKeyDownを生成したら対応するonKeyUpも生成することを推奨します。</li>				</ul>			</td></tr>
-<tr><td valign="top"><span class="argname">params</span></td>
-<td>				　イベントのパラメータが格納された辞書配列を指定します。<br />
-				<ul>				<li>&quot;onKeyDown&quot; イベントや &quot;onKeyUp&quot; イベントでは、&quot;key&quot; に仮想キーコード、&quot;shift&quot; にシフト状態を格納します。&quot;shift&quot; を省略すると 0 であると見なされます。</li>				<li>&quot;onKeyPress&quot; イベントでは &quot;key&quot; に文字を指定します。</li>				</ul>			</td></tr>
+	<tr>
+		<td valign="top"><span class="argname">eventname</span></td>
+		<td> 　指定事件的名称。可以指定为以下的字符串。<br />
+			<ul>
+				<li>&quot;<a class="targanchor" name="id413" id="id413">onKeyDown</a>&quot; 生成 <a class="jump"
+						href="../Events/f_Window_onKeyDown.html">Window.onKeyDown</a> 事件。</li>
+				<li>&quot;<a class="targanchor" name="id414" id="id414">onKeyPress</a>&quot; 生成 <a class="jump"
+						href="../Events/f_Window_onKeyPress.html">Window.onKeyPress</a> 事件。</li>
+				<li>&quot;<a class="targanchor" name="id415" id="id415">onKeyUp</a>&quot; 生成 <a class="jump"
+						href="../Events/f_Window_onKeyUp.html">Window.onKeyUp</a>
+					事件。因为onKeyDown与onKeyUp成对出现，推荐生成onKeyDown时也同时生成onKeyUp事件。</li>
+			</ul>
+		</td>
+	</tr>
+	<tr>
+		<td valign="top"><span class="argname">params</span></td>
+		<td> 　指定包含了事件参数的字典。<br />
+			<ul>
+				<li>对于&quot;onKeyDown&quot; 事件和 &quot;onKeyUp&quot; 事件&quot;key&quot; 为虚拟键码、&quot;shift&quot;
+					为移位类键状态。省略&quot;shift&quot; 则视为0。</li>
+				<li>对于&quot;onKeyPress&quot; 事件 &quot;key&quot; 为字符。</li>
+			</ul>
+		</td>
+	</tr>
 </table>
 </dd>
 <dt>返回值</dt>
@@ -45,12 +63,16 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　入力イベントを生成します。現バージョンではキー入力に関する３つのイベントを生成できます。<br />
+		<!-- 　入力事件。現バージョンではキー入力に関する３つのイベントを生成できます。<br />
 		　このメソッドは、イベントを非同期イベントとして生成します。つまり、このメソッドは、対応するイベントハンドラの終了を待たずに帰ります。実際にイベントハンドラが呼ばれて処理が行われるのは、いったん吉里吉里に制御が戻った後となります。<br />
 		　入力イベントは、Windowクラスのほか、通常の入力イベントと同じく、Layerクラスの該当するイベントとしても発生します。<br />
+		<code class="bq"><span class="weak">例:</span><br />postInputEvent('onKeyDown',&nbsp;%[key:&nbsp;VK_UP,&nbsp;shift:&nbsp;ssShift]);<br /> -->
+		　输入事件。在当前版本会生成与键输入相关的三个事件。<br />
+		　此方法将事件作为异步事件生成。也就是说，此方法不会等到对应的事件处理器处理结束才会返回。实际上调用事件处理器被处理事件时，是在控制权返回吉里吉里之后。<br />
+		　输入事件除了会在Window类上发生以外，也会像普通的输入事件一样，也会在Layer类上发生对应事件。<br />
 		<code class="bq"><span class="weak">例:</span><br />postInputEvent('onKeyDown',&nbsp;%[key:&nbsp;VK_UP,&nbsp;shift:&nbsp;ssShift]);<br />
 postInputEvent('onKeyUp',&nbsp;&nbsp;&nbsp;%[key:&nbsp;VK_UP,&nbsp;shift:&nbsp;ssShift]);<br />
-&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;左カーソルキーを押す<br />
+&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;按下上方向键<br />
 </code>
 	</dd>
 </dl>

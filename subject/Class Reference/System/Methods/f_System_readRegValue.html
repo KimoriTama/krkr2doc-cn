@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-レジストリの読み込み</dd>
+读取注册表</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_System.html">System类</a>的成员方法<br />
@@ -32,17 +32,17 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="readRegValue の引数">
 <tr><td valign="top"><span class="argname">key</span></td>
-<td>				　読み込むレジストリキーを指定します。<br />
+<td>				　指定读取的注册表的键。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>実行に成功すればレジストリの値、失敗すれば void が返ります。</result></dd>
+<result>执行成功时返回注册表的值；失败则返回void。</result></dd>
 <dt>说明</dt>
 <dd>
-		　key で指定した Windows レジストリを読み込みます。<br />
-		　レジストリキーは、以下のルートキー名で始めることができます。<br />
+		　读取key指定的 Windows 注册表。<br />
+		　注册表键以以下的路径名开始。<br />
 		<span class="script">HKEY_CLASSES_ROOT<br />
 HKEY_CURRENT_CONFIG<br />
 HKEY_CURRENT_USER<br />
@@ -50,11 +50,10 @@ HKEY_CURRENT_USER<br />
 HKEY_USERS<br />
 HKEY_PERFORMANCE_DATA<br />
 		HKEY_DYN_DATA<br />
-</span>		　たとえば、以下のような文字列を key に指定することができます。<br />
+</span>		　例如，可以指定为以下字符串指定为key。<br />
 		<span class="script">HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\hoeg\installdir</span><br />
 		<br />
-		　数値、単一文字列のみを読み込むことができます。数値の場合は整数型、文字列の場合は文字列型
-		の結果が返ります。<br />
+		　可以读入数字或单一字符串。数值时返回数字，字符串时返回字符串的结果。<br />
 	</dd>
 </dl>
 </div></div>

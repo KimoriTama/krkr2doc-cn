@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-クライアントサイズの設定</dd>
+	设置内部绘图区域的大小</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Window.html">Window类</a>的成员方法<br />
@@ -32,10 +32,10 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="setInnerSize の引数">
 <tr><td valign="top"><span class="argname">width</span></td>
-<td>				　クライアントの横幅を指定します。<br />
+<td>				　指定内部绘图区域的宽度。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">height</span></td>
-<td>				　クライアントの縦幅を指定します。<br />
+<td>				　指定内部绘图区域的高度。<br />
 			</td></tr>
 </table>
 </dd>
@@ -45,12 +45,17 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　ウィンドウのクライアントサイズを指定します。<br />
+		<!-- 　ウィンドウのクライアントサイズを指定します。<br />
 		　クライアントは、レイヤを表示可能なウィンドウ内の領域です。<br />
 		　このサイズを設定するとウィンドウのサイズもそれに応じて変化します。<br />
 		　クライアントのサイズを指定するときには、<a class="jump" href="../Properties/f_Window_innerWidth.html">Window.innerWidth</a> や
 		<a class="jump" href="../Properties/f_Window_innerHeight.html">Window.innerHeight</a> プロパティを個々に設定するよりも
-		このメソッドで一気に指定した方が効率的です。<br />
+		このメソッドで一気に指定した方が効率的です。<br /> -->
+		　设置内部绘图区域的大小。<br />
+		　所谓内部绘图区域，即可以显示层的窗口内的区域。<br />
+		　设置此值后，窗口的大小也会随之变化，<br />
+		　设置内部绘图区域的大小时，比起单独设置<a class="jump" href="../Properties/f_Window_innerWidth.html">Window.innerWidth</a> 与
+		<a class="jump" href="../Properties/f_Window_innerHeight.html">Window.innerHeight</a>属性，此方法可以一次设置更有效率。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

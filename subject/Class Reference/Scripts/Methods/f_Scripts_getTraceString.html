@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-呼び出し履歴の取得</dd>
+取得调用历史记录</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Scripts.html">Scripts类</a>的成员方法<br />
@@ -32,7 +32,7 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="getTraceString の引数">
 <tr><td valign="top"><span class="argname">limit</span></td>
-<td>				　履歴を取得する最大呼び出し深さを指定します。この引数を省略するか 0 を指定すると、取得できる限りの履歴を取得します。<br />
+<td>				　指定可取得历史记录的最大深度。省略此参数时为0，将取出全部取得到的履历。 <br />
 			</td></tr>
 </table>
 </dd>
@@ -41,9 +41,12 @@
 <result>呼び出し履歴を文字列化した物</result></dd>
 <dt>说明</dt>
 <dd>
-		　メソッドの呼び出し履歴を文字列として取得します。このメソッドが呼ばれた時点での履歴を取得することができます。<br />
+		<!-- 　メソッドの呼び出し履歴を文字列として取得します。このメソッドが呼ばれた時点での履歴を取得することができます。<br />
 		　このメソッドを使用するには、コマンドラインオプションで -debug (デバッグモード) が有効になっていなければなりません。デバッグモードが無効の場合はこのメソッドは空文字列を返します。<br />
-		　返される文字列はたとえば 'messagelayer.tjs(1561)[(function) addButton] &lt;-- mainwindow.tjs(4463)[(function expression) (anonymous)] &lt;-- conductor.tjs(427)[(function) onTag] &lt;-- conductor.tjs(95)[(function) timerCallback]' のような物です。
+		　返される文字列はたとえば 'messagelayer.tjs(1561)[(function) addButton] &lt;-- mainwindow.tjs(4463)[(function expression) (anonymous)] &lt;-- conductor.tjs(427)[(function) onTag] &lt;-- conductor.tjs(95)[(function) timerCallback]' のような物です。 -->
+		　获取方法的调用历史记录作为字符串。可以获取调用此方法时的历史记录。<br />
+		　要使用此方法，命令行选项必须启用 -debug(调试模式)。如果调试模式未启用，则此方法返回空字符串。<br />
+		　返回的字符串如例： 'messagelayer.tjs(1561)[(function) addButton] &lt;-- mainwindow.tjs(4463)[(function expression) (anonymous)] &lt;-- conductor.tjs(427)[(function) onTag] &lt;-- conductor.tjs(95)[(function) timerCallback]'。
 	</dd>
 </dl>
 </div></div>

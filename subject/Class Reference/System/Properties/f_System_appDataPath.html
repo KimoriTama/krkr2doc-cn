@@ -25,13 +25,29 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　使用这一属性可以获取到操作系统的用户主目录的绝对路径。在操作系统为 Windows 的情况下，返回用户注册表中的<br />
-		HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders下的AppData这一条目所储存的数据。<br />
-        若AppData条目中所存储的这条路径不存在的话，这一属性返回的值则与 <a class="jump" href="f_System_exePath.html">System.exePath</a> 属性所返回的路径相同。<br />
-		<br />
-		これは、通常、以下の通りになります。
-		<br />
-			<dl>			<dt>Windows 95, 98, 98SE, ME でマルチユーザ環境でない場合</dt>			<dd><span class="script">C:\Windows\Application Data\</span> ( C:\Windows の部分は Windows をインストールした場所です )</dd>			<dt>Windows 95 (初期型でない場合), 98, 98SE, ME でマルチユーザ環境の場合</dt>			<dd><span class="script">C:\Windows\Profiles\&lt;ユーザ名&gt;\Application Data\</span> ( C:\Windows の部分は Windows をインストールした場所です )</dd>			<dt>Windows NT 4.0 の場合</dt>			<dd><span class="script">C:\WINNT\Profiles\&lt;ユーザ名&gt;\Application Data\</span> ( C:\WINNT の部分は Windows をインストールした場所です )</dd>			<dt>Windows 2000, XP 以降 の場合</dt>			<dd><span class="script">C:\Documents and Settings\&lt;ユーザ名&gt;\Application Data\</span> ( C: の部分は環境によって異なります )</dd>			<dt>何らかの理由で レジストリキー ( 上記参照 ) を読み出せなかった場合か、初期の Windows 95</dt>			<dd>吉里吉里の実行可能ファイルのあるフォルダ (<a class="jump" href="f_System_exePath.html">System.exePath</a>)になります</dd>			</dl>	</dd>
+	　使用这一属性可以获取到操作系统的用户主目录的绝对路径。在操作系统为 Windows 的情况下，返回用户注册表中的<br />
+	HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Shell Folders下的AppData这一条目所储存的数据。<br />
+	若AppData条目中所存储的这条路径不存在的话，这一属性返回的值则与 <a class="jump" href="f_System_exePath.html">System.exePath</a>
+	属性所返回的路径相同。<br />
+	<br />
+	这通常如下所示。
+	<br />
+	<dl>
+		<dt>Windows 95, 98, 98SE, ME 非多用户环境时</dt>
+		<dd><span class="script">C:\Windows\Application Data\</span>
+			( C:\Windows的部分是安装Windows的地方 )
+		</dd>
+		<dt>Windows95（非初始型）、98,98SE、ME中为多用户环境时</dt>
+		<dd><span class="script">C:\Windows\Profiles\&lt;用户名&gt;\Application Data\</span> ( C:\Windows的部分是安装Windows的地方 )</dd>
+		<dt>Windows NT 4.0 时</dt>
+		<dd><span class="script">C:\WINNT\Profiles\&lt;用户名&gt;\Application Data\</span> ( C:\WINNT的部分是安装Windows的地方 )</dd>
+		<dt>Windows 2000, XP 以上时</dt>
+		<dd><span class="script">C:\Documents and Settings\&lt;用户名&gt;\Application Data\</span> ( C: 的部分因环境而异 )
+		</dd>
+		<dt>由于某种原因无法读出注册表键 （参照上述），或为初期的Windows95的情况下</dt>
+		<dd>则为吉里吉里的可执行文件所在的文件夹 (<a class="jump" href="f_System_exePath.html">System.exePath</a>)</dd>
+	</dl>
+</dd>
 <dt>参照</dt>
 <dd>
 <a class="jump" href="f_System_exePath.html">System.exePath</a><br />

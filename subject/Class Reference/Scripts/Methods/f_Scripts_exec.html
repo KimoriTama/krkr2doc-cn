@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-スクリプトの実行</dd>
+执行脚本</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Scripts.html">Scripts类</a>的成员方法<br />
@@ -32,27 +32,29 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="exec の引数">
 <tr><td valign="top"><span class="argname">script</span></td>
-<td>				　実行するスクリプトを文字列で指定します。<br />
+<td>				　指定要执行的脚本的字符串。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">name</span></td>
-<td>				　エラーメッセージ用ファイル名の指定
+<td>				　指定错误信息使用的文件名。
 			</td></tr>
 <tr><td valign="top"><span class="argname">linesof</span></td>
-<td>				　エラーメッセージ用行番号の指定
+<td>				　指定错误信息使用的行序号。
 			</td></tr>
 <tr><td valign="top"><span class="argname">context</span></td>
-<td>				　実行コンテキストを指定します。<br />
+<td>				　指定执行的上下文。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>スクリプトを実行した結果が戻ります。</result></dd>
+<result>返回脚本的计算结果。</result></dd>
 <dt>说明</dt>
 <dd>
-		　script で指定された文字列を TJS2 スクリプトとして実行します。<br />
+	<!-- 	　script で指定された文字列を TJS2 スクリプトとして実行します。<br />
 		　スクリプトを実行中に発生した例外はこのメソッド内では捕捉されませんので、このメソッドの
-		呼び出し側で捕捉することができます。<br />
+		呼び出し側で捕捉することができます。<br /> -->
+		　script 指定的字符串作为tjs2表达式被执行。<br />
+		　脚本执行中发生的异常不会在此方法内捕获，可在此方法的调用上下文进行捕获。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

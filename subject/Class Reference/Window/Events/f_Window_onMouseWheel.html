@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-マウスホイールが回転した</dd>
+	鼠标滚轮滚动时</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Window.html">Window类</a>的事件<br />
@@ -31,32 +31,29 @@
 <dt>参数</dt>
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onMouseWheel の引数">
-<tr><td valign="top"><span class="argname">shift</span></td>
-<td>				　マウスが移動していた時に同時に押されていたシフト系のキーやマウスのボタンの状態です。
-				以下の値のビット OR による組み合わせになります。<br />
-				<span class="script"><a class="targanchor" name="id388" id="id388">ssAlt</a>     : </span>ALT キーが押されていた<br />
-				<span class="script"><a class="targanchor" name="id389" id="id389">ssShift</a>   : </span>SHIFT キーが押されていた<br />
-				<span class="script"><a class="targanchor" name="id390" id="id390">ssCtrl</a>    : </span>CTRL キーが押されていた<br />
-				<span class="script"><a class="targanchor" name="id391" id="id391">ssLeft</a>    : </span>マウスの左ボタンが押されていた<br />
-				<span class="script"><a class="targanchor" name="id392" id="id392">ssMiddle</a>  : </span>マウスの中ボタンが押されていた<br />
-				<span class="script"><a class="targanchor" name="id393" id="id393">ssRight</a>   : </span>マウスの右ボタンが押されていた<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">delta</span></td>
-<td>				　ホイールの回転角です。上方向(ユーザの反対側の方向)に回された場合は正、
-				下方向(ユーザ側の方向)に回された場合は負の値になります。通常、最小量は 120
-				となります。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">x</span></td>
-<td>				　ホイールが回転した位置の x 座標 ( クライアント座標での ) の値です。<br />
-			</td></tr>
-<tr><td valign="top"><span class="argname">y</span></td>
-<td>				　ホイールが回転した位置の y 座標 ( クライアント座標での ) の値です。<br />
-			</td></tr>
-</table>
+	<tr><td valign="top"><span class="argname">shift</span></td>
+	<td>				　鼠标滚轮转动时同时被按下的鼠标键和键盘移位类键的的状态。为以下值的按位或之和。<br />
+					<span class="script"><a class="targanchor" name="id61" id="id61">ssAlt</a>     : </span>ALT 键被按下了<br />
+					<span class="script"><a class="targanchor" name="id62" id="id62">ssShift</a>   : </span>SHIFT 键被按下了<br />
+					<span class="script"><a class="targanchor" name="id63" id="id63">ssCtrl</a>    : </span>CTRL 键被按下了<br />
+					<span class="script"><a class="targanchor" name="id64" id="id64">ssLeft</a>    : </span>鼠标左键被按下<br />
+					<span class="script"><a class="targanchor" name="id65" id="id65">ssMiddle</a>  : </span>鼠标中键被按下<br />
+					<span class="script"><a class="targanchor" name="id66" id="id66">ssRight</a>   : </span>鼠标右键被按下<br />
+				</td></tr>
+	<tr><td valign="top"><span class="argname">delta</span></td>
+	<td>				　滚轮的旋转角。上方向（用户的反方向）旋转时为正、下方向（用户的方向）旋转时为负，通常情况下最小值为120。<br />
+				</td></tr>
+	<tr><td valign="top"><span class="argname">x</span></td>
+	<td>				　滚轮进行滚动时鼠标的位置的x坐标（以内部绘图区域的坐标表示）的值。<br />
+				</td></tr>
+	<tr><td valign="top"><span class="argname">y</span></td>
+	<td>				　滚轮进行滚动时鼠标的位置的y坐标（以内部绘图区域的坐标表示）的值。<br />
+				</td></tr>
+	</table>
 </dd>
 <dt>说明</dt>
 <dd>
-		　マウスホイールが回転した時に発生します。<br />
+	　鼠标滚轮滚动时发生。<br />
 	</dd>
 </dl>
 </div></div>

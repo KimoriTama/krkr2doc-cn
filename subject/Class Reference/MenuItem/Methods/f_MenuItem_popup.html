@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-メニュー項目のポップアップ表示</dd>
+弹出菜单项</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_MenuItem.html">MenuItem类</a>的成员方法<br />
@@ -32,7 +32,7 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="popup の引数">
 <tr><td valign="top"><span class="argname">flags</span></td>
-<td>				以下为代表菜单行为的标志。请指定以下值得按位与运输的结果。<br />
+<td>				以下为代表菜单行为的标志。请指定以下值的按位与运算的结果。<br />
 				<a class="targanchor" name="id291" id="id291">tpmLeftButton</a><br />
 				<a class="targanchor" name="id292" id="id292">tpmRightButton</a><br />
 				<a class="targanchor" name="id293" id="id293">tpmLeftAlign</a><br />
@@ -64,9 +64,8 @@
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>flags指定为tpmReturnCmd的情况下、
-		選択されたメニュー項目のIDを整数で返します(ただし、現バージョンではこのIDを吉里吉里側から設定することができないため、flagsにtpmReturnCmdを指定することは意味がありません)。
-		何も選択されずにキャンセルされた場合は0を返します。
+<result>flags指定为tpmReturnCmd的情况下、返回所选菜单项的整数的ID（但是，在当前版本中无法从吉里吉里侧设置该ID，因此在flags中指定tpmReturnCmd没有意义）。		如果不选择菜单取消的情况下，则返回0。
+		
 	</result></dd>
 <dt>说明</dt>
 <dd>
@@ -74,9 +73,12 @@
 		メニューが閉じられるまでの間に他の非同期イベントが発生する可能性があるので注意してください。<br /> -->
 		将菜单项弹出表示。此方法在菜单项关闭前会保持阻塞状态。<br />
 		在菜单关闭前的时间内，请注意存在其他异步事件发生的可能性。<br />
-		<a class="jump" href="../../Window/Properties/f_Window_menu.html">Window.menu</a>そのものはポップアップできません。<br />
+		<!-- <a class="jump" href="../../Window/Properties/f_Window_menu.html">Window.menu</a>そのものはポップアップできません。<br />
 		非表示状態のメニュー項目はポップアップできません。<br />
-		<a class="jump" href="../../Window/Properties/f_Window_menu.html">Window.menu</a>の子でないメニューはポップアップできません。<br />
+		<a class="jump" href="../../Window/Properties/f_Window_menu.html">Window.menu</a>の子でないメニューはポップアップできません。<br /> -->
+		<a class="jump" href="../../Window/Properties/f_Window_menu.html">Window.menu</a>本身不能弹出。<br />
+		无法弹出隐藏的菜单项。<br />
+		不能弹出非<a class="jump" href="../../Window/Properties/f_Window_menu.html">Window.menu</a>的子菜单。<br />
 	</dd>
 </dl>
 </div></div>

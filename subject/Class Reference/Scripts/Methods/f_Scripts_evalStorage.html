@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-ストレージ上の式の評価</dd>
+storage中的表达式计算</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Scripts.html">Scripts类</a>的成员方法<br />
@@ -32,24 +32,26 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="evalStorage の引数">
 <tr><td valign="top"><span class="argname">storage</span></td>
-<td>				　評価するストレージを指定します。<br />
+<td>				　指定计算的storage名。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">mode</span></td>
-<td>				　ファイルを読み込む際のモード文字列を指定します。&quot;o&quot; に続いてオフセットを10進で指定するとファイルのそのバイト位置からの読み込みになります。<br />
+<td>				　指定文件读入时的模式字符串。&quot;o&quot; 之后以10进制指定偏移量则会以指定文件的对应字节位置开始读入。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">context</span></td>
-<td>				　実行コンテキストを指定します。<br />
+<td>				　指定执行的上下文。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>式を評価した結果が戻ります。</result></dd>
+<result>返回表达式的计算结果。</result></dd>
 <dt>说明</dt>
 <dd>
-		　指定されたストレージを読み込み、その内容を TJS2 式として評価します。<br />
+	<!-- 	　指定されたストレージを読み込み、その内容を TJS2 式として評価します。<br />
 		　スクリプトを実行中に発生した例外はこのメソッド内では捕捉されませんので、このメソッドの
-		呼び出し側で捕捉することができます。<br />
+		呼び出し側で捕捉することができます。<br /> -->
+		　读入指定的storage，将其中的内容作为tjs2表达式计算。<br />
+		　脚本执行中发生的异常不会在此方法内捕获，可在此方法的调用上下文进行捕获。<br /><br />
 	</dd>
 <dt>参照</dt>
 <dd>

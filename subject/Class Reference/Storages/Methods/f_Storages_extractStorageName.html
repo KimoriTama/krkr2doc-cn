@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-ストレージ名の抽出</dd>
+取出文件名</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Storages.html">Storages类</a>的成员方法<br />
@@ -32,17 +32,17 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="extractStorageName の引数">
 <tr><td valign="top"><span class="argname">storage</span></td>
-<td>				　ストレージ名を抽出したいストレージ名を指定します。<br />
+<td>				　指定想要取出文件名的storage名。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>ストレージ名が返ります。ストレージ名がなかった場合は空文字列が返ります。</result></dd>
+<result>返回文件的名称。不存在文件名的情况则返回空字符串。</result></dd>
 <dt>说明</dt>
 <dd>
-		　指定されたストレージ名から、ストレージ名の部分 ( パスを除く ) を抽出して返します。<br />
-		　たとえば <span class="script">&quot;System/hoge.txt&quot;</span> を渡した場合、<span class="script">&quot;hoge.txt&quot;</span> が返ります。<br />
+		　从指定的storage名中取出文件名（去除路径）的部分并返回。<br />
+		　例如输入<span class="script">&quot;System/hoge.txt&quot;</span> 的情况、<span class="script">&quot;hoge.txt&quot;</span> 会返回。<br />
 	</dd>
 <dt>参照</dt>
 <dd>
