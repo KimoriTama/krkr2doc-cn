@@ -16,16 +16,24 @@
 <body>
 <h1><a id="id149" name="id149">关于图形图像系统</a>
 </h1><div class="para"><div>
-　吉里吉里は、レイヤによるグラフィックの表示機構を持っています。<br />
+<!-- 　吉里吉里は、レイヤによるグラフィックの表示機構を持っています。<br />
 　各レイヤはアルファブレンドによる透過重ね合わせや階層構造管理機能を持っています。また、レイヤを GUI 部品 (ウィジット) として動作させることができるように、ユーザからの入力を受け取るための機構 ( フォーカス ) を持っています。<br />
 <br />
 　重ね合わされたレイヤは、描画デバイスと呼ばれる機構にて、ウィンドウに描画されます。デフォルトでは PassThroughと呼ばれる、単純にレイヤの出力をウィンドウに描画するだけのデバイスが使用されます。描画デバイスは<a target="main" class="jump" href="../Class Reference/Window/f_Window_drawDevice.html">Window.drawDevice</a>プロパティを操作することで自由に差し替えられるようになっており、用途に応じた演出効果などをユーザが独自に(プラグインの形式で)定義することとができますが、吉里吉里２が内蔵しているのは前述のPassThroughデバイスのみです。</div></div>
 <h1><a id="id150" name="id150">可以读取的图像类型</a>
 </h1><div class="para"><div>
-　標準状態の吉里吉里で、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_loadImages.html">Layer.loadImages</a> でレイヤに読み込むことのできる形式は以下の通りです。<br />
+　標準状態の吉里吉里で、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_loadImages.html">Layer.loadImages</a> でレイヤに読み込むことのできる形式は以下の通りです。<br /> -->
+
+　吉里吉里有层为基础的图像的显示机制。<br />
+　每个层都具有alpha混合的透明叠加和分层结构管理功能。它还具有用于接收用户输入的机制（焦点），以允许层作为GUI部件（控件）工作。<br />
+<br />
+　重合的层通过被称为绘制设备的机制在窗口中绘制。 默认情况下，使用称为 PassThrough 的设备，它只是简单地将图层的输出绘制到窗口中。通过操作<a target="main" class="jump" href="../Class Reference/Window/f_Window_drawDevice.html">Window.drawDevice</a>性，可以自由更换绘图设备，用户可以根据用途自定义演出效果（以插件的形式），但吉里吉里2内置的只有前述的 PassThrough 设备。</div></div>
+<h1><a id="id150" name="id150">可以读取的图像类型</a>
+</h1><div class="para"><div>
+	　在标准状态的吉里吉里中，<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_loadImages.html">Layer.loadImages</a> 可以读取到层中的格式如下。<br />
 <br />
 <dl>
-<dt>BMP</dt>
+<!-- <dt>BMP</dt>
 <dd>　Windows 標準のビットマップ形式です。32 bpp の BMP はアルファチャネル付きビットマップと見なされます。<br />
 　RLE圧縮されたビットマップは読み込むことができません。</dd>
 <dt>PNG</dt>
@@ -42,187 +50,280 @@
 <dd>　メイン/マスク分離形式は、色情報の画像(メイン) とアルファチャネル(マスク) の画像が分離している形式で、マスク画像は、メイン画像のファイル名に _m が付加されたものとなります ( たとえば、abc.jpeg に対して abc_m.jpeg )。<br />
 　メイン/マスク画像の形式が異なっていてもかまいません。</dd></dl><br />
 　その他、Susie Plug-in を使って読み込み可能な画像形式を増やすことができます。Susie plug-in は <a target="main" class="jump" href="../Class Reference/Plugins/f_Plugins_link.html">Plugins.link</a> メソッドで読み込むことができます。<br />
-　Susie Plug-in から 32bpp のビットマップが渡された場合は、アルファチャネル付きビットマップと見なされます。<br />
+　Susie Plug-in から 32bpp のビットマップが渡された場合は、アルファチャネル付きビットマップと見なされます。<br /> -->
+<dt>BMP</dt>
+<dd>　Windows标准的位图格式。32bpp的BMP被认为是带有alpha通道的位图。。<br />
+	　无法读取RLE压缩的位图。</dd>
+<dt>PNG</dt>
+<!-- <dd>　Portable Network Graphic 形式を読み込むことができます。アルファチャネル付きビットマップ PNG も読み込むことができます。</dd> -->
+<dd>　可以读取Portable Network Graphic 格式。也可以读取带有 alpha 通道的位图 PNG。</dd>
+<dt>JPEG</dt>
+<!-- <dd>　JPEG 形式を読み込むことができます。算術圧縮されたものや可逆圧縮のものは読み込むことができませんが、そもそも滅多に見かけないのでかまわないかと思います。</dd> -->
+<dd>　可以读取 JPEG 格式。但是不能读取算术压缩或可逆压缩的文件，不过这些文件本来就很少见，所以不必担心。</dd>
+<dt>ERI</dt>
+<!-- <dd>　L.Entis 氏の提唱する可逆圧縮フォーマットです。アルファチャネル付きのものも読み込むことができます。</dd> -->
+<dd>　L.Entis  先生提出的可逆压缩格式。也可以读取带有 alpha 通道的文件。</dd>
+<dt>TLG5</dt>
+<!-- <dd>　吉里吉里独自の可逆圧縮フォーマットです。拡張子は .tlg です。アルファチャネル付きのものも読み込むことができます。圧縮率はさほど高くありませんが、高速に展開できるのが特徴です。この形式は<em>マスク画像(_m) あるいは領域画像 (_p) に使用することはできません</em>。アルファチャンネル無しのフルカラー画像、あるいはアルファチャンネル付きのフルカラー画像のみを扱うことができます。</dd> -->
+<dd>　吉里吉里独有的可逆压缩格式。扩展名为 .tlg。也可以读取带有 alpha 通道的文件。压缩率不是很高，但可以快速读取。这种格式<em>不能用于遮罩图像 (_m) 或区域图像 (_p)</em>。只能处理无 alpha 通道的全彩图像或带有 alpha 通道的全彩图像。</dd>
+<dt>TLG6</dt>
+<!-- <dd>　吉里吉里独自の可逆圧縮フォーマットです。拡張子はTLG5と同じく .tlg です。TLG6は高い圧縮率が特徴です。展開速度はTLG5の２倍弱かかりますが、それでもPNGの２倍以上高速に展開でき、サイズもPNGより2～4割小さくなります。</dd> -->
+<dd>　吉里吉里独有的可逆压缩格式。扩展名与 TLG5 相同，为 .tlg。TLG6 的特点是高压缩率。读取速度比 TLG5 慢近两倍，但仍然比 PNG 快两倍以上，大小也比 PNG 小 2-4 成。</dd>
+<!-- <dt>メイン/マスク分離形式</dt>
+<dd>　メイン/マスク分離形式は、色情報の画像(メイン) とアルファチャネル(マスク) の画像が分離している形式で、マスク画像は、メイン画像のファイル名に _m が付加されたものとなります ( たとえば、abc.jpeg に対して abc_m.jpeg )。<br />
+　メイン/マスク画像の形式が異なっていてもかまいません。</dd></dl><br /> -->
+<dt>主/遮罩分离格式</dt>
+<dd>　主/遮罩分离格式是颜色信息图像（主）和 alpha 通道（遮罩）图像分离的格式，遮罩图像是在主图像文件名后加上 _m 的文件（例如，abc.jpeg 对应 abc_m.jpeg）。<br />
+	　主/遮罩图像的格式可以不同。</dd></dl><br />
+
+<!-- 　その他、Susie Plug-in を使って読み込み可能な画像形式を増やすことができます。Susie plug-in は <a target="main" class="jump" href="../Class Reference/Plugins/f_Plugins_link.html">Plugins.link</a> メソッドで読み込むことができます。<br />
+　Susie Plug-in から 32bpp のビットマップが渡された場合は、アルファチャネル付きビットマップと見なされます。<br /> -->
+ 　此外，还可以使用 Susie 插件来增加可读取的图像格式。Susie 插件可以通过 <a target="main" class="jump" href="../Class Reference/Plugins/f_Plugins_link.html">Plugins.link</a> 方法加载。<br />
+　如果从 Susie 插件传递了 32bpp 的位图，则会被视为带有 alpha 通道的位图。<br />
 <br />
 </div></div>
 <h1><a id="id151" name="id151">图层类型</a>
 </h1><div class="para"><div>
-　吉里吉里のレイヤは様々な合成モード(レイヤタイプ)で表示することができます。<br />
+<!-- 　吉里吉里のレイヤは様々な合成モード(レイヤタイプ)で表示することができます。<br />
 　以下の合成モードがあり、lt で始まるレイヤタイプ定数を <a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> プロパティに指定することができます。<br />
-　なお、式中の <span class="i">result</span> は結果、<span class="i">dest</span> は重ね合わせ先の画像の輝度、<span class="i">src</span> は重ね合わせる画像の輝度、<span class="i">α</span>は重ね合わせる画像のピクセルごとのアルファ値で、すべて値の範囲は 0.0 ～ 1.0 とします。<br />
-　また、ここでは説明のために以下の関数を定義します。<br />
-<ul><li>abs(<span class="i">a</span>) : <span class="i">a</span> の絶対値</li><li>max(<span class="i">a</span>, <span class="i">b</span>) : <span class="i">a</span> と <span class="i">b</span> のどちらか大きい方</li><li>min(<span class="i">a</span>, <span class="i">b</span>) : <span class="i">a</span> と <span class="i">b</span> のどちらか小さい方</li><li>blend(<span class="i">a</span>, <span class="i">b</span>, <span class="i">r</span>) = <span class="i">a</span> × (1.0 - <span class="i">r</span>) + <span class="i">b</span> × <span class="i">r</span></li></ul><br />
+　なお、式中の <span class="i">result</span> は結果、<span class="i">dest</span> は重ね合わせ先の画像の輝度、<span class="i">src</span> は重ね合わせる画像の輝度、<span class="i">alpha</span>は重ね合わせる画像のピクセルごとのアルファ値で、すべて値の範囲は 0.0 ～ 1.0 とします。<br />
+　また、ここでは説明のために以下の関数を定義します。<br /> -->
+　吉里吉里的图层可以以多种合成模式（图层类型）显示。<br />
+　以下是合成模式，可以通过将以 lt 开头的图层类型常量指定为<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_type.html">Layer.type</a> 属性来使用。<br />
+　 另外，在公式中<span class="i">result</span>  是结果，<span class="i">dest</span> 是重叠目标图像的亮度，<span class="i">src</span> 是重叠图像的亮度，<span class="i">alpha</span>是重叠图像的每个像素的 alpha 值，所有值的范围都是 0.0 ～ 1.0。<br />
+　此外，为了解释，我们在这里定义以下函数。<br />
+<ul>
+	<li>abs(<span class="i">a</span>) : <span class="i">a</span> 的绝对值</li>
+	<li>max(<span class="i">a</span>, <span class="i">b</span>) : <span class="i">a</span> 和 <span class="i">b</span>
+		中较大的一个 </li>
+	<li>min(<span class="i">a</span>, <span class="i">b</span>) : <span class="i">a</span> 和 <span class="i">b</span>
+		中较小的一个 </li>
+	<li>blend(<span class="i">a</span>, <span class="i">b</span>, <span class="i">r</span>) = <span class="i">a</span> ×
+		(1.0 - <span class="i">r</span>) + <span class="i">b</span> × <span class="i">r</span></li>
+</ul><br />
 <dl>
 <dt><a id="id152" name="id152" class="targanchor"><dfn>ltOpaque</dfn></a> (<a id="id153" name="id153" class="targanchor"><dfn>ltCoverRect</dfn></a>)</dt>
-<dd>　ltOpaque は透過を伴わない表示です。常にレイヤの矩形全体が完全不透明な表示になります ( このレイヤタイプに限りませんが、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_opacity.html">Layer.opacity</a> で不透明度を下げている場合はそれに従います )。<br />
+<!-- <dd>　ltOpaque は透過を伴わない表示です。常にレイヤの矩形全体が完全不透明な表示になります ( このレイヤタイプに限りませんが、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_opacity.html">Layer.opacity</a> で不透明度を下げている場合はそれに従います )。<br /> -->
+	<dd>　ltOpaque 是不透明显示。图层矩形总是完全不透明（仅限于此图层类型，但如果使用<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_opacity.html">Layer.opacity</a> 降低不透明度，则遵循其规则 )。<br />
+<br />公式 : <span class="i">result</span> = <span class="i">src</span><br />
 <br />
-式 : <span class="i">result</span> = <span class="i">src</span><br />
-<br /><div class="note"><div class="notehead"><span class="noteheadspan">Note</span></div>
-ltCoverRect でも同じ意味になりますが、2.23 beta 2 未満における古い名称です。</div><br />
+<div class="note">
+	<div class="notehead"><span class="noteheadspan">Note</span></div>
+	<!-- ltCoverRect でも同じ意味になりますが、2.23 beta 2 未満における古い名称です。 -->
+	ltCoverRect  也具有相同的含义，但它是 2.23 beta 2 之前的旧名称。
+</div><br />
 </dd>
-<dt><a id="id154" name="id154" class="targanchor"><dfn>ltAlpha</dfn></a> (<a id="id155" name="id155" class="targanchor"><dfn>ltTransparent</dfn></a>)</dt>
-<dd>　ltAlpha はアルファ合成を行います。透過を行う際のもっとも基本的なタイプです。BMP や Susie plug-in からのアルファチャネルの入力においても下記の式が使われます。<br />
-<br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, <span class="i">src</span>, <span class="i">α</span>)<br />
-<br /><div class="note"><div class="notehead"><span class="noteheadspan">Note</span></div>
-ltTransparent でも同じ意味になりますが、2.23 beta 2 未満における古い名称です。</div><br />
+<dt><a id="id154" name="id154" class="targanchor"><dfn>ltAlpha</dfn></a> (<a id="id155" name="id155"
+		class="targanchor"><dfn>ltTransparent</dfn></a>)</dt>
+<!-- <dd>　ltAlpha はアルファ合成を行います。透過を行う際のもっとも基本的なタイプです。BMP や Susie plug-in からのアルファチャネルの入力においても下記の式が使われます。<br /> -->
+<dd>　ltAlpha 进行 alpha 混合。这是进行透明时最基本的类型。BMP 或 Susie 插件中的 alpha 通道输入也使用以下公式。<br />
+	<br />
+	公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, <span class="i">src</span>, <span
+		class="i">alpha</span>)<br />
+	<br />
+	<div class="note">
+		<div class="notehead"><span class="noteheadspan">Note</span></div>
+		ltTransparent 也具有相同的含义，但它是 2.23 beta 2 之前的旧名称。
+	</div><br />
 </dd>
 <dt><a id="id156" name="id156" class="targanchor"><dfn>ltAddAlpha</dfn></a></dt>
-<dd>　ltAddAlpha は加算アルファ合成を行います。<br />
-　<a target="main" class="jump" href="../Tools Reference/TPC.html">画像フォーマットコンバータ</a>でこの形式に適した画像を出力できます。また、<a target="main" class="jump" href="../Class Reference/Layer/f_Layer_convertType.html">Layer.convertType</a> メソッドで ltAlpha からこの形式に変換することができます。<br />
-　ltAddAlphaのレイヤは、ltAlpha のレイヤの直接の子になると正常に表示できません。<br />
-<br />
-式 : <span class="i">result</span> = min(1.0, <span class="i">dest</span> × ( 1.0 - <span class="i">α</span> ) + <span class="i">src</span>)<br />
+<!-- <dd>　ltAddAlpha は加算アルファ合成を行います。<br />
+	　<a target="main" class="jump" href="../Tools Reference/TPC.html">画像フォーマットコンバータ</a>でこの形式に適した画像を出力できます。また、<a
+		target="main" class="jump" href="../Class Reference/Layer/f_Layer_convertType.html">Layer.convertType</a> メソッドで
+	ltAlpha からこの形式に変換することができます。<br />
+	　ltAddAlphaのレイヤは、ltAlpha のレイヤの直接の子になると正常に表示できません。<br /> -->
+<dd>　ltAddAlpha 进行加法 alpha 混合。<br />
+	　可以使用 <a target="main" class="jump" href="../Tools Reference/TPC.html"> 图像格式转换器</a>输出适合此格式的图像。另外，<a
+		target="main" class="jump" href="../Class Reference/Layer/f_Layer_convertType.html">Layer.convertType</a> 方法从 ltAlpha 转换为此格式。<br />
+	　ltAddAlpha的图层成为 ltAlpha 图层的直接子层时无法正常显示。。<br />
+	<br />
+	公式 : <span class="i">result</span> = min(1.0, <span class="i">dest</span> × ( 1.0 - <span class="i">alpha</span> ) +
+	<span class="i">src</span>)<br />
 </dd>
 <dt><a id="id157" name="id157" class="targanchor"><dfn>ltAdditive</dfn></a></dt>
-<dd>　ltAdditive は加算合成を行います。光彩の表現に適しています。Photoshopにおける「覆い焼き(リニア)」ですが、Photoshopと同じ効果を得たい場合は後述の ltPsAdditive を使用してください。ltPsAdditive と違い、ltAdditive では <span class="i">α</span>は無視されます。<br />
-　中性色 (重ね合わせても変化のない色) は黒です。<br />
-<br />
-式 : <span class="i">result</span> = min(1.0, <span class="i">dest</span> + <span class="i">src</span>)<br />
+<!-- <dd>　ltAdditive は加算合成を行います。光彩の表現に適しています。Photoshopにおける「覆い焼き(リニア)」ですが、Photoshopと同じ効果を得たい場合は後述の ltPsAdditive
+	を使用してください。ltPsAdditive と違い、ltAdditive では <span class="i">alpha</span>被忽略。<br />
+	　中性色 (重ね合わせても変化のない色) は黒です。<br /> -->
+<dd>　ltAdditive 进行加法混合。适用于光艳的颜色的显示。在 Photoshop 中称为“颜色减淡（线性）”，但如果要获得与 Photoshop 相同的效果，请使用后面提到的 ltPsAdditive。与 ltPsAdditive 不同，ltAdditive中<span class="i">alpha</span>被忽略。<br />
+	　中性色（重叠后不变化的颜色）为黑色。<br />
+	<br />
+	公式 : <span class="i">result</span> = min(1.0, <span class="i">dest</span> + <span class="i">src</span>)<br />
 </dd>
 <dt><a id="id158" name="id158" class="targanchor"><dfn>ltSubtractive</dfn></a></dt>
-<dd>　ltSubtractive は減算合成を行います。<span class="i">α</span>は無視されます。<br />
-　中性色は白です。<br />
-<br />
-式 : <span class="i">result</span> = max(0.0, <span class="i">dest</span> + <span class="i">src</span> - 1.0)<br />
-<br /><div class="note"><div class="notehead"><span class="noteheadspan">Note</span></div>
-　<span class="i">result</span> = <span class="i">dest</span> - <span class="i">src</span> と違うのは src が反転しないかするかの違いだけです。</div><br />
+<!-- <dd>　ltSubtractive は減算合成を行います。<span class="i">alpha</span>被忽略。<br />
+	　中性色为白色。<br /> -->
+<dd>　ltSubtractive 进行减法混合。<span class="i">alpha</span>被忽略。<br />
+	　中性色为白色。<br />
+	<br />
+	公式 : <span class="i">result</span> = max(0.0, <span class="i">dest</span> + <span class="i">src</span> - 1.0)<br />
+	<br />
+	<div class="note">
+		<div class="notehead"><span class="noteheadspan">Note</span></div>
+		　与<span class="i">result</span> = <span class="i">dest</span> - <span class="i">src</span> 的区别仅在于 src 是否反转。
+	</div><br />
 </dd>
 <dt><a id="id159" name="id159" class="targanchor"><dfn>ltMultiplicative</dfn></a></dt>
-<dd>　ltMultiplicative は乗算合成を行います。<span class="i">α</span>は無視されます。<br />
-　中性色は白です。<br />
-<br />
-式 : <span class="i">result</span> = <span class="i">dest</span> × <span class="i">src</span></dd>
+<!-- <dd>　ltMultiplicative は乗算合成を行います。<span class="i">alpha</span>被忽略。<br />
+	　中性色为白色。<br /> -->
+<dd>　ltMultiplicative 进行乘法混合。<span class="i">alpha</span>被忽略。<br />
+	　中性色为白色。<br />
+	<br />
+	公式 : <span class="i">result</span> = <span class="i">dest</span> × <span class="i">src</span>
+</dd>
 <dt><a id="id160" name="id160" class="targanchor"><dfn>ltDodge</dfn></a></dt>
-<dd>　ltDodge は「覆い焼き」合成を行います。光に照らされたものの表現に適しています。<span class="i">α</span>は無視されます。<br />
-　中性色は黒です。<br />
-<br />
-式 : <span class="i">result</span> = min(1.0, <span class="i">dest</span> ÷ ( 1.0 -  <span class="i">src</span> ) )<br />
+<!-- <dd>　ltDodge は「覆い焼き」合成を行います。光に照らされたものの表現に適しています。<span class="i">alpha</span>被忽略。<br />
+	　中性色为黑色。<br /> -->
+<dd>　ltDodge 进行“颜色减淡”混合。。适用于被光照射物体的表现。<span class="i">alpha</span>被忽略。<br />
+	　中性色为黑色。<br />
+	<br />
+	公式 : <span class="i">result</span> = min(1.0, <span class="i">dest</span> ÷ ( 1.0 - <span class="i">src</span> )
+	)<br />
 </dd>
 <dt><a id="id161" name="id161" class="targanchor"><dfn>ltLighten</dfn></a></dt>
-<dd>　ltLighten は「比較(明)」合成を行います。<span class="i">α</span>は無視されます。<br />
-　中性色は黒です。<br />
-<br />
-式 : <span class="i">result</span> = max(<span class="i">dest</span>, <span class="i">src</span>)<br />
+<!-- <dd>　ltLighten は「比較(明)」合成を行います。<span class="i">alpha</span>被忽略。<br />
+	　中性色为黑色。<br /> -->
+<!-- <dd>　ltLighten は「比較(明)」合成を行います。<span class="i">alpha</span>被忽略。<br /> -->
+<dd>　ltLighten 进行变亮混合。<span class="i">alpha</span>被忽略。<br />
+	　中性色为黑色。<br />
+	<br />
+	公式 : <span class="i">result</span> = max(<span class="i">dest</span>, <span class="i">src</span>)<br />
 </dd>
 <dt><a id="id162" name="id162" class="targanchor"><dfn>ltDarken</dfn></a></dt>
-<dd>　ltDarken は「比較(暗)」合成を行います。<span class="i">α</span>は無視されます。<br />
-　中性色は白です。<br />
-<br />
-式 : <span class="i">result</span> = min(<span class="i">dest</span>, <span class="i">src</span>)<br />
+<dd>　ltDarken 进行变暗混合。<span class="i">alpha</span>被忽略。<br />
+	　中性色为白色。<br />
+	<br />
+	公式 : <span class="i">result</span> = min(<span class="i">dest</span>, <span class="i">src</span>)<br />
 </dd>
 <dt><a id="id163" name="id163" class="targanchor"><dfn>ltScreen</dfn></a></dt>
-<dd>　ltLighten は「スクリーン乗算」合成を行います。<span class="i">α</span>は無視されます。<br />
-　中性色は黒です。<br />
-<br />
-式 : <span class="i">result</span> = 1.0 - ( 1.0 - <span class="i">dest</span> ) × ( 1.0 - <span class="i">src</span> )<br />
+<!-- <dd>　ltLighten は「スクリーン乗算」合成を行います。<span class="i">alpha</span>被忽略。<br /> -->
+<dd>　ltLighten 进行屏幕乘法混合。<span class="i">alpha</span>被忽略。<br />
+	　中性色为黑色。<br />
+	<br />
+	公式 : <span class="i">result</span> = 1.0 - ( 1.0 - <span class="i">dest</span> ) × ( 1.0 - <span
+		class="i">src</span> )<br />
 </dd>
 
 
 <dt><a id="id164" name="id164" class="targanchor"><dfn>ltPsNormal</dfn></a></dt>
-<dd>　ltPsNormal は ltAlpha と同じ効果を持ちます。歴史的な理由で ltAlpha とは別のルーチンや名称となっています。</dd>
+<!-- <dd>　ltPsNormal は ltAlpha と同じ効果を持ちます。歴史的な理由で ltAlpha とは別のルーチンや名称となっています。</dd> -->
+<dd>　ltPsNormal 与 ltAlpha 具有相同的效果。由于历史原因，它与 ltAlpha 有不同的例程和名称。</dd>
 
 <dt><a id="id165" name="id165" class="targanchor"><dfn>ltPsAdditive</dfn></a></dt>
-<dd>　ltPsAdditive はPhotoshop互換の「覆い焼き(リニア)」合成(加算合成)を行います。ltAdditive と違い、<span class="i">α</span>は無視されません。<br />
-　中性色は黒です。<br />
+<!-- <dd>　ltPsAdditive はPhotoshop互換の「覆い焼き(リニア)」合成(加算合成)を行います。ltAdditive と違い、<span class="i">alpha</span>不会被忽略。<br /> -->
+<dd>　ltPsAdditive 进行与 Photoshop 兼容的“颜色减淡（线性）“混合（加法混合）。与ltAdditive 不同、<span class="i">alpha</span>不会被忽略。<br />
+　中性色为黑色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, min(1.0, <span class="i">dest</span> + <span class="i">src</span>), <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, min(1.0, <span class="i">dest</span> + <span class="i">src</span>), <span class="i">alpha</span>)<br />
 </dd>
 <dt><a id="id166" name="id166" class="targanchor"><dfn>ltPsSubtractive</dfn></a></dt>
-<dd>　ltPsSubtractive はPhotoshop互換の「焼き込み(リニア)」合成(減算合成)を行います。ltSubtractive と違い、<span class="i">α</span>は無視されません。<br />
-　中性色は白です。<br />
+<!-- <dd>　ltPsSubtractive はPhotoshop互換の「焼き込み(リニア)」合成(減算合成)を行います。ltSubtractive と違い、<span class="i">alpha</span>不会被忽略。<br /> -->
+<dd>　ltPsSubtractive 进行与 Photoshop 兼容的“颜色加深（线性）“混合（减法混合）。 与ltSubtractive 不同，<span class="i">alpha</span>不会被忽略。<br />
+　中性色为白色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, max(0.0, <span class="i">dest</span> + <span class="i">src</span> - 1.0), <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, max(0.0, <span class="i">dest</span> + <span class="i">src</span> - 1.0), <span class="i">alpha</span>)<br />
 </dd>
 <dt><a id="id167" name="id167" class="targanchor"><dfn>ltPsMultiplicative</dfn></a></dt>
-<dd>　ltPsMultiplicative はPhotoshop互換の「乗算」合成を行います。ltMultiplicative と違い、<span class="i">α</span>は無視されません。<br />
-　中性色は白です。<br />
+<!-- <dd>　ltPsMultiplicative はPhotoshop互換の「乗算」合成を行います。与ltMultiplicative 不同，<span class="i">alpha</span>不会被忽略。<br /> -->
+<dd>　ltPsMultiplicative 进行与 Photoshop 兼容的乘法混合。与ltMultiplicative 不同，<span class="i">alpha</span>不会被忽略。<br />
+　中性色为白色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, <span class="i">dest</span> × <span class="i">src</span>, <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, <span class="i">dest</span> × <span class="i">src</span>, <span class="i">alpha</span>)<br />
 </dd>
 <dt><a id="id168" name="id168" class="targanchor"><dfn>ltPsScreen</dfn></a></dt>
-<dd>　ltPsScreen はPhotoshop互換の「スクリーン」合成を行います。ltScreen と違い、<span class="i">α</span>は無視されません。<br />
-　中性色は黒です。<br />
+<!-- <dd>　ltPsScreen はPhotoshop互換の「スクリーン」合成を行います。与ltScreen 不同，<span class="i">alpha</span>不会被忽略。<br /> -->
+<dd>　ltPsScreen 进行与 Photoshop 兼容的屏幕混合。与ltScreen 不同，<span class="i">alpha</span>不会被忽略。<br />
+　中性色为黑色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, 1.0 - (1.0 - <span class="i">dest</span>) × (1.0 - <span class="i">src</span>), <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, 1.0 - (1.0 - <span class="i">dest</span>) × (1.0 - <span class="i">src</span>), <span class="i">alpha</span>)<br />
 </dd>
 
 <dt><a id="id169" name="id169" class="targanchor"><dfn>ltPsOverlay</dfn></a></dt>
-<dd>　ltPsOverlay はPhotoshop互換の「オーバーレイ」合成を行います。<br />
-　中性色は50%灰色です。<br />
+<!-- <dd>　ltPsOverlay はPhotoshop互換の「オーバーレイ」合成を行います。<br /> -->
+<dd>　ltPsOverlay 进行与 Photoshop 兼容的叠加混合。<br />
+　中性色是 50% 灰色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, overlay(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">α</span>)<br />
-ここで overlay(<span class="i">a</span>, <span class="i">b</span>) = <br />
-　<span class="i">a</span> × <span class="i">b</span> × 2.0  ( <span class="i">a</span> &lt; 0.5 のとき)<br />
-　1.0 - (1.0 - <span class="i">a</span>) × (1.0 - <span class="i">b</span>) × 2.0 (それ以外のとき)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, overlay(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">alpha</span>)<br />
+此处 overlay(<span class="i">a</span>, <span class="i">b</span>) = <br />
+　<span class="i">a</span> × <span class="i">b</span> × 2.0  ( <span class="i">a</span> &lt; 0.5 的时候)<br />
+　1.0 - (1.0 - <span class="i">a</span>) × (1.0 - <span class="i">b</span>) × 2.0 (其他的情况)<br />
 </dd>
 <dt><a id="id170" name="id170" class="targanchor"><dfn>ltPsHardLight</dfn></a></dt>
-<dd>　ltPsHardLight はPhotoshop互換の「ハードライト」合成を行います。<br />
-　中性色は50%灰色です。<br />
+<!-- <dd>　ltPsHardLight はPhotoshop互換の「ハードライト」合成を行います。<br /> -->
+<dd>　ltPsHardLight 进行与 Photoshop 兼容的硬光混合。<br />
+　中性色是 50% 灰色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, hardlight(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">α</span>)<br />
-ここで hardlight(<span class="i">a</span>, <span class="i">b</span>) = <br />
-　<span class="i">a</span> × <span class="i">b</span> × 2.0  (<span class="i">b</span> &lt; 0.5 のとき)<br />
-　1.0 - (1.0 - <span class="i">a</span>) × (1.0 - <span class="i">b</span>) × 2.0 (それ以外のとき)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, hardlight(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">alpha</span>)<br />
+此处 hardlight(<span class="i">a</span>, <span class="i">b</span>) = <br />
+　<span class="i">a</span> × <span class="i">b</span> × 2.0  (<span class="i">b</span> &lt; 0.5 的时候)<br />
+　1.0 - (1.0 - <span class="i">a</span>) × (1.0 - <span class="i">b</span>) × 2.0 (其他的情况)<br />
 </dd>
 
 <dt><a id="id171" name="id171" class="targanchor"><dfn>ltPsSoftLight</dfn></a></dt>
-<dd>　ltPsSoftLight はPhotoshop互換の「ソフトライト」合成を行います。<br />
-　中性色は50%灰色です。<br />
+<!-- <dd>　ltPsSoftLight はPhotoshop互換の「ソフトライト」合成を行います。<br /> -->
+<dd>　ltPsSoftLight 进行与 Photoshop 兼容的柔光混合。<br />
+　中性色是 50% 灰色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, softlight(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">α</span>)<br />
-ここで softlight(<span class="i">a</span>, <span class="i">b</span>) = <br />
-　<span class="i">a</span><sup>(0.5 ÷ <span class="i">b</span>)</sup>  (<span class="i">b</span> &lt; 0.5 のとき)<br />
-　<span class="i">a</span><sup>((1.0 - <span class="i">b</span>) ÷ 2)</sup>  (それ以外のとき)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, softlight(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">alpha</span>)<br />
+此处 softlight(<span class="i">a</span>, <span class="i">b</span>) = <br />
+　<span class="i">a</span><sup>(0.5 ÷ <span class="i">b</span>)</sup>  (<span class="i">b</span> &lt; 0.5 的时候)<br />
+　<span class="i">a</span><sup>((1.0 - <span class="i">b</span>) ÷ 2)</sup>  (其他的情况)<br />
 </dd>
 
 <dt><a id="id172" name="id172" class="targanchor"><dfn>ltPsColorDodge</dfn></a></dt>
-<dd>　ltPsColorDodge はPhotoshop互換の「覆い焼きカラー」合成を行います。ltDodge と違い、<span class="i">α</span>は無視されません。<br />
-　中性色は黒です。<br />
+<!-- <dd>　ltPsColorDodge はPhotoshop互換の「覆い焼きカラー」合成を行います。ltDodge と違い、<span class="i">alpha</span>不会被忽略。<br /> -->
+<dd>　ltPsColorDodge进行与 Photoshop 兼容的"颜色减淡色彩"混合。与ltDodge 不同、<span class="i">alpha</span>不会被忽略。<br />
+　中性色为黑色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, min(1.0, <span class="i">dest</span> ÷ ( 1.0 -  <span class="i">src</span> ) ), <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, min(1.0, <span class="i">dest</span> ÷ ( 1.0 -  <span class="i">src</span> ) ), <span class="i">alpha</span>)<br />
 </dd>
 <dt><a id="id173" name="id173" class="targanchor"><dfn>ltPsColorDodge5</dfn></a></dt>
-<dd>　ltPsColorDodge はPhotoshopのバージョン 5.x 以下と互換の「覆い焼きカラー」合成を行います。ltPsColorDodge とは式が若干異なります。<br />
-　中性色は黒です。<br />
+<!-- <dd>　ltPsColorDodge はPhotoshopのバージョン 5.x 以下と互換の「覆い焼きカラー」合成を行います。ltPsColorDodge とは式が若干異なります。<br /> -->
+<dd>　ltPsColorDodge 进行与 Photoshop 5.x 及以下版本兼容的“颜色减淡色彩”混合。与 ltPsColorDodge的公式稍有不同。<br />
+　中性色为黑色。<br />
 <br />
-式 : <span class="i">result</span> = min(1.0, <span class="i">dest</span> ÷ ( 1.0 - <span class="i">src</span> × <span class="i">α</span>) )<br />
+公式 : <span class="i">result</span> = min(1.0, <span class="i">dest</span> ÷ ( 1.0 - <span class="i">src</span> × <span class="i">alpha</span>) )<br />
 </dd>
 <dt><a id="id174" name="id174" class="targanchor"><dfn>ltPsColorBurn</dfn></a></dt>
-<dd>　ltPsColorBurn はPhotoshop互換の「焼き込みカラー」合成を行います。<br />
-　中性色は白です。<br />
+<!-- <dd>　ltPsColorBurn はPhotoshop互換の「焼き込みカラー」合成を行います。<br /> -->
+<dd>　ltPsColorBurn 进行与 Photoshop 兼容的 “颜色加深色彩”混合。<br />
+　中性色为白色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, max(0.0, 1.0 - (1.0 - <span class="i">dest</span>) ÷ <span class="i">src</span>), <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, max(0.0, 1.0 - (1.0 - <span class="i">dest</span>) ÷ <span class="i">src</span>), <span class="i">alpha</span>)<br />
 </dd>
 <dt><a id="id175" name="id175" class="targanchor"><dfn>ltPsLighten</dfn></a></dt>
-<dd>　ltPsLighten はPhotoshop互換の「比較(明)」合成を行います。ltLighten と違い、<span class="i">α</span>は無視されません。<br />
-　中性色は黒です。<br />
+<!-- <dd>　ltPsLighten はPhotoshop互換の「比較(明)」合成を行います。ltLighten と違い、<span class="i">alpha</span>不会被忽略。<br /> -->
+<dd>　ltPsLighten  进行与 Photoshop 兼容的“变亮”混合。与ltLighten 不同，<span class="i">alpha</span>不会被忽略。<br />
+　中性色为黑色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, max(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, max(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">alpha</span>)<br />
 </dd>
 <dt><a id="id176" name="id176" class="targanchor"><dfn>ltPsDarken</dfn></a></dt>
-<dd>　ltPsDarken はPhotoshop互換の「比較(暗)」合成を行います。ltDarken と違い、<span class="i">α</span>は無視されません。<br />
-　中性色は白です。<br />
+<!-- <dd>　ltPsDarken はPhotoshop互換の「比較(暗)」合成を行います。ltDarken と違い、<span class="i">alpha</span>不会被忽略。<br /> -->
+<dd>　ltPsDarken  进行与 Photoshop 兼容的”变暗“混合。与ltDarken 不同、<span class="i">alpha</span>不会被忽略。<br />
+　中性色为白色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, min(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, min(<span class="i">dest</span>, <span class="i">src</span>), <span class="i">alpha</span>)<br />
 </dd>
 <dt><a id="id177" name="id177" class="targanchor"><dfn>ltPsDifference</dfn></a></dt>
-<dd>　ltPsDifference はPhotoshop互換の「差の絶対値」合成を行います。<br />
-　中性色は黒です。<br />
+<!-- <dd>　ltPsDifference はPhotoshop互換の「差の絶対値」合成を行います。<br /> -->
+<dd>　ltPsDifference  进行与 Photoshop 兼容的“差异”混合。<br />
+　中性色为黑色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>, abs(<span class="i">dest</span> - <span class="i">src</span>), <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>, abs(<span class="i">dest</span> - <span class="i">src</span>), <span class="i">alpha</span>)<br />
 </dd>
 <dt><a id="id178" name="id178" class="targanchor"><dfn>ltPsDifference5</dfn></a></dt>
-<dd>　ltPsDifference5 はPhotoshopのバージョン 5.x 以下と互換の「差の絶対値」合成を行います。ltPsDifference とは式が若干異なります。<br />
-　中性色は黒です。<br />
+<!-- <dd>　ltPsDifference5 はPhotoshopのバージョン 5.x 以下と互換の「差の絶対値」合成を行います。ltPsDifference とは式が若干異なります。<br /> -->
+<dd>　ltPsDifference5 进行与 Photoshop 5.x 及以下版本兼容的 “差异”混合。与ltPsDifference 的公式稍有不同。<br />
+　中性色为黑色。<br />
 <br />
-式 : <span class="i">result</span> = abs(<span class="i">dest</span> - <span class="i">src</span> × <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = abs(<span class="i">dest</span> - <span class="i">src</span> × <span class="i">alpha</span>)<br />
 </dd>
 <dt><a id="id179" name="id179" class="targanchor"><dfn>ltPsExclusion</dfn></a></dt>
-<dd>　ltPsExclusion はPhotoshop互換の「除外」合成を行います。<br />
-　中性色は黒です。<br />
+<!-- <dd>　ltPsExclusion はPhotoshop互換の「除外」合成を行います。<br /> -->
+<dd>　ltPsExclusion 进行与 Photoshop 兼容的“排除”混合。<br />
+　中性色为黑色。<br />
 <br />
-式 : <span class="i">result</span> = blend(<span class="i">dest</span>,  <span class="i">dest</span> + <span class="i">src</span> - 2.0 × <span class="i">src</span> × <span class="i">dest</span>, <span class="i">α</span>)<br />
+公式 : <span class="i">result</span> = blend(<span class="i">dest</span>,  <span class="i">dest</span> + <span class="i">src</span> - 2.0 × <span class="i">src</span> × <span class="i">dest</span>, <span class="i">alpha</span>)<br />
 </dd>
 
 </dl></div></div>

@@ -148,31 +148,31 @@
 			</td></tr> -->
 <td>				　指定运算的模式。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id202" id="id202">omAuto</a></span> ，则会根据运算源层的<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>属性自动确定运算类型。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id203" id="id203">omPsNormal</a></span> ，则进行Photoshop兼容的alpha合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id204" id="id204">omPsAdditive</a></span> ，则会进行Photoshop兼容的颜色减淡（线性）合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id205" id="id205">omPsSubtractive</a></span>，则执行Photoshop兼容的颜色加深（线性）合成在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id206" id="id206">omPsMultiplicative</a></span> ，则执行Photoshop兼容的乘法合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id207" id="id207">omPsScreen</a></span> ，则会进行Photoshop兼容的屏幕合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id208" id="id208">omPsOverlay</a></span> ，则会进行Photoshop兼容的叠加合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id209" id="id209">omPsHardLight</a></span> ，则会进行Photoshop兼容的硬光合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id210" id="id210">omPsSoftLight</a></span> ，则会进行Photoshop兼容的柔光合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id211" id="id211">omPsColorDodge</a></span> 则会进行Photoshop兼容的颜色减淡合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id212" id="id212">omPsColorDodge5</a></span> 则会进行与Photoshop版本5.x以下兼容的颜色减淡合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id213" id="id213">omPsColorBurn</a></span> 则会进行Photoshop兼容的颜色加深合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id214" id="id214">omPsLighten</a></span> ，则进行Photoshop兼容的变浅合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id215" id="id215">omPsDarken</a></span> ，则进行Photoshop兼容的变暗合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id216" id="id216">omPsDifference</a></span> ，则会进行Photoshop兼容的差值合成（Difference Blend Mode）（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id217" id="id217">omPsDifference5</a></span> ，则Photoshop的版本5.x以下会进行兼容的差值合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id218" id="id218">omPsExclusion</a></span> 则会执行与Photoshop兼容的排除合成（Exclusion Blend Mode）（当前版本尚未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id219" id="id219">omAdditive</a></span> ，则进行加法合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id220" id="id220">omSubtractive</a></span> ，则进行减法合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id221" id="id221">omMultiplicative</a></span> ，则执行乘法合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id222" id="id222">omDodge</a></span> ，则会进行颜色减淡合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id223" id="id223">omDarken</a></span> ，则进行变暗合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id224" id="id224">omLighten</a></span> ，则进行变亮合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id225" id="id225">omScreen</a></span>，则进行屏幕乘法合成（在当前版本中未实现）。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id226" id="id226">omAlpha</a></span> ，则进行alpha合成。<br />
-				<span class="script">如果指定为<a class="targanchor" name="id227" id="id227">omAddAlpha</a></span> 则进行加法alpha合成。在这种情况下，如果目标层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>属性为dfOpaque且 <a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为假值，则可以通过为type参数指定stFastLinear来进行线性插值。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id203" id="id203">omPsNormal</a></span> ，则进行Photoshop兼容的alpha混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id204" id="id204">omPsAdditive</a></span> ，则会进行Photoshop兼容的颜色减淡（线性）混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id205" id="id205">omPsSubtractive</a></span>，则执行Photoshop兼容的颜色加深（线性）混合在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id206" id="id206">omPsMultiplicative</a></span> ，则执行Photoshop兼容的乘法混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id207" id="id207">omPsScreen</a></span> ，则会进行Photoshop兼容的屏幕混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id208" id="id208">omPsOverlay</a></span> ，则会进行Photoshop兼容的叠加混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id209" id="id209">omPsHardLight</a></span> ，则会进行Photoshop兼容的硬光混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id210" id="id210">omPsSoftLight</a></span> ，则会进行Photoshop兼容的柔光混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id211" id="id211">omPsColorDodge</a></span> 则会进行Photoshop兼容的颜色减淡混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id212" id="id212">omPsColorDodge5</a></span> 则会进行与Photoshop版本5.x以下兼容的颜色减淡混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id213" id="id213">omPsColorBurn</a></span> 则会进行Photoshop兼容的颜色加深混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id214" id="id214">omPsLighten</a></span> ，则进行Photoshop兼容的变亮混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id215" id="id215">omPsDarken</a></span> ，则进行Photoshop兼容的变暗混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id216" id="id216">omPsDifference</a></span> ，则会进行Photoshop兼容的差异混合（Difference Blend Mode）（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id217" id="id217">omPsDifference5</a></span> ，则Photoshop的版本5.x以下会进行兼容的差异混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id218" id="id218">omPsExclusion</a></span> 则会执行与Photoshop兼容的排除混合（Exclusion Blend Mode）（当前版本尚未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id219" id="id219">omAdditive</a></span> ，则进行加法混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id220" id="id220">omSubtractive</a></span> ，则进行减法混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id221" id="id221">omMultiplicative</a></span> ，则执行乘法混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id222" id="id222">omDodge</a></span> ，则会进行颜色减淡混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id223" id="id223">omDarken</a></span> ，则进行变暗混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id224" id="id224">omLighten</a></span> ，则进行变亮混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id225" id="id225">omScreen</a></span>，则进行屏幕乘法混合（在当前版本中未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id226" id="id226">omAlpha</a></span> ，则进行alpha混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id227" id="id227">omAddAlpha</a></span> 则进行加法alpha混合。在这种情况下，如果目标层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>属性为dfOpaque且 <a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为假值，则可以通过为type参数指定stFastLinear来进行线性插值。<br />
 				<span class="script">如果指定为<a class="targanchor" name="id228" id="id228">omOpaque</a></span> ，则忽略src的alpha信息，src始终被视为完全不透明。在这种情况下，如果目标层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性为 dfOpaque 且 <a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为假值，则可以通过为type参数指定stFastLinear来进行线性插值。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">opa</span></td>
