@@ -19,20 +19,24 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-ラベル</dd>
+标签</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_WaveSoundBuffer.html">WaveSoundBuffer类</a>的成员属性 (只读)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　ラベルを表すオブジェクトを得ることができます。<br />
+		<!-- 　ラベルを表すオブジェクトを得ることができます。<br />
 		　このオブジェクトは辞書配列で、それぞれ、ループ情報中のラベルの名前をメンバ名とした要素が入っています。それぞれの要素も辞書配列で、name メンバはラベルの名前を表し、position メンバはミリ秒単位でのラベルの位置を表し、samplePosition はサンプル数単位でのラベルの位置を表しています。<br />
-		　この辞書配列は只读であると考えてください。値を代入したり、新しいメンバを作成しても反映されることはありません。<br />
+		　この辞書配列は只读であると考えてください。値を代入したり、新しいメンバを作成しても反映されることはありません。<br /> -->
+
+		　可以获得表示标签的对象。<br />
+		　该对象是一个字典，每个数组都包含一个元素，每个元素都是字典。该元素以循环信息中标签的名称作为成员名称，name成员表示标签的名称，position成员表示标签以毫秒为单位的位置，samplePosition表示标签以样本数为单位的位置。<br />
+		　请认为这个字典只是读的。赋值或创建新成员不会反映这些值。<br />
 <code class="bq"><span class="weak">例:</span><br />var&nbsp;buf&nbsp;=&nbsp;new&nbsp;WaveSoundBuffer(window);<br />
 (略)<br />
-debug.message(buf.labels['start'].position);&nbsp;//&nbsp;'start'&nbsp;というラベル名の位置をミリ秒単位で<br />
-debug.message(buf.labels['start'].samplePosition);&nbsp;//&nbsp;'start'&nbsp;というラベル名の位置をサンプル数単位で<br />
+debug.message(buf.labels['start'].position);&nbsp;//&nbsp;'start'&nbsp;标签以毫秒为单位的位置 <br />
+debug.message(buf.labels['start'].samplePosition);&nbsp;//&nbsp;'start'&nbsp;标签以样本数为单位的位置<br />
 </code>
 	</dd>
 </dl>

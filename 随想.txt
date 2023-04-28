@@ -2,7 +2,6 @@ krkrz能否和KAG兼容？
 能否支持UTF-8 等多编码
 插件的加载、编写
 gif
-复制是传值还是传引用
+window的usemousekey未翻译  インサーションフィルタ 再翻译  getVisBuffer  WaveSoundBuffer.samplePosition
 弹出框（事件解锁、音乐提示）
 Window.drawDevice吉里吉里2.28版本也没有
-Window.onCloseQuery 再译

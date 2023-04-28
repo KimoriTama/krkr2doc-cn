@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-ミキシング対象レイヤの設定</dd>
+	设置混合层</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_VideoOverlay.html">VideoOverlay类</a>的成员方法<br />
@@ -32,7 +32,7 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="setMixingLayer の引数">
 <tr><td valign="top"><span class="argname">layer</span></td>
-<td>				レイヤー<br />
+<td>				层<br />
 			</td></tr>
 </table>
 </dd>
@@ -42,13 +42,18 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		指定したレイヤーとビデオのミキシングを行います。<br />
+	<!-- 	指定したレイヤーとビデオのミキシングを行います。<br />
 		ミキシングはこのメソッドが呼び出された時のレイヤー画像と行われます。<br />
 		レイヤー画像の更新を反映するには、再度このメソッドを呼び出す必要があります。<br />
 		<a class="jump" href="../Events/f_VideoOverlay_onFrameUpdate.html">VideoOverlay.onFrameUpdate</a> を使用して、
 		レイヤー画像が更新されたことを調べてこのメソッドを呼び出すようにすれば、自動的に更新が反映されるようになります。
-		onFrameUpdateで毎フレームこのメソッドを呼び出した場合、かなり負荷がかかりますのでそれは避けた方が良いです。<br />
-		ミキサーモードでのみ利用可能です。
+		onFrameUpdateで毎フレームこのメソッドを呼び出した場合、かなり負荷がかかりますのでそれは避けた方が良いです。<br /> -->
+		混合指定的图层和视频。<br />
+		调用该方法时与指定的图层图像进行混合。<br />
+		要反映层画面的的更新，必须再次调用此方法。<br />
+		使用<a class="jump" href="../Events/f_VideoOverlay_onFrameUpdate.html">VideoOverlay.onFrameUpdate</a> ，检查层画面是否更新并调用此方法就能够自动反映层画面的更新。
+		通过onFrameUpdate事件每帧都调用此方法的情况下，会产生较大的负荷请尽量避免。<br />
+		仅在混合模式下可用。
 	</dd>
 </dl>
 </div></div>

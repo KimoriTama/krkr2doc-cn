@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-画像の保存</dd>
+保存图像</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,18 +32,26 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="saveLayerImage の引数">
 <tr><td valign="top"><span class="argname">name</span></td>
-<td>				　保存するストレージ名を指定します。<br />
+<td>				　指定要保存的storage名。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">type</span></td>
-<td>				　保存する画像形式を文字列で指定します。現バージョンでは以下の形式を指定可能です。<br />
-				<br />
-				<dl>				<dt>&quot;<a class="targanchor" name="id237" id="id237">bmp</a>&quot; または &quot;<a class="targanchor" name="id238" id="id238">bmp32</a>&quot;</dt>				<dd>					　32bpp の BMP です。アルファチャンネル(マスク)も保存します。<br />
-				</dd>				<br />
-				<dt>&quot;<a class="targanchor" name="id239" id="id239">bmp24</a>&quot;</dt>				<dd>					　24bpp の BMP です。アルファチャンネル(マスク)は保存されません。<br />
-				</dd>				<br />
-				<dt>&quot;<a class="targanchor" name="id240" id="id240">bmp8</a>&quot;</dt>				<dd>					　8bpp の BMP です。アルファチャンネル(マスク)は保存されません。画像は
-					252色の固定パレットによる4×4組織化ディザリングを用いて減色されます。<br />
-				</dd>				</dl>			</td></tr>
+<td> 　指定保存图像格式的字符串。现版本可指定的格式如下。<br />
+	<br />
+	<dl>
+		<dt>&quot;<a class="targanchor" name="id237" id="id237">bmp</a>&quot; 或是 &quot;<a class="targanchor"
+				name="id238" id="id238">bmp32</a>&quot;</dt>
+		<dd> 　32bpp 的 BMP 。aplha通道（遮罩）也会保存。<br />
+		</dd> <br />
+		<dt>&quot;<a class="targanchor" name="id239" id="id239">bmp24</a>&quot;</dt>
+		<dd> 　24bpp 的 BMP 。aplha通道（遮罩）不会保存。<br />
+		</dd> <br />
+		<dt>&quot;<a class="targanchor" name="id240" id="id240">bmp8</a>&quot;</dt>
+		<dd> 　8bpp 的 BMP 。aplha通道（遮罩）不会保存。图像为252色的 アルファチャンネル(マスク)は保存されません。画像は
+			252色の固定パレットによる4×4組織化ディザリングを用いて減色されます。<br />
+		</dd>
+	</dl>
+</td>
+</tr>
 </table>
 </dd>
 <dt>返回值</dt>
@@ -52,8 +60,8 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　name で指定したストレージ (ファイル) に、type で指定した画像形式でファイルを保存します。<br />
-		　保存されるのはレイヤの画像で、領域画像は保存することはできません。<br />
+		　将name 指定的storage（文件）以type指定的图像格式保存为文件。<br />
+		　保存的层图像无法保存为领域图像。<br />
 	</dd>
 </dl>
 </div></div>

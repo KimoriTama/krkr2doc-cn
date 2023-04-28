@@ -19,25 +19,32 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-フラグ</dd>
+旗标</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_WaveSoundBuffer.html">WaveSoundBuffer类</a>的成员属性 (只读)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　フラグを表すオブジェクトを得ることができます。<br />
+		<!-- 　フラグを表すオブジェクトを得ることができます。<br />
 		　このオブジェクトには 0 ～ 15 のプロパティがあり、それぞれ各フラグの値を表しています。プロパティには間接メンバ選択演算子 ('[ ]' 演算子) を用いてアクセスすることができます。これらのプロパティには值可写。値は 0 ～ 9999 の範囲であり、これを下回ったり、上回ることはできません。<br />
 		　このオブジェクトの count プロパティは常に 16 を返します。<br />
 		　このオブジェクトには reset メソッドがあり、このメソッドを実行すると、全てのフラグが 0 にリセットされます。<br />
 		　メディアを開いていない場合は、このオブジェクトのプロパティに値を設定しても無視されます。<br />
 		　このオブジェクトは一見配列オブジェクトにも見えますが、いわゆるTJSの配列オブジェクト('Array' クラスのオブジェクト) ではありません。<br />
-		　フラグは <a class="jump" href="../Methods/f_WaveSoundBuffer_open.html">WaveSoundBuffer.open</a> メソッドで全て 0 にリセットされます。<br />
+		　フラグは <a class="jump" href="../Methods/f_WaveSoundBuffer_open.html">WaveSoundBuffer.open</a> メソッドで全て 0 にリセットされます。<br /> -->			
+		　可以获得表示旗标的对象。<br />
+		　该对象具有0～15的属性，分别表示每个标志的值。可以使用间接成员选择运算符（'[ ]'运算符）访问属性。这些属性的值可写。值范围为0到9999，不能低于或超过。<br />
+		　此对象的count属性始终返回16。<br />
+		　此对象具有reset方法，执行此方法后，所有标志都将重置为0。<br />
+		　如果音乐未加载，则为该对象的属性设置值将被忽略。<br />
+		　此对象看起来像数组对象，但不是所谓的TJS数组对象（'Array' 类对象）。<br />
+		　标记会在 <a class="jump" href="../Methods/f_WaveSoundBuffer_open.html">WaveSoundBuffer.open</a> 方法中全部重置为0。<br />
 <code class="bq"><span class="weak">例:</span><br />var&nbsp;buf&nbsp;=&nbsp;new&nbsp;WaveSoundBuffer(window);<br />
 (略)<br />
-buf.flags.reset();&nbsp;//&nbsp;全てのフラグを&nbsp;0&nbsp;にリセット<br />
-var&nbsp;cnt&nbsp;=&nbsp;buf.flags.count;&nbsp;//&nbsp;cnt&nbsp;には&nbsp;16&nbsp;が入る<br />
-buf.flags[4]&nbsp;=&nbsp;34;&nbsp;//&nbsp;4番のフラグに34を代入<br />
+buf.flags.reset();&nbsp;//&nbsp;重置全部的旗标为&nbsp;0&nbsp;<br />
+var&nbsp;cnt&nbsp;=&nbsp;buf.flags.count;&nbsp;//&nbsp;cnt&nbsp;赋值为&nbsp;16&nbsp;<br />
+buf.flags[4]&nbsp;=&nbsp;34;&nbsp;//&nbsp;为第4个旗标赋值34<br />
 </code>
 	</dd>
 </dl>

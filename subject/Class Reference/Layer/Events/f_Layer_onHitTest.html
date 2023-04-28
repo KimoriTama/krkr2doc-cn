@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-当たり判定</dd>
+	点击判定时</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的事件<br />
@@ -32,20 +32,20 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onHitTest の引数">
 <tr><td valign="top"><span class="argname">x</span></td>
-<td>				　当たり判定を行う位置の ( レイヤの表示座標内での )  x 座標です。<br />
+<td>				　进行点击判定的位置 ( 层的显示坐标 )  x 坐标。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">y</span></td>
-<td>				　当たり判定を行う位置の ( レイヤの表示座標内での )  y 座標です。<br />
+<td>				　进行点击判定的位置 ( 层的显示坐标 )  y 坐标。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">hit</span></td>
-<td>				　当たり判定の結果、当たっている場合は真, はずれている場合は偽になります。
-				当たり判定の結果は、同名のスーパークラスのイベントのこの引数に渡してください。<br />
+<td>				　点击判定的结果，命中时为真值，未命中则为假值。
+				请将点击判定的结果，用父类的同名事件的此参数传递。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		　レイヤ内のある点に対して、当たり判定 ( ヒットテスト ) が行われる場合に呼び出されます。<br />
+		<!-- 　レイヤ内のある点に対して、当たり判定 ( ヒットテスト ) が行われる場合に呼び出されます。<br />
 		　当たり判定の結果は、スーパークラスのこのイベントの第３引数に当たり判定の結果を
 		渡してください ( 第１引数と
 		第２引数はそのまま渡してください )。<br />
@@ -54,7 +54,13 @@
 		　このイベントは、<a class="jump" href="../Properties/f_Layer_hitThreshold.html">Layer.hitThreshold</a> や <a class="jump" href="../Properties/f_Layer_hitType.html">Layer.hitType</a> で行われる
 		当たり判定で「当たっている」という判定がされた後に呼び出されます。したがって
 		Layer.hitThreshold や Layer.hitType で「当たってない」と判定されている場合は
-		このイベントは呼び出されません。<br />
+		このイベントは呼び出されません。<br /> -->
+		　当对层内某点进行点击判定 ( hit test ) 时调用。<br />
+		　点击判定的结果，请用父类的同名事件的第三参数传递（第一参数与第二参数请保持原样）。<br />
+		　点击判定的结果，命中时鼠标事件不传递，在此层处理。<br />
+		　未命中时则事件传递，鼠标事件在更深层处理。<br />
+		　此事件在<a class="jump" href="../Properties/f_Layer_hitThreshold.html">Layer.hitThreshold</a> 与 <a class="jump" href="../Properties/f_Layer_hitType.html">Layer.hitType</a> 进行的点击判定后结果为「命中」后被调用。因此
+		Layer.hitThreshold 与 Layer.hitType 判定为「未命中」时，不会调用此事件。<br />
 	</dd>
 </dl>
 </div></div>

@@ -19,20 +19,17 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-親レイヤのヒントを引き継ぐか</dd>
+是否继承父层提示</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　親レイヤのヒントを引き継ぐかどうかを表します。值可写。<br />
-		　真の場合は、<a class="jump" href="f_Layer_hint.html">Layer.hint</a> プロパティが空文字列の場合は、親レイヤをさか
-		のぼり、ヒントが設定されているレイヤのヒントをそのまま引き継いで
-		表示します。Layer.hint プロパティが空文字列でなかった場合はそれを表示します。<br />
+		　表示是否继承父层提示。值可写。<br />
+		　为真值时<a class="jump" href="f_Layer_hint.html">Layer.hint</a> 属性为空字符串时，追溯设置了提示的父层并继承其提示。Layer.hint 属性不为空字符串时显示其内容。<br />
  
-		　偽の場合は、Layer.hint プロパティが空文字列でなければそれを表示し、空文字列であれば
-		ヒントは表示しません。<br />
+		　为假值时，Layer.hint 属性不为空字符串时则显示其内容，否则不显示。<br />
 	</dd>
 </dl>
 </div></div>

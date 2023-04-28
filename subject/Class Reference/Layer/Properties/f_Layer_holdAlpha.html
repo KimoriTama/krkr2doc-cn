@@ -19,32 +19,32 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-アルファチャンネルを保護するか</dd>
+是否保护alpha通道</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　描画においてアルファチャンネルを保護するかどうかを指定します。值可写。<br />
-		　デフォルトでは偽です。<br />
-		　吉里吉里 2.23 beta 1 以前では、各描画メソッドに hda というパラメータがあり、それがこのプロパティと同じ動作をしていましたが、2.23 beta 2 よりプロパティとして分離されました。<br />
-		　いくつかの描画演算では、<a class="jump" href="f_Layer_face.html">Layer.face</a> プロパティが <a class="targanchor" name="id272" id="id272">dfOpaque</a> のとき、画像のアルファチャンネル(マスク画像)を保持するかどうかをこのプロパティで指定できます。多くのメソッドでは、このプロパティを偽にした方が高速な描画が可能です。<a class="jump" href="f_Layer_type.html">Layer.type</a> が <a class="targanchor" name="id273" id="id273">ltAlpha</a> でも <a class="targanchor" name="id274" id="id274">ltAddAlpha</a> でも無い場合は、画像のアルファチャンネルは使用されないので、このプロパティを偽に設定しても問題有りません。ただし、このプロパティが偽だとアルファチャンネルは破壊されます。<br />
+		　绘制时是否进行alpha通道保护。值可写。<br />
+		　默认为假值。<br />
+		　吉里吉里 2.23 beta 1 之前，各绘制方法有名为hda的参数，它与此属性的作用相同，2.23 beta 2 之后作为此属性被分离。<br />
+		　存在数个绘制运算当<a class="jump" href="f_Layer_face.html">Layer.face</a> 属性为 <a class="targanchor" name="id272" id="id272">dfOpaque</a> 时，可通过此属性指定是否保护alpha通道（遮罩图像）。大多数方法在此属性指定为假值时可以进行高速绘制。<a class="jump" href="f_Layer_type.html">Layer.type</a> 既非 <a class="targanchor" name="id273" id="id273">ltAlpha</a> 也非 <a class="targanchor" name="id274" id="id274">ltAddAlpha</a> 的情况下，图像的alpha通道不会被使用，所以将此属性设置为假值也不会有问题。只不过此属性为假值时alpha通道会被破坏。<br />
 		<br />
-		　以下のメソッドはこのプロパティの影響を受けません。<br />
+		　以下的方法不受此属性影响。<br />
 		<a class="jump" href="../Methods/f_Layer_loadImages.html">Layer.loadImages</a><br />
 		<a class="jump" href="../Methods/f_Layer_loadProvinceImage.html">Layer.loadProvinceImage</a><br />
 		<a class="jump" href="../Methods/f_Layer_setMainPixel.html">Layer.setMainPixel</a><br />
 		<a class="jump" href="../Methods/f_Layer_setMaskPixel.html">Layer.setMaskPixel</a><br />
 		<a class="jump" href="../Methods/f_Layer_setProvincePixel.html">Layer.setProvincePixel</a><br />
 		<a class="jump" href="../Methods/f_Layer_piledCopy.html">Layer.piledCopy</a><br />
-		<a class="jump" href="../Methods/f_Layer_adjustGamma.html">Layer.adjustGamma</a>(常にアルファチャンネルは保護されます)<br />
-		<a class="jump" href="../Methods/f_Layer_doGrayScale.html">Layer.doGrayScale</a>(常にアルファチャンネルは保護されます)<br />
+		<a class="jump" href="../Methods/f_Layer_adjustGamma.html">Layer.adjustGamma</a>(总是保护alpha通道)<br />
+		<a class="jump" href="../Methods/f_Layer_doGrayScale.html">Layer.doGrayScale</a>(总是保护alpha通道)<br />
 		<a class="jump" href="../Methods/f_Layer_flipLR.html">Layer.flipLR</a><br />
 		<a class="jump" href="../Methods/f_Layer_flipUD.html">Layer.flipUD</a><br />
 		<a class="jump" href="../Methods/f_Layer_assignImages.html">Layer.assignImages</a><br />
 		<br />
-		　以下のメソッドはこのプロパティの影響を受けます。<br />
+		　以下的方法受此属性影响。<br />
 		<a class="jump" href="../Methods/f_Layer_copyRect.html">Layer.copyRect</a><br />
 		<a class="jump" href="../Methods/f_Layer_stretchCopy.html">Layer.stretchCopy</a><br />
 		<a class="jump" href="../Methods/f_Layer_affineCopy.html">Layer.affineCopy</a><br />

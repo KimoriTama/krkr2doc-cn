@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-メッセージ受信関数の登録/登録削除</dd>
+	注册/删除消息接收函数</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Window.html">Window类</a>的成员方法<br />
@@ -32,23 +32,33 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="registerMessageReceiver の引数">
 <tr><td valign="top"><span class="argname">mode</span></td>
-<td>				　登録するか、登録削除するかどうかを指定します。<br />
+<!-- <td>				　登録するか、登録削除するかどうかを指定します。<br />
 				　<a class="targanchor" name="id417" id="id417">wrmRegister</a> を指定すると登録になります。<a class="targanchor" name="id418" id="id418">wrmUnregister</a> を
 				指定すると登録削除になります。<br />
-				　wrm で始まる定数は tp_stub.h に定義されています。<br />
+				　wrm で始まる定数は tp_stub.h に定義されています。<br /> -->	
+<td>　指定是注册还是取消注册。<br />
+	　指定为<a class="targanchor" name="id417" id="id417">wrmRegister</a> 时注册。如果指定为<a class="targanchor" name="id418" id="id418">wrmUnregister</a> 则取消注册。<br />
+	　以wrm 开头的常数在 tp_stub.h 中定义。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">func</span></td>
-<td>				　メッセージ受信関数を指定します。<br />
+<!-- <td>				　メッセージ受信関数を指定します。<br />
 				　メッセージ受信関数は bool __stdcall func(void *userdata, tTVPWindowMessage *Message)
 				の形式である必要があり、このメソッドに渡す際にその関数ポインタを整数型にキャストして渡す
 				必要があります。<br />
 				　構造体 tTVPWindowMessage は tp_stub.h に定義されています。<br />
-				　この関数が true を返すと吉里吉里本体側はそのウィンドウメッセージに関知しなくなります。<br />
+				　この関数が true を返すと吉里吉里本体側はそのウィンドウメッセージに関知しなくなります。<br /> -->
+<td>				　指定消息接收函数。<br />
+	　消息接收函数必须采用 bool__stdcall func（void *userdata，tTVPWindowMessage *Message）的形式，在传递给该方法时，必须将该函数指针转换为整数型。<br />
+	　结构体 tTVPWindowMessage在tp_stub.h中定义。<br />
+	　如果该函数返回true，则吉里吉里主体侧将不再处理该窗口消息。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">userdata</span></td>
-<td>				　func 引数で指定された受信関数の userdata 引数に渡すためのデータポインタを指定します。<br />
+<!-- <td>				　func 引数で指定された受信関数の userdata 引数に渡すためのデータポインタを指定します。<br />
 				　このメソッドに渡す際にはそのポインタを整数型にキャストして渡す必要があります。<br />
-				　この引数は mode 引数が wrmRegister でないときは無視されます。<br />
+				　この引数は mode 引数が wrmRegister でないときは無視されます。<br /> -->
+<td>				　指定用于传递给func参数指定的消息接收函数的userdata参数的数据指针。<br />
+	　在传递给此方法时，必须将指针转换为整数类型。<br />
+	　当mode参数不是wrmRegister时，将忽略该参数。<br />
 			</td></tr>
 </table>
 </dd>
@@ -58,14 +68,17 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　このメソッドは C++ 等で記述されたプラグインから利用されることを想定しているメソッドです。TJS2
+		<!-- 　このメソッドは C++ 等で記述されたプラグインから利用されることを想定しているメソッドです。TJS2
 		からは正常に利用できません。<br />
 		　このメソッドでは、このウィンドウを通過するメッセージをトラップするためのメッセージ受信関数を
 		登録することができます。メッセージ受信関数では通常のウィンドウメッセージの他、
 		TVP_WM_DETACH と TVP_WM_ATTACH という２つの重要なメッセージもトラップすることができ、
 		ウィンドウが再構築や破棄されるタイミングにおいて、子ウィンドウを取り外すというような
 		用途に使用できます。<br />
-		　吉里吉里ソース配布パッケージ中の src/plugins/win32/wmrdump に簡単な使用法の説明があります。<br />
+		　吉里吉里ソース配布パッケージ中の src/plugins/win32/wmrdump に簡単な使用法の説明があります。<br /> -->
+　此方法是设想从C++等中编写的插件中使用的方法。TJS2无法正常使用。<br />
+　此方法允许您注册一个消息接收函数来捕获通过此窗口的消息。在消息接收函数中，除了通常的窗口消息之外，TVP_WM_DETACH和TVP_WM_您还可以捕获两条重要消息（ATTACH），它们可用于在窗口重建或销毁时移除子窗口。<br />
+　吉里吉里发布的源码包中的src/plugins/win32/wmrdump有一个简单的用法说明。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

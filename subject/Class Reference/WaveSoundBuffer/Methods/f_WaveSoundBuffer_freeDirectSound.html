@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-DirectSound の解放</dd>
+	释放DirectSound</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_WaveSoundBuffer.html">WaveSoundBuffer类</a>的成员方法<br />
@@ -38,11 +38,14 @@ DirectSound の解放</dd>
 </dd>
 <dt>说明</dt>
 <dd>
-		　DirectSound を解放します。すべての WaveSoundBuffer クラスのオブジェクトは停止状態に
+		<!-- 　DirectSound を解放します。すべての WaveSoundBuffer クラスのオブジェクトは停止状態に
 		なります。<br />
 		　DirectSound と WaveMapper ( MCI 等 ) による再生を同時に行えない環境などで DirectSound を
 		解放するためにこのメソッドを使います。<br />
-		　このメソッドは WaveSoundBuffer クラス上にしか存在しません (WaveSoundBufferから作られたオブジェクト上にこのメソッドはありません)。使用する際は WaveSoundBuffer.freeDirectSound(); としてください。<br />
+		　このメソッドは WaveSoundBuffer クラス上にしか存在しません (WaveSoundBufferから作られたオブジェクト上にこのメソッドはありません)。使用する際は WaveSoundBuffer.freeDirectSound(); としてください。<br /> -->
+		　释放DirectSound。所有WaveSoundBuffer类的对象将处于停止状态。<br />
+		　此方法用于在无法同时播放DirectSound和WaveMapper（MCI等）的环境中释放DirectSound。<br />
+		　此方法仅存在于WaveSoundBuffer类上（该方法不存在于由WaveSoundBuffer创建的对象上）。使用时请使用WaveSoundBuffer.freeDirectSound(); 。<br />
 	</dd>
 </dl>
 </div></div>

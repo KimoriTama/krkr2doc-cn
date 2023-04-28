@@ -19,22 +19,21 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-レイヤが画像を持っているかどうか</dd>
+层是否持有图像</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　レイヤが画像を持っているかどうかを表します。值可写。<br />
-		　真を指定するとレイヤは画像を持ちます。これがデフォルトです。<br />
-		　偽を指定するとレイヤの画像は開放され、レイヤは画像を持たなくなります。<br />
-		　<a class="jump" href="f_Layer_type.html">Layer.type</a>プロパティを設定するとhasImageは真にリセットされます。<br />
-		　レイヤが画像を持たない場合、<a class="jump" href="f_Layer_type.html">Layer.type</a>が<a class="targanchor" name="id241" id="id241">ltOpaque</a>ならばレイヤは全面
-		<a class="jump" href="f_Layer_neutralColor.html">Layer.neutralColor</a>で塗りつぶされているとして表示されます。<br />
-		　それ以外のタイプの場合は完全に透明として扱われます。<br />
-		　このプロパティが偽のレイヤは<a class="jump" href="f_Layer_hitType.html">Layer.hitType</a>がhtMaskの場合は全面が不透明度0 (完全に透明)であると見なされます。また、描画やフォントを操作することはできません。<br />
-		　このプロパティが偽のレイヤは、通常、複数の子レイヤをまとめ、自分自身は透明なだけのレイヤとして使います。
+		　表示层是否持有图像。值可写。<br />
+		　为真值时层持有图像。这是默认值。<br />
+		　为假值则层中的图像将被释放，而层不具有图像。<br />
+		　设置<a class="jump" href="f_Layer_type.html">Layer.type</a>属性会将hasImage重置为真值。<br />
+		　如果层没有图像，并且<a class="jump" href="f_Layer_type.html">Layer.type</a>为<a class="targanchor" name="id241" id="id241">ltOpaque</a>则层完全填充为<a class="jump" href="f_Layer_neutralColor.html">Layer.neutralColor</a>的颜色。<br />
+		　其他类型将被视为完全透明。<br />
+		　此属性为假值的层且<a class="jump" href="f_Layer_hitType.html">Layer.hitType</a>为htMask的情况下被视为整体不透明度为0（完全透明）。另外，无法进行绘制与字体的操作。<br />
+		　此属性为假值时，通常被用于整合复数的子层，而自身作为透明的层的作用。
 	</dd>
 </dl>
 </div></div>

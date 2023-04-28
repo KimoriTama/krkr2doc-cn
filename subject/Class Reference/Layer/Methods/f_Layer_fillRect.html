@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-矩形塗りつぶし</dd>
+填充矩形</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,26 +32,34 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="fillRect の引数">
 <tr><td valign="top"><span class="argname">left</span></td>
-<td>				　塗りつぶす矩形の左端位置を ( 画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定填充矩形（层的图像坐标的）左端位置。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">top</span></td>
-<td>				　塗りつぶす矩形の上端位置を ( 画像位置における ) ピクセル単位で指定します。<br />
+<td>				　塗以像素为单位指定填充矩形（层的图像坐标的）上端位置。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">width</span></td>
-<td>				　塗りつぶす矩形の横幅を ( 画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定填充矩形（层的图像坐标）的宽度。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">height</span></td>
-<td>				　塗りつぶす矩形の縦幅を ( 画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定填充矩形（层的图像坐标）的高度。<br />
 			</td></tr>
-<tr><td valign="top"><span class="argname">value</span></td>
-<td>				　塗りつぶす色や値を指定します。<br />
-				　この値は、<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティの値によって意味が変わります。<br />
-				<span class="script"><a class="targanchor" name="id71" id="id71">dfAlpha</a> (または<a class="targanchor" name="id72" id="id72">dfBoth</a>)  </span> : 0xAARRGGBB 形式で不透明度と色を指定してください。メインとマスクの両方が塗りつぶされます。<br />
-				<span class="script"><a class="targanchor" name="id73" id="id73">dfAddAlpha</a>              </span> : 0xAARRGGBB 形式で不透明度と色を指定してください。メインとマスクの両方が塗りつぶされます。<br />
-				<span class="script"><a class="targanchor" name="id74" id="id74">dfOpaque</a> (または<a class="targanchor" name="id75" id="id75">dfMain</a>) </span> : 0xRRGGBB 形式で色を指定してください。<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> プロパティが真の時は、メインのみが塗りつぶされ、マスクはそのままになります。偽の時は dfAlpha や dfAddAlpha の時と同じく、0xAARRGGBB 形式での不透明度と色の指定を受け付け、メインとマスクの両方が塗りつぶされます。<br />
-				<span class="script"><a class="targanchor" name="id76" id="id76">dfMask</a>                  </span> : マスク(不透明度)の値 ( 0 ～ 255 ) を指定してください。マスクのみが塗りつぶされ、メインはそのままになります。<br />
-				<span class="script"><a class="targanchor" name="id77" id="id77">dfProvince</a>              </span> : 領域の値 ( 0 ～ 255 ) を指定してください。領域のみが塗りつぶされます。<br />
-			</td></tr>
+<tr>
+	<td valign="top"><span class="argname">value</span></td>
+	<td> 　指定填充的颜色或值。<br />
+		　此值随<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>属性的值不同而意义不同。<br />
+		<span class="script"><a class="targanchor" name="id71" id="id71">dfAlpha</a> (或是<a class="targanchor"
+				name="id72" id="id72">dfBoth</a>) </span> : 以0xAARRGGBB形式指定颜色与不透明度。同时填充主图像与遮罩图像。<br />
+		<span class="script"><a class="targanchor" name="id73" id="id73">dfAddAlpha</a> </span> : 以0xAARRGGBB形式指定颜色与不透明度。同时填充主图像与遮罩图像。<br />
+		<span class="script"><a class="targanchor" name="id74" id="id74">dfOpaque</a> (或是<a class="targanchor"
+				name="id75" id="id75">dfMain</a>) </span> : 以0xRRGGBB 形式指定颜色。<a class="jump"
+			href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为真值时，只会填充主图像，遮罩将保持不变。为假值时，与
+		dfAlpha 和 dfAddAlpha 时相同，以0xAARRGGBB 形式指定颜色与不透明度。同时填充主图像与遮罩图像。<br />
+		<span class="script"><a class="targanchor" name="id76" id="id76">dfMask</a> </span> : 指定遮罩(不透明度)的值 ( 0 ～ 255 )
+		。只会填充遮罩，主图像保持不变。<br />
+		<span class="script"><a class="targanchor" name="id77" id="id77">dfProvince</a> </span> : 指定领域的值 ( 0 ～ 255 )
+		。只有领域图像会被填充。<br />
+	</td>
+</tr>
 </table>
 </dd>
 <dt>返回值</dt>
@@ -60,7 +68,7 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定されたレイヤ画像の矩形を指定された方法で塗りつぶします。<br />
+		　以指定的方法填充指定的层图像的矩形。<br />
 	</dd>
 </dl>
 </div></div>

@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-フォント選択ダイアログボックスの表示</dd>
+	显示字体选择对话框</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Font.html">Font类</a>的成员方法<br />
@@ -32,36 +32,34 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="doUserSelect の引数">
 <tr><td valign="top"><span class="argname">flags</span></td>
-<td>				　フォント選択ダイアログボックスのオプションを指定します。<br />
-				　次の値のビット論理和による組み合わせ指定します。<br />
-				<span class="script"><a class="targanchor" name="id16" id="id16">fsfFixedPitch</a>    </span> : 固定ピッチフォントのみ表示します<br />
-				<span class="script"><a class="targanchor" name="id17" id="id17">fsfSameCharSet</a>   </span> : 同じキャラクタセットのフォントのみ表示します<br />
-				<span class="script"><a class="targanchor" name="id18" id="id18">fsfNoVertical</a>    </span> : 縦書き用フォントを表示しません<br />
-				<span class="script"><a class="targanchor" name="id19" id="id19">fsfTrueTypeOnly</a>  </span> : TrueType フォントのみ表示します<br />
-				<span class="script"><a class="targanchor" name="id20" id="id20">fsfUseFontFace</a>   </span> : 選択リストボックスをそれぞれのフォントで表示します<br />
-				　fsfSameCharSet を指定した場合は、現在選択されているフォントと同じキャラクタセットの
-				フォントが表示されます。<br />
+<td>				　指定“选择”对话框中的选项。<br />
+					　指定以下值的按位与组合。<br />
+				<span class="script"><a class="targanchor" name="id16" id="id16">fsfFixedPitch</a>    </span> : 仅显示等宽字体<br />
+				<span class="script"><a class="targanchor" name="id17" id="id17">fsfSameCharSet</a>   </span> : 仅显示相同字符集的字体<br />
+				<span class="script"><a class="targanchor" name="id18" id="id18">fsfNoVertical</a>    </span> : 不显示垂直字体<br />
+				<span class="script"><a class="targanchor" name="id19" id="id19">fsfTrueTypeOnly</a>  </span> : 仅显示TrueType字体<br />
+				<span class="script"><a class="targanchor" name="id20" id="id20">fsfUseFontFace</a>   </span> : 选择列表框用各自的字体显示<br />
+				　如果指定fsfSameCharSet 则显示与当前选定字体相同的字符集字体。 <br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">caption</span></td>
-<td>				　ダイアログボックスのキャプション ( タイトルバー ) に表示する
-				文字列を指定します。<br />
+<td>				　在对话框的标题栏中显示，指定字符串。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">prompt</span></td>
-<td>				　ダイアログボックス内に表示する文字列を指定します。<br />
-				　通常はユーザに入力を促すためのメッセージを指定します。<br />
+<td>				　指定要在对话框中显示的字符串。<br />
+					　通常指定提示用户输入的消息。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sample</span></td>
-<td>				　ダイアログボックス内の「サンプル」の部分に表示する文字列を指定します。<br />
-				　ユーザは、ここに表示されるサンプルで実際のフォントを確かめることができます。<br />
+<td>				　指定要在对话框中的示例部分显示的字符串。<br />
+					　用户可以在此处显示的示例中确认实际的字体。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>ユーザが OK ボタンを選択した場合は true、それ以外の場合は false が戻ります</result></dd>
+<result>如果用户选择确定按钮，则返回真值，否则返回假值</result></dd>
 <dt>说明</dt>
 <dd>
-		　ユーザにフォントを選択させるためのダイアログボックスを開きます。<br />
+	　打开一个对话框，允许用户选择字体。<br />
 	</dd>
 </dl>
 </div></div>

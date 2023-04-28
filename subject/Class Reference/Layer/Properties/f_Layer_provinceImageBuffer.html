@@ -19,14 +19,14 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-領域画像バッファポインタ</dd>
+	领域图像缓冲区指针</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员属性 (只读)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　領域画像 ( 領域の情報を含む 8bpp のビットマップ ) の画像バッファ左上隅へのポインタ
+		<!-- 　領域画像 ( 領域の情報を含む 8bpp のビットマップ ) の画像バッファ左上隅へのポインタ
 		を表します。<br />
 		　このプロパティは、プラグインなどのために画像バッファへの直接のアクセスの手段を提供する
 		ためにあります。<br />
@@ -38,7 +38,17 @@
 		全域が領域番号 0 であると見なす必要があります。<br />
 		　画像のサイズは <a class="jump" href="f_Layer_imageWidth.html">Layer.imageWidth</a> と <a class="jump" href="f_Layer_imageHeight.html">Layer.imageHeight</a> プロパティが
 		表しています。<br />
-		　ポインタの計算方法は <a class="jump" href="f_Layer_provinceImageBufferPitch.html">Layer.provinceImageBufferPitch</a> を参照してください。<br />
+		　ポインタの計算方法は <a class="jump" href="f_Layer_provinceImageBufferPitch.html">Layer.provinceImageBufferPitch</a> を参照してください。<br /> -->
+		
+		　表示指向领域图像（包含领域信息的8bpp位图）的图像缓冲区左上角的指针。<br />
+		　此属性用于为插件等提供直接访问图像缓冲区的方法。<br />
+		　它以整数类型返回，但插件必须将其转换为适当的类型 ( const unsigned char * 等 )使用。<br />
+		　不要将值写入由此属性提供的指针。您可以写入由
+		<a class="jump" href="f_Layer_provinceImageBufferForWrite.html">Layer.provinceImageBufferForWrite</a>获得的指针。<br />
+		　如果未指定图像，则返回NULL（0）。如果未分配任何图像，则整个区域应被视为区域序号为0。<br />
+		　<a class="jump" href="f_Layer_imageWidth.html">Layer.imageWidth</a> 和 <a class="jump" href="f_Layer_imageHeight.html">Layer.imageHeight</a> 属性表示图像的大小。<br />
+		　有关如何计算指针的信息，请参见 <a class="jump" href="f_Layer_provinceImageBufferPitch.html">Layer.provinceImageBufferPitch</a> 。<br />
+		
 	</dd>
 <dt>参照</dt>
 <dd>

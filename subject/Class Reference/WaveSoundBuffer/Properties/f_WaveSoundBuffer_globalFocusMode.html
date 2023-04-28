@@ -19,20 +19,27 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-フォーカスモード</dd>
+	聚焦模式</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_WaveSoundBuffer.html">WaveSoundBuffer类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　フォーカスモードを表します。值可写。<br />
+	<!-- 	　フォーカスモードを表します。值可写。<br />
 		　フォーカスモードは、アプリケーションが最小化したときや非アクティブになったときにミュートするモードです。<br />
 		　<span class="script"><a class="targanchor" name="id366" id="id366">sgfmNeverMute</a></span>を指定すると、アプリケーションがどのような状態でもミュートはしません。<br />
 		　<span class="script"><a class="targanchor" name="id367" id="id367">sgfmMuteOnMinimize</a></span>を指定すると、アプリケーションが最小化時にミュートします。<br />
 		　<span class="script"><a class="targanchor" name="id368" id="id368">sgfmMuteOnDeactivate</a></span>を指定すると、アプリケーションが非アクティブ化したときにミュートします。<br />
 		　このプロパティは WaveSoundBuffer クラス上にしか存在しません (WaveSoundBufferから作られたオブジェクト上にこのプロパティはありません)。使用する際は WaveSoundBuffer.globalFocusMode としてください。<br />
-		　このプロパティの設定よりも、コマンドラインオプションで指定した '-wsmute' (DirectSound ミュート) の設定が優先されます。<br />
+		　このプロパティの設定よりも、コマンドラインオプションで指定した '-wsmute' (DirectSound ミュート) の設定が優先されます。<br /> -->
+		　表示聚焦模式。值可写。<br />
+		　聚焦模式是当应用程序最小化或非活动状态时静音的模式。<br />
+		　如果指定<span class="script"><a class="targanchor" name="id366" id="id366">sgfmNeverMute</a></span>，则应用程序在任何状态下都不会静音。<br />
+		　如果指定<span class="script"><a class="targanchor" name="id367" id="id367">sgfmMuteOnMinimize</a></span>，则在应用程序最小化时静音。<br />
+		　如果指定<span class="script"><a class="targanchor" name="id368" id="id368">sgfmMuteOnDeactivate</a></span>，则在应用程序非活动状态时静音。<br />
+		　此属性仅存在于 WaveSoundBuffer 类上（该属性不存在于由WaveSoundBuffer创建的对象上）。使用时请使用WaveSoundBuffer.globalFocusMode。<br />
+		　在命令行选项中指定的 '-wsmute' (DirectSound 静音)设置优先于此属性设置。<br />
 	</dd>
 </dl>
 </div></div>

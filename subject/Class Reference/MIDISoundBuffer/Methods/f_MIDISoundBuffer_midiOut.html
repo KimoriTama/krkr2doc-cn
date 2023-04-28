@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-任意の MIDI データの出力</dd>
+	任意MIDI数据的输出</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_MIDISoundBuffer.html">MIDISoundBuffer类</a>的成员方法<br />
@@ -32,7 +32,7 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="midiOut の引数">
 <tr><td valign="top"><span class="argname">data</span></td>
-<td>				　出力する MIDI データをオクテット形式で指定します。<br />
+<td>				　以八位字节格式指定要输出的MIDI数据。<br />
 			</td></tr>
 </table>
 </dd>
@@ -42,8 +42,9 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　任意の MIDI データを出力します。<br />
-		　データ中に ff 00 が入っていると、その時点で 50ms のウェイトが入ります。<br />
+	　任意MIDI数据的输出。<br />
+		<!-- 　データ中に ff 00 が入っていると、その時点で 50ms のウェイトが入ります。<br /> -->
+		　数据中有 ff 00 时，此时间点会有50ms的等待。<br />
 	</dd>
 </dl>
 </div></div>

@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-レイヤ拡大倍率の設定</dd>
+设置缩放比例</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Window.html">Window类</a>的成员方法<br />
@@ -32,10 +32,10 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="setZoom の引数">
 <tr><td valign="top"><span class="argname">numer</span></td>
-<td>				　倍率の分子を整数で指定します。<br />
+<td>				　以整数指定设置缩放比的分子<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">denom</span></td>
-<td>				　倍率の分母を整数で指定します。<br />
+<td>				　以整数指定设置缩放比的分母。<br />
 			</td></tr>
 </table>
 </dd>
@@ -45,10 +45,14 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　レイヤの拡大倍率を指定します。分子/分母で指定したサイズで画像が拡大、あるいは縮小されて表示されます。<br />
+		<!-- 　レイヤの拡大倍率を指定します。分子/分母で指定したサイズで画像が拡大、あるいは縮小されて表示されます。<br />
 		　分子・分母が公約数を持つ場合は自動的に約分されるため、<a class="jump" href="../Properties/f_Window_zoomNumer.html">Window.zoomNumer</a> プロパティや <a class="jump" href="../Properties/f_Window_zoomDenom.html">Window.zoomDenom</a> プロパティで読み出される値は、このメソッドで指定した値とは異なる場合があります。<br />
 		　現バージョンの吉里吉里では、拡大・縮小時に補間がかかるかどうかはグラフィックカードのハードウェアやドライバに影響されます。補間がかからないハードウェアやドライバの場合は、画質が荒くなります。<br />
-		　オプションによっては、吉里吉里は拡大・縮小に使用可能なハードウェアを、倍率が変更されるたびに調査するため、このメソッドは拡大率を連続的に変化させて演出を行うような用途には適していません。<br />
+		　オプションによっては、吉里吉里は拡大・縮小に使用可能なハードウェアを、倍率が変更されるたびに調査するため、このメソッドは拡大率を連続的に変化させて演出を行うような用途には適していません。<br /> -->
+		　指定层的缩放比。按分子/分母指定的大小画面进行扩大或缩小。<br />
+		　分子・分母存在公约数的情况下会自动进行约分，因此，<a class="jump" href="../Properties/f_Window_zoomNumer.html">Window.zoomNumer</a> 属性与 <a class="jump" href="../Properties/f_Window_zoomDenom.html">Window.zoomDenom</a> 属性读出的值，存在与此方法指定的值不同的情况。<br />
+		　在当前版本的吉里吉里中扩大缩小时是否需要插值会受到显卡硬件和驱动的影响。在没有插值的硬件和驱动程序的情况下，图像质量会变得粗糙。<br />
+		　根据选项的不同，吉里吉里在放大、缩小时会检查可使用的硬件，所以这个方法不适合连续变化的缩放比进行演出的用途。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

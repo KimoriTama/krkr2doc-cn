@@ -14,70 +14,77 @@
     <link href="mailto:dee@kikyou.info" rev="Made" />
 </head>
 <body>
-<h1><a id="id110" name="id110">ファイル/フォルダ覧</a>
+<h1><a id="id110" name="id110">文件/文件夹一览</a>
 </h1><div class="para"><div>
-ここでは、吉里吉里に関連するファイルやフォルダを説明します。<br />
+<!-- ここでは、吉里吉里に関連するファイルやフォルダを説明します。<br />
 すべてのファイルを網羅するわけではありません。特に注意が必要なファイルが中心になっています。吉里吉里２ SDK 配布アーカイブのフォルダ構造については readme.txt を参照してください。<br />
-便宜上、KAGに関連するファイルも掲載しています。<br />
+便宜上、KAGに関連するファイルも掲載しています。<br /> -->
+这里介绍与吉里吉里相关的文件和文件夹。<br />
+我不是要列举所有的文件。以需要特别注意的文件为中心。有关吉里吉里2SDK发布包的文件夹结构，请参阅readme.txt。<br />
+为了方便，还记载了与KAG相关的文件。。<br />
 </div></div>
-<h1><a id="id111" name="id111">フォルダ</a>
+<h1><a id="id111" name="id111">文件夹</a>
 </h1><div class="para"><div>
 <dl>  
 <dt><a id="id112" name="id112" class="targanchor"><dfn>plugin</dfn></a></dt>
-  <dd>吉里吉里がプラグインを探すフォルダです。吉里吉里は、吉里吉里の実行可能ファイルがあるフォルダにこのフォルダがあると、その中に配置されているプラグインを参照します。→ <a target="main" class="jump" href="Plugins.html">プラグインについて</a></dd>
+
+  <dd>吉里吉里寻找插件的文件夹。在吉里吉里的可执行文件所在的文件夹中有这个文件夹的话，会引用其中放置的插件。→ <a target="main" class="jump" href="Plugins.html">关于插件</a></dd>
   
 <dt><a id="id113" name="id113" class="targanchor"><dfn>tools</dfn></a></dt>
-  <dd>吉里吉里は、吉里吉里の実行可能ファイルがあるフォルダにこのフォルダがあると、その中からkrdevui.dllを探します(吉里吉里本体がkrdevui.dllを使うのは、最初にフォルダ/アーカイブの選択のダイアログボックスを表示するときだけです)。</dd>
+  <dd>在吉里吉里的可执行文件所在的文件夹中有这个文件夹的话，会从中寻找krdevui.dll(吉里吉里本身使用krdevui.dll只是在最初显示文件夹/存档选择对话框的时候)。</dd>
   
-<dt><a id="id114" name="id114" class="targanchor"><dfn>data</dfn></a> と <a id="id115" name="id115" class="targanchor"><dfn>content-data</dfn></a></dt>
-  <dd>吉里吉里吉里の実行可能ファイルがあるフォルダにこのフォルダがある場合、フォルダをプロジェクトフォルダと見なして実行します。→ <a target="main" class="jump" href="Startup.html">起動の仕方</a></dd></dl></div></div>
-<h1><a id="id116" name="id116">ファイル</a>
+<dt><a id="id114" name="id114" class="targanchor"><dfn>data</dfn></a> 与 <a id="id115" name="id115" class="targanchor"><dfn>content-data</dfn></a></dt>
+  <dd>如果此文件夹位于吉里吉里可执行文件所在的文件夹中，则将该文件夹视为项目文件夹并运行。→ <a target="main" class="jump" href="Startup.html">启动方法</a></dd></dl></div></div>
+<h1><a id="id116" name="id116">文件</a>
 </h1><div class="para"><div>
 <dl>  
 <dt>*.<a id="id117" name="id117" class="targanchor"><dfn>xp3</dfn></a></dt>
-  <dd>吉里吉里用のアーカイブファイルです。→ <a target="main" class="jump" href="../Tools Reference/Releaser.html">Releaser</a></dd>
+  <dd>是吉里吉里用的项目文件。→ <a target="main" class="jump" href="../Tools Reference/Releaser.html">Releaser</a></dd>
   
 <dt><a id="id118" name="id118" class="targanchor"><dfn>data.xp3</dfn></a> と <a id="id119" name="id119" class="targanchor"><dfn>data.exe</dfn></a></dt>
-  <dd>吉里吉里は、このファイルが吉里吉里の実行可能ファイルと同じフォルダにある場合、それをプロジェクトフォルダとみなして実行します。→ <a target="main" class="jump" href="Startup.html">起動の仕方</a></dd>
+  <dd>如果这个文件和吉里吉里的可执行文件在同一个文件夹中，则将其视为项目文件夹来执行。→ <a target="main" class="jump" href="Startup.html">启动方法</a></dd>
   
 <dt>*.<a id="id120" name="id120" class="targanchor"><dfn>tpm</dfn></a></dt>
-  <dd>吉里吉里用のプラグインで、起動時に自動的に読み込まれる物です。→ <a target="main" class="jump" href="Plugins.html">プラグインについて</a></dd>
+  <dd>吉里吉里的插件，启动时自动加载。→ <a target="main" class="jump" href="Plugins.html">关于插件</a></dd>
   
 <dt><a id="id121" name="id121" class="targanchor"><dfn>krdevui.dll</dfn></a></dt>
-  <dd>吉里吉里の開発用ツールが共通で使用するDLLです。このファイルをエンドユーザ向けの配布物に同梱する必要はありません。吉里吉里本体もこのファイルを使用しますが、吉里吉里本体が krdevui.dll を使うのは、最初にフォルダ/アーカイブの選択のダイアログボックスを表示するときだけです。</dd>
+  <dd>是吉里吉里的开发用工具共同使用的DLL。不需要将此文件与最终用户向发布的的产品捆绑在一起。吉里吉里本体也使用这个文件，不过，吉里吉里本体使用krdevui.dll只是在最初显示文件夹/存档的选择的对话框的时候。</dd>
   
 <dt><a id="id122" name="id122" class="targanchor"><dfn>krflash.dll</dfn></a></dt>
-  <dd>吉里吉里で Flash の再生を行う場合に必要になります。Flash 再生を行わない場合はエンドユーザ向けの配布物にこれを同梱する必要はありません。→ <a target="main" class="jump" href="../Class Reference/VideoOverlay/f_VideoOverlay.html">VideoOverlayクラス</a></dd>
+  <dd>里吉里进行Flash的播放时需要。如果不播放Flash，则不必将其与最终向用户发布的产品捆绑在一起。→ <a target="main" class="jump" href="../Class Reference/VideoOverlay/f_VideoOverlay.html">VideoOverlay类</a></dd>
   
 <dt><a id="id123" name="id123" class="targanchor"><dfn>krmovie.dll</dfn></a></dt>
-  <dd>吉里吉里で WMV/MPG の再生を行う場合に必要になります。ビデオ再生を行わない場合はエンドユーザ向けの配布物にこれを同梱する必要はありません。→ <a target="main" class="jump" href="../Class Reference/VideoOverlay/f_VideoOverlay.html">VideoOverlayクラス</a></dd>
+  <dd>在吉里吉里进行WMV/MPG的播放时需要。如果不播放视频，则不必将其与最终向用户发布的产品捆绑在一起。→ <a target="main" class="jump" href="../Class Reference/VideoOverlay/f_VideoOverlay.html">VideoOverlay类</a></dd>
   
 <dt>*.<a id="id124" name="id124" class="targanchor"><dfn>dll</dfn></a></dt>
-  <dd>吉里吉里用のプラグインの場合は、エンドユーザ向けの配布物に同梱しなければなりません。もちろん、必要のないプラグインを同梱する必要はありません。→ <a target="main" class="jump" href="Plugins.html">プラグインについて</a></dd>
+  <dd>如果是吉里吉里用的插件，必须与面向最终用户的发布产品捆绑在一起。当然，不需要附带不需要的插件。→ <a target="main" class="jump" href="Plugins.html">关于插件</a></dd>
   
 <dt><a id="id125" name="id125" class="targanchor"><dfn>krkr.eXe</dfn></a></dt>
-  <dd>吉里吉里本体です。エンドユーザ向けに配布する際にファイル名を変更してもかまいません。</dd>
+  <dd>吉里吉里本体。向最终用户发布时可以更改文件名。</dd>
   
-<dt>*.<a id="id126" name="id126" class="targanchor"><dfn>cf</dfn></a> と *.<a id="id127" name="id127" class="targanchor"><dfn>cfu</dfn></a></dt>
-  <dd>吉里吉里本体に対するオプションが記述されたファイルです。「吉里吉里設定」(krkrconf.exe)で吉里吉里本体に指示したオプション(これには-datapathオプションの指定などが含まれます)を有効にするためには、エンドユーザ向けの配布物にこれも同梱する必要があります。→ <a target="main" class="jump" href="../Tools Reference/Configure.html">吉里吉里設定</a></dd>
+<dt>*.<a id="id126" name="id126" class="targanchor"><dfn>cf</dfn></a> 与 *.<a id="id127" name="id127" class="targanchor"><dfn>cfu</dfn></a></dt>
+
+  <dd>是记录了对吉里吉里本体的选项的文件。为了使「吉里吉里设置」（krkrconf.exe）中指定给吉里本体的选项（包括指定-datapath选项）生效，也必须将其捆绑在面向最终用户的发布产品中。→ <a target="main" class="jump" href="../Tools Reference/Configure.html">吉里吉里设置</a></dd>
   
 <dt><a id="id128" name="id128" class="targanchor"><dfn>エンジン設定.exe</dfn></a></dt>
-  <dd>エンドユーザ向けの設定ツールです。エンドユーザ向けの配布物に同梱することが推奨されます。吉里吉里２ SDK 配布時は enduser-tools 内に入っていますが、エンドユーザに配布する際は、吉里吉里の実行可能ファイルと同じフォルダに配置する必要があります。→ <a target="main" class="jump" href="../Tools Reference/Configure.html">吉里吉里設定</a></dd>
+  <dd>面向最终用户的配置工具。建议随最终用户发布产品一起提供。吉里吉里2 SDK发布时位于enduser-tools中，但发布给最终用户时必须与吉里吉里的可执行文件位于同一文件夹中。→ <a target="main" class="jump" href="../Tools Reference/Configure.html">吉里吉里设置</a></dd>
   
-<dt><a id="id129" name="id129" class="targanchor"><dfn>ファイル破損チェックツール.exe</dfn></a> とその .<a id="id130" name="id130" class="targanchor"><dfn>ini</dfn></a> ファイル</dt>
-  <dd>ファイル破損チェックツールです。エンドユーザ向けに配布する際にファイル名を変更してもかまいませんが、その場合は .exe ファイルと .ini ファイルの両方の名前を同じ物にしなければなりません。吉里吉里２ SDK 配布時は enduser-tools 内に入っていますが、エンドユーザに配布する際は、通常、吉里吉里の実行可能ファイルと同じフォルダに配置する必要があります。→ <a target="main" class="jump" href="../Tools Reference/FileChkTool.html">ファイル破損チェックツール</a></dd>
+<dt><a id="id129" name="id129" class="targanchor"><dfn>文件损坏检查工具.exe</dfn></a> 与其 .<a id="id130" name="id130" class="targanchor"><dfn>ini</dfn></a> 文件</dt>
+
+  <dd>文件损坏检查工具。您可以更改文件名以供最终用户发布，但.exe和.ini文件必须具有相同的名称。吉里吉里2 SDK发布时位于enduser-tools中，但向最终用户发布时，通常需要与吉里吉里的可执行文件放在同一文件夹中。→ <a target="main" class="jump" href="../Tools Reference/FileChkTool.html">ファイル破損チェックツール</a></dd>
   
 <dt><a id="id131" name="id131" class="targanchor"><dfn>startup.tjs</dfn></a></dt>
-  <dd>TJSスクリプトファイルです。吉里吉里は、プロジェクトフォルダ直下のこのファイルを探し、一番最初に実行します。→ <a target="main" class="jump" href="Startup.html">起動の仕方</a></dd>
+  <dd>TJS脚本文件。吉里吉里在项目文件夹下查找该文件，并首先运行该文件。→ <a target="main" class="jump" href="Startup.html">起動の仕方</a></dd>
   
 <dt>*.<a id="id132" name="id132" class="targanchor"><dfn>tjs</dfn></a></dt>
-  <dd>TJSスクリプトファイルです。</dd>
+  <dd>TJS脚本文件。</dd>
   
 <dt><a id="id133" name="id133" class="targanchor"><dfn>msgmap.tjs</dfn></a></dt>
-  <dd>メッセージマップファイルです。作成した覚えがないならば、このファイルをエンドユーザ向けの配布物に同梱する必要はありません。→ <a target="main" class="jump" href="Controller.html">コントローラ</a></dd>
+  <dd>消息映射文件。如果您未曾创建过此文件，则无需将其包含在向最终用户发布产品中。→ <a target="main" class="jump" href="Controller.html">コントローラ</a></dd>
   
 <dt>*.<a id="id134" name="id134" class="targanchor"><dfn>sig</dfn></a></dt>
-  <dd>キー・署名ツールが出力する署名ファイルです。ファイル破損チェックツールなどが参照します。→ <a target="main" class="jump" href="../Tools Reference/SignTool.html">キー・署名ツール</a></dd>
+
+  <dd>密钥签名工具输出的签名文件。文件损坏检查工具等参照此文件。→ <a target="main" class="jump" href="../Tools Reference/SignTool.html">秘钥与签名工具</a></dd>
   
 <dt>*.<a id="id135" name="id135" class="targanchor"><dfn>rpf</dfn></a></dt>
   <dd>Releaserのプロファイルです。Releaserの設定情報が記録されています。このファイルはエンドユーザ向けの配布物に同梱する必要はありません(Releaser ではこのファイルを自動的に除外します)。→ <a target="main" class="jump" href="../Tools Reference/Releaser.html">Releaser</a></dd>
@@ -95,31 +102,31 @@
   <dd>TJSのダンプファイルです。このファイルをエンドユーザ向けの配布物に同梱する必要はありません。→ <a target="main" class="jump" href="Controller.html">コントローラ</a></dd>
   
 <dt>*.<a id="id140" name="id140" class="targanchor"><dfn>sli</dfn></a></dt>
-  <dd>ループチューナが出力する、ループ定義ファイルです。→ <a target="main" class="jump" href="../Tools Reference/LoopTuner.html">ループチューナ</a></dd>
+  <dd>循环调谐器输出的循环定义文件。→ <a target="main" class="jump" href="../Tools Reference/LoopTuner.html">ループチューナ</a></dd>
   
 <dt>*.<a id="id141" name="id141" class="targanchor"><dfn>tft</dfn></a></dt>
   <dd>レンダリング済みフォントデータ作成ツールが出力する、レンダリング済みフォントデータです。→ <a target="main" class="jump" href="../Tools Reference/FontMaker.html">レンダリング済みフォントデータ作成ツール</a></dd>
   
 <dt>*.png *.jpeg *.jpg *.tlg *.bmp</dt>
-  <dd>画像ファイルです。→ <a target="main" class="jump" href="GraphicSystem.html">グラフィックシステム</a></dd>
+  <dd>图像文件。→ <a target="main" class="jump" href="GraphicSystem.html">关于图形与图像</a></dd>
   
 <dt>*.wav *.tcw *.ogg</dt>
-  <dd>音声ファイルです。→ <a target="main" class="jump" href="SoundSystem.html">サウンドシステム</a></dd>
+  <dd>音乐文件す。→ <a target="main" class="jump" href="SoundSystem.html">サウンドシステム</a></dd>
   
 <dt>*.wmv *.mpg</dt>
-  <dd>動画ファイルです。→ <a target="main" class="jump" href="../Class Reference/VideoOverlay/f_VideoOverlay.html">VideoOverlayクラス</a></dd>
+  <dd>视频文件。→ <a target="main" class="jump" href="../Class Reference/VideoOverlay/f_VideoOverlay.html">VideoOverlayクラス</a></dd>
   
 <dt>*.ks</dt>
   <dd>KAGのシナリオファイルです。</dd>
   
 <dt>*.ksd *.kdt</dt>
-  <dd>KAGのセーブデータです。</dd>
+  <dd>KAG存档文件。</dd>
   
 <dt>*.asd</dt>
-  <dd>KAGのアニメーション定義ファイルです。</dd> 
+  <dd>KAG动画定义文件。</dd> 
   
 <dt>*.ma</dt>
-  <dd>KAGの領域アクション定義ファイルです。</dd> 
+  <dd>KAG的领域行为定义文件。</dd> 
 </dl></div></div>
 	<script type="text/javascript" charset="UTF-8" src="../../js/documentid.js" ></script>
 	<script type="text/javascript" charset="UTF-8" src="../../js/postcontent.js" ></script>

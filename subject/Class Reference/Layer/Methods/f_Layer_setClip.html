@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-描画クリップ矩形の設定</dd>
+设置绘制裁剪矩形</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,20 +32,20 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="setClip の引数">
 <tr><td valign="top"><span class="argname">left</span></td>
-<td>				　描画クリップ矩形の ( レイヤの画像座標での ) 左端位置をピクセル単位で指定します。<br />
-				　この値は <a class="jump" href="../Properties/f_Layer_clipLeft.html">Layer.clipLeft</a> プロパティでも取得や設定ができます。<br />
+<td>				　以像素为单位指定绘制裁剪矩形（层的图像坐标的）左端位置。 <br />
+				　此值可以通过 <a class="jump" href="../Properties/f_Layer_clipLeft.html">Layer.clipLeft</a> 属性取得或设置。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">top</span></td>
-<td>				　描画クリップ矩形の ( レイヤの画像座標での ) 上端位置をピクセル単位で指定します。<br />
-				　この値は <a class="jump" href="../Properties/f_Layer_clipTop.html">Layer.clipTop</a> プロパティでも取得や設定ができます。<br />
+<td>				　以像素为单位指定绘制裁剪矩形（层的图像坐标的）上端位置。<br />
+				　此值可以通过 <a class="jump" href="../Properties/f_Layer_clipTop.html">Layer.clipTop</a> 属性取得或设置。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">width</span></td>
-<td>				　描画クリップ矩形の横幅をピクセル単位で指定します。<br />
-				　この値は <a class="jump" href="../Properties/f_Layer_clipWidth.html">Layer.clipWidth</a> プロパティでも取得や設定ができます。<br />
+<td>				　以像素为单位指定绘制裁剪矩形的宽度。<br />
+				　此值可以通过 <a class="jump" href="../Properties/f_Layer_clipWidth.html">Layer.clipWidth</a> 属性取得或设置。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">height</span></td>
-<td>				　描画クリップ矩形の縦幅をピクセル単位で指定します。<br />
-				　この値は <a class="jump" href="../Properties/f_Layer_clipHeight.html">Layer.clipHeight</a> プロパティでも取得や設定ができます。<br />
+<td>				　以像素为单位指定绘制裁剪矩形的高度。<br />
+				　此值可以通过 <a class="jump" href="../Properties/f_Layer_clipHeight.html">Layer.clipHeight</a> 属性取得或设置。<br />
 			</td></tr>
 </table>
 </dd>
@@ -55,7 +55,7 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　レイヤの<a class="targanchor" name="id70" id="id70">描画クリップ矩形</a>を設定します。<br />
+		<!-- 　レイヤの<a class="targanchor" name="id70" id="id70">描画クリップ矩形</a>を設定します。<br />
 		　レイヤに対する描画は、この描画クリップ矩形内に制限されます ( 矩形外にはみ出た部分は
 		描画されません )。ただし、<a class="jump" href="f_Layer_flipLR.html">Layer.flipLR</a> や <a class="jump" href="f_Layer_flipUD.html">Layer.flipUD</a> のように
 		描画クリップ矩形の影響を受けないメソッドもあります。<br />
@@ -63,7 +63,12 @@
 		に描画する事ができます )。<br />
 		　描画クリップ矩形は、画像読み込みや画像サイズが変更されたり、レイヤの表示タイプが
 		変更されると初期値に戻ります。<br />
-		　また、このメソッドを引数なしで呼び出すと、描画クリップ矩形を初期値に戻すことができます。<br />
+		　また、このメソッドを引数なしで呼び出すと、描画クリップ矩形を初期値に戻すことができます。<br /> -->
+		　设置层的<a class="targanchor" name="id70" id="id70">绘制裁剪矩形</a>。<br />
+		　对层的绘制被限制在此裁剪矩形内 ( 超出矩形韦德部分将不会被绘制 )。只是也存在像<a class="jump" href="f_Layer_flipLR.html">Layer.flipLR</a> 以及 <a class="jump" href="f_Layer_flipUD.html">Layer.flipUD</a> 这样不受绘制裁剪矩形影响的方法。<br />
+		　初始值裁剪矩形设为层的图像区域整体（可在层全部位置进行绘制）。<br />
+		　绘制裁剪矩形当读入的图像大小变更及层的显示类型变更时变为初始值。<br />
+		　另外，以无参数调用此方法时绘制裁剪矩形可以变为初始值。<br />
 	</dd>
 </dl>
 </div></div>

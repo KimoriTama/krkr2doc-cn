@@ -19,23 +19,26 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-フィルタ配列</dd>
+过滤器数组</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_WaveSoundBuffer.html">WaveSoundBuffer类</a>的成员属性 (只读)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　インサーションフィルタオブジェクトを保持している配列(Arrayクラスのインスタンス)です。<br />
+	<!-- 	　インサーションフィルタオブジェクトを保持している配列(Arrayクラスのインスタンス)です。<br />
 		　この配列にフィルタオブジェクトを登録することにより、再生中にリアルタイムで音声に対して
 		様々な効果をかけることができます。<br />
 		　フィルタ配列への変更が反映されるのは、<a class="jump" href="../Methods/f_WaveSoundBuffer_open.html">WaveSoundBuffer.open</a>メソッドが実行された
-		時だけです。それまでは、この配列への変更を行っても反映はされません。<br />
+		時だけです。それまでは、この配列への変更を行っても反映はされません。<br /> -->
+		　包含插入过滤器对象的数组（Array类的实例）<br />
+		　通过在该数组中注册过滤器对象，可以在播放过程中实时对声音产生各种效果。<br />
+		　只有在<a class="jump" href="../Methods/f_WaveSoundBuffer_open.html">WaveSoundBuffer.open</a>方法执行时才会反映对过滤器数组的更改。在此之前，对该数组进行更改不会反映。<br />
 <code class="bq"><span class="weak">例:</span><br />var&nbsp;buf&nbsp;=&nbsp;new&nbsp;WaveSoundBuffer(window);<br />
 (略)<br />
-buf.filters.clear();&nbsp;//&nbsp;フィルタ配列をクリア<br />
-buf.filters.add(new&nbsp;WaveSoundBuffer.PhaseVocoder());&nbsp;//&nbsp;PhaseVocoderフィルタを追加<br />
-buf.filters[0].time&nbsp;=&nbsp;0.5;&nbsp;//&nbsp;倍速再生<br />
+buf.filters.clear();&nbsp;//&nbsp;清空过滤器数组<br />
+buf.filters.add(new&nbsp;WaveSoundBuffer.PhaseVocoder());&nbsp;//&nbsp;增加PhaseVocoder过滤器<br />
+buf.filters[0].time&nbsp;=&nbsp;0.5;&nbsp;//&nbsp;倍速播放<br />
 </code>
 	</dd>
 </dl>

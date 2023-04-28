@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-フォーカスを受け取る直前</dd>
+获得焦点前</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的事件<br />
@@ -32,25 +32,21 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="onBeforeFocus の引数">
 <tr><td valign="top"><span class="argname">layer</span></td>
-<td>				　フォーカスを受け取るレイヤオブジェクトです。<br />
-				　通常は this が渡されますが、スーパークラスの同名のイベントを呼ぶときに
-				異なるレイヤオブジェクトを指定すれば、そのレイヤにフォーカスを
-				渡すようにすることができます。<br />
+<td>				　接受焦点的层对象。<br />
+				　一般情况下此参数会传递this，但调用父类的同名事件时指定不同的对象，则可以将焦点传递给该层。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">blurred</span></td>
-<td>				　フォーカスを失うレイヤオブジェクトです。<br />
+<td>				　失去焦点的层对象。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">direction</span></td>
-<td>				　フォーカスの後方検索によってフォーカスが変更されるときは真、
-				フォーカスの前方検索によって行われる場合は偽になります。<br />
+<td>				　由后方搜索进行焦点变更时为真值，由前方检索进行焦点变更时为假值。<br />
 			</td></tr>
 </table>
 </dd>
 <dt>说明</dt>
 <dd>
-		　フォーカスを受け取る直前に発生するイベントです。<br />
-		　フォーカスを受け取るレイヤを指定するときは、スーパークラスの同名のイベント
-		の第１引数にそのレイヤを指定する事ができます。<br />
+		　获得焦点前发生的事件。<br />
+		　想指定接受焦点的层时，可以将父类同名事件的第一参数指定为该层。<br />
 	</dd>
 </dl>
 </div></div>

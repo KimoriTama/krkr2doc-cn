@@ -19,30 +19,55 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-IMEモード</dd>
+	IME模式</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员属性 (可读写)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　IMEのモードを表します。值可写。<br />
-		　レイヤにフォーカスが設定されると、IMEはここで指定したモードに切り替わります。<br />
-		　設定可能な値は以下の通りです。<br />
-		<ul>		<li><span class="script"><a class="targanchor" name="id278" id="id278">imDisable</a></span> を指定すると、IMEは無効になります。IMEを使用した入力はできませんし、ユーザの操作でもIMEを有効にすることはできません。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id279" id="id279">imClose</a></span> を指定すると、IMEは無効になります。imDisableと異なり、ユーザの操作でIMEを有効にすることができます。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id280" id="id280">imOpen</a></span> を指定すると、IMEは有効になります。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id281" id="id281">imDontCare</a></span> を指定すると、IMEの有効/無効の状態は、前の状態を引き継ぎます。ユーザの操作によってIMEを有効にしたり無効にしたりすることができます。日本語入力においては、半角/全角文字をユーザに自由に入力させる場合の一般的なモードです。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id282" id="id282">imSAlpha</a></span> を指定すると、IMEは有効になり、半角アルファベット入力モードになります。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id283" id="id283">imAlpha</a></span> を指定すると、IMEは有効になり、全角アルファベット入力モードになります。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id284" id="id284">imHira</a></span> を指定すると、IMEは有効になり、ひらがな入力モードになります。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id285" id="id285">imSKata</a></span> を指定すると、IMEは有効になり、半角カタカナ入力モードになります。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id286" id="id286">imKata</a></span> を指定すると、IMEは有効になり、全角カタカナ入力モードになります。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id287" id="id287">imChinese</a></span> を指定すると、IMEは有効になり、2バイト中国語入力を受け付けるモードになります。日本語環境では使用できません。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id288" id="id288">imSHanguel</a></span> を指定すると、IMEは有効になり、1バイト韓国語入力を受け付けるモードになります。日本語環境では使用できません。<br />
-</li>		<li><span class="script"><a class="targanchor" name="id289" id="id289">imHanguel</a></span> を指定すると、IMEは有効になり、2バイト韓国語入力を受け付けるモードになります。日本語環境では使用できません。<br />
-</li>		</ul>		未指定時は imDisable になります。<br />
-	</dd>
+	　表示IME的模式。值可写。<br />
+	　层获得焦点时，IME模式会切换为此处设置的IME模式。<br />
+	　以下为可设定的值。<br />
+	<ul>
+		<li>指定为<span class="script"><a class="targanchor" name="id278" id="id278">imDisable</a></span>
+			时，IME无效。无法使用IME输入， 也不能通过用户操作启用IME。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id279" id="id279">imClose</a></span>
+			时，IME无效。与imDisable不同，可以通过用户操作启用IME。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id280" id="id280">imOpen</a></span>
+			时，IME有效。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id281" id="id281">imDontCare</a></span>
+			时，IME的启用/禁用状态将继承以前的状态。您可以通过用户操作启用或禁用IME。在日语输入中，这是让用户自由输入半角/全角字符的一般模式。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id282" id="id282">imSAlpha</a></span>
+			时，IME有效且进入半角字母输入模式。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id283" id="id283">imAlpha</a></span>
+			时，IME有效且进入全角字母输入模式。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id284" id="id284">imHira</a></span>
+			时，IME有效且进入平假名输入模式。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id285" id="id285">imSKata</a></span>
+			时，IME有效且进入半角片假名输入模式。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id286" id="id286">imKata</a></span>
+			时，IME有效且进入全角片假名输入模式。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id287" id="id287">imChinese</a></span>
+			时，IME有效且进入接受双字节中文输入的模式。在日语环境中不可用。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id288" id="id288">imSHanguel</a></span>
+			时，IME有效且进入接受1字节韩语输入的模式。在日语环境中不可用。<br />
+		</li>
+		<li>指定为<span class="script"><a class="targanchor" name="id289" id="id289">imHanguel</a></span>
+			时，IME有效且进入接受双字节韩语输入的模式。在日语环境中不可用。<br />
+		</li>
+	</ul> 未指定时则为 imDisable 。<br />
+</dd>
 <dt>参照</dt>
 <dd>
 <a class="jump" href="../../Window/Properties/f_Window_imeMode.html">Window.imeMode</a><br />

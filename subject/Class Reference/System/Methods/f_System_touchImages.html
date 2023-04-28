@@ -97,7 +97,7 @@
 	　此方法尝试将指定的图像读入缓存。但是，该方法会尽力将图像读入缓存中，但实际上不能保证图像在缓存中。超过图像缓存的限制值或超时会中断图像读取。在storages参数中指定的图像中，越是先传入的图像，进入缓存的可能性越大（优先）。如果指定的图像已经进入缓存，则只是提高缓存中的存活顺序。<br />
 	　此方法忽略图像导入过程中的所有错误。<br />
 	　在当前版本中，此方法可以读入高速缓存的图像通常是
-		<a class="jump" href="../../Layer/Methods/f_Layer_loadImages.html">Layer.loadImages</a> 可以读取的图像，并且不指定颜色键 ( 带aplha通道的图像则没有问题 )。也会读取过渡的规则图像和区域图像，但不会成为高速缓存有效的数据 ( 读取的数据会浪费) ，所以请勿指定。<br />
+		<a class="jump" href="../../Layer/Methods/f_Layer_loadImages.html">Layer.loadImages</a> 可以读取的图像，并且不指定颜色键 ( 带aplha通道的图像则没有问题 )。也会读取的规则图像和区域图像，但不会成为高速缓存有效的数据 ( 读取的数据会浪费) ，所以请勿指定。<br />
 		　有关图像在高速缓存中使用的字节数的信息，请参照 <a class="jump" href="../Properties/f_System_graphicCacheLimit.html">System.graphicCacheLimit</a> 。<br />
 	</dd>
 </dl>

@@ -19,14 +19,14 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-領域画像バッファピッチ</dd>
+	领域图像缓冲区间距</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员属性 (只读)<br />
 </dd>
 <dt>说明</dt>
 <dd>
-		　領域画像 ( 領域の情報を含む 8bpp のビットマップ ) の画像バッファのピッチ
+		<!-- 　領域画像 ( 領域の情報を含む 8bpp のビットマップ ) の画像バッファのピッチ
 		( 一つ下のスキャンラインまでのバイト数 ) を表します。<br />
 		　このプロパティは、プラグインなどのために画像バッファへの直接のアクセスの手段を提供する
 		ためにあります。<br />
@@ -35,6 +35,14 @@
 		<span class="script">(tjs_uint8*)provinceImageBuffer + y*provinceImageBufferPitch + x</span><br />
 		　このプロパティの数値は画像横幅ぴったりに必要なバイト数よりも若干大きい場合があります。<br />
 		　このプロパティは値が負になり得ますので注意してください。<br />
+	</dd> -->
+
+		　表示领域图像（包含区域信息的8bpp位图）的图像缓冲区间距（到下一扫描线的字节数）。<br />
+		　此属性用于为插件等提供直接访问图像缓冲区的方法。<br />
+		　tjs_uint8是8位（1位）的整数类型，指向图像位置（x，y）的指针可以用C语言编写，如下所示。<br />
+		<span class="script">(tjs_uint8*)provinceImageBuffer + y*provinceImageBufferPitch + x</span><br />
+		　此属性的数字可能略大于图像宽度所需的字节数。<br />
+		　请注意，此属性的值可以为负值。<br />
 	</dd>
 <dt>参照</dt>
 <dd>

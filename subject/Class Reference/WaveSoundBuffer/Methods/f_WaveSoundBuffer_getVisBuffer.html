@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-視覚化用データの取得</dd>
+	获取可视化数据</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_WaveSoundBuffer.html">WaveSoundBuffer类</a>的成员方法<br />
@@ -32,20 +32,33 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="getVisBuffer の引数">
 <tr><td valign="top"><span class="argname">buffer</span></td>
-<td>				　出力データを書き込むバッファを指定します。<br />
+<!-- <td>				　出力データを書き込むバッファを指定します。<br />
 				　バッファは 16bit 符号付き整数の配列で、numsamples 引数および channels 引数
 				で指定したサンプルが書き込まれるのに十分な個数 ( numsamples * channels 以上 )
 				である必要があります。<br />
 				　channels に 1 以外を指定した場合は、各チャネルのサンプルはインターリーブされて
 				( ステレオならば 右 左 右 左 ・・・・の順に ) 格納されます。<br />
 				　配列の先頭要素へのポインタを指定する必要がありますが、整数型にキャストして
-				渡してください。<br />
+				渡してください。<br /> -->
+			
+如果为channels指定了1以外的值，则每个通道的采样将被交织（如果是立体声，则按右左左右左…的顺序）并存储。
+<td>				　指定写入输出数据的缓冲区。<br />
+	　缓冲区是一个带16位有符号数的数组，必须有足够数量（大于等于numsamples*channels），以便写入由numsamples和channels参数指定的样本。<br />
+				　channels に 1 以外を指定した場合は、各チャネルのサンプルはインターリーブされて
+				( 如果是立体声，则按 右 左 右 左 ・・・・的顺序) 格納されます。<br />
+				　必须指定指向数组首元素的指针，且将其转换为整数。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">numsamples</span></td>
-<td>				　取得するサンプル数を指定します。<br />
+<!-- <td>				　取得するサンプル数を指定します。<br /> -->
+<td>				　指定要获取的样本数。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">channel</span></td>
-<td>				　取得するチャンネル数を指定します。<br />
+<!-- <td>				　取得するチャンネル数を指定します。<br />
+				　1 を指定すると、モノラルの場合はそのまま、そうでない場合は 1チャンネルにダウンミックス
+				されたデータを得ることができます。<br />
+				　1 以外の数値を指定する場合は、再生中のサウンドと同じチャンネル数を指定する必要がありま
+				す。このばあいは、そのままのデータを得ることができます。<br /> -->
+				<td>				　指定要获取的声道数。<br />
 				　1 を指定すると、モノラルの場合はそのまま、そうでない場合は 1チャンネルにダウンミックス
 				されたデータを得ることができます。<br />
 				　1 以外の数値を指定する場合は、再生中のサウンドと同じチャンネル数を指定する必要がありま
@@ -60,16 +73,22 @@
 </dd>
 <dt>返回值</dt>
 <dd>
-<result>取得できたサンプル数が戻ります。</result></dd>
+<result>返回检索到的样本数。</result></dd>
 <dt>说明</dt>
 <dd>
-		　視覚化用に PCM データを取得します。<br />
+	<!-- 	　視覚化用に PCM データを取得します。<br />
 		　現在の再生位置から PCM データを読み込み、buffer 引数で指定した配列に書き込みます。<br />
 		　ただし、バッファの状態や再生形式によっては正常にデータを読み込めない可能性もあります。<br />
 		　このメソッドは C や C++ 等で書かれたプラグインから利用されることを想定してますので、たとえば
 		buffer 引数に TJS の配列を指定する、などのようなことはできません。<br />
 		　このメソッドを使用するには  <a class="jump" href="../Properties/f_WaveSoundBuffer_useVisBuffer.html">WaveSoundBuffer.useVisBuffer</a> プロパティを真に指定する
-		必要があります。<br />
+		必要があります。<br /> -->
+
+		　获取用于可视化的PCM数据。<br />
+		　从当前播放位置读取PCM数据，写入buffer参数指定的数组。<br />
+		　但是，根据缓冲区的状态和播放形式的不同，也有不能正常读取数据的可能性。<br />
+		　设想该方法是从用C或C++等编写的插件中使用的，所以不能在buffer参数中指定TJS的数组等。<br />
+		　要使用此方法，必须将 <a class="jump" href="../Properties/f_WaveSoundBuffer_useVisBuffer.html">WaveSoundBuffer.useVisBuffer</a> 属性指定为真值。<br />
 	</dd>
 </dl>
 </div></div>
