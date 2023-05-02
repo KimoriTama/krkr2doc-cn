@@ -41,7 +41,7 @@
 <dt>*.<a id="id117" name="id117" class="targanchor"><dfn>xp3</dfn></a></dt>
   <dd>是吉里吉里用的项目文件。→ <a target="main" class="jump" href="../Tools Reference/Releaser.html">Releaser</a></dd>
   
-<dt><a id="id118" name="id118" class="targanchor"><dfn>data.xp3</dfn></a> と <a id="id119" name="id119" class="targanchor"><dfn>data.exe</dfn></a></dt>
+<dt><a id="id118" name="id118" class="targanchor"><dfn>data.xp3</dfn></a> 与 <a id="id119" name="id119" class="targanchor"><dfn>data.exe</dfn></a></dt>
   <dd>如果这个文件和吉里吉里的可执行文件在同一个文件夹中，则将其视为项目文件夹来执行。→ <a target="main" class="jump" href="Startup.html">启动方法</a></dd>
   
 <dt>*.<a id="id120" name="id120" class="targanchor"><dfn>tpm</dfn></a></dt>
@@ -71,53 +71,55 @@
   
 <dt><a id="id129" name="id129" class="targanchor"><dfn>文件损坏检查工具.exe</dfn></a> 与其 .<a id="id130" name="id130" class="targanchor"><dfn>ini</dfn></a> 文件</dt>
 
-  <dd>文件损坏检查工具。您可以更改文件名以供最终用户发布，但.exe和.ini文件必须具有相同的名称。吉里吉里2 SDK发布时位于enduser-tools中，但向最终用户发布时，通常需要与吉里吉里的可执行文件放在同一文件夹中。→ <a target="main" class="jump" href="../Tools Reference/FileChkTool.html">ファイル破損チェックツール</a></dd>
+  <dd>文件损坏检查工具。您可以更改文件名以供最终用户发布，但.exe和.ini文件必须具有相同的名称。吉里吉里2 SDK发布时位于enduser-tools中，但向最终用户发布时，通常需要与吉里吉里的可执行文件放在同一文件夹中。→ <a target="main" class="jump" href="../Tools Reference/FileChkTool.html">文件破损分析工具</a></dd>
   
 <dt><a id="id131" name="id131" class="targanchor"><dfn>startup.tjs</dfn></a></dt>
-  <dd>TJS脚本文件。吉里吉里在项目文件夹下查找该文件，并首先运行该文件。→ <a target="main" class="jump" href="Startup.html">起動の仕方</a></dd>
+  <dd>TJS脚本文件。吉里吉里在项目文件夹下查找该文件，并首先运行该文件。→ <a target="main" class="jump" href="Startup.html">启动方法</a></dd>
   
 <dt>*.<a id="id132" name="id132" class="targanchor"><dfn>tjs</dfn></a></dt>
   <dd>TJS脚本文件。</dd>
   
 <dt><a id="id133" name="id133" class="targanchor"><dfn>msgmap.tjs</dfn></a></dt>
-  <dd>消息映射文件。如果您未曾创建过此文件，则无需将其包含在向最终用户发布产品中。→ <a target="main" class="jump" href="Controller.html">コントローラ</a></dd>
+  <dd>消息映射文件。如果您未曾创建过此文件，则无需将其包含在向最终用户发布产品中。→ <a target="main" class="jump" href="Controller.html">控制器</a></dd>
   
 <dt>*.<a id="id134" name="id134" class="targanchor"><dfn>sig</dfn></a></dt>
 
-  <dd>密钥签名工具输出的签名文件。文件损坏检查工具等参照此文件。→ <a target="main" class="jump" href="../Tools Reference/SignTool.html">秘钥与签名工具</a></dd>
+  <dd>密钥签名工具输出的签名文件。文件损坏检查工具等参照此文件。→ <a target="main" class="jump" href="../Tools Reference/SignTool.html">秘钥签名工具</a></dd>
   
 <dt>*.<a id="id135" name="id135" class="targanchor"><dfn>rpf</dfn></a></dt>
-  <dd>Releaserのプロファイルです。Releaserの設定情報が記録されています。このファイルはエンドユーザ向けの配布物に同梱する必要はありません(Releaser ではこのファイルを自動的に除外します)。→ <a target="main" class="jump" href="../Tools Reference/Releaser.html">Releaser</a></dd>
-  
+  <dd>Releaser的配置文件。记录Releaser的设置信息。此文件不必随最终用户产品发布（Releaser将自动排除此文件）。→ <a target="main" class="jump" href="../Tools Reference/Releaser.html">Releaser</a></dd>
+
 <dt><a id="id136" name="id136" class="targanchor"><dfn>krenvprf.kep</dfn></a></dt>
-  <dd>吉里吉里本体のデバッグ支援ウィンドウの設定内容を保持するファイルで、-datapath オプションで指定された位置に作成されます。このファイルをエンドユーザ向けの配布物に同梱する必要はありません(Releaser ではこのファイルを自動的に除外します)。</dd>
+  <dd> 保存吉里吉里本体调试辅助窗口设置内容的文件，在-datapath选项指定的位置创建。无需将此文件随最终用户产品发布（Releaser将自动排除此文件）。</dd>
   
 <dt><a id="id137" name="id137" class="targanchor"><dfn>hwexcept.log</dfn></a></dt>
-  <dd>吉里吉里本体がクラッシュした際に、-datapath オプションで指定された位置に作成される可能性があります。クラッシュといっても様々な状況がありますが、このファイルが作成されていた場合はかなり重症のクラッシュですので、エンドユーザから回収し、必要であれば吉里吉里の作者まで送ってください。このファイルはエンドユーザ向けの配布物に同梱する必要はありません。</dd>
+
+  <dd>吉里吉里本体崩溃时，可能会在-datapath选项指定的位置创建。虽说是崩溃也有各种各样的状况，但是这个文件被生成的话是相当严重的崩溃，所以请从最终用户产品中回收，如果需要的话请发送给吉里吉里的作者。此文件不必随最终用户产品发布。</dd>
   
 <dt>*.<a id="id138" name="id138" class="targanchor"><dfn>console.log</dfn></a></dt>
-  <dd>吉里吉里のコンソールのログファイルです。通常、吉里吉里がクラッシュした際などに、-datapath オプションで指定された位置に作成される可能性があります。このファイルが記録するログはほとんどの場合は、スクリプトの記述ミスに起因する物です。アプリケーションの開発中、あるいはエンドユーザに配布した後はエンドユーザから回収し、デバッグに役立ててください。このファイルをエンドユーザ向けの配布物に同梱する必要はありません。</dd>
+
+  <dd>吉里吉里控制台的日志文件。通常，吉里吉里崩溃时，可能会在-datapath选项指定的位置创建。此文件记录的日志在大多数情况下都是由于脚本编写错误引起的。在应用程序开发过程中或发布给最终用户后，从用户产品中回收并用于调试。不需要将此文件与最终用户发布的产品捆绑在一起。。</dd>
   
 <dt>*.<a id="id139" name="id139" class="targanchor"><dfn>dump.txt</dfn></a></dt>
-  <dd>TJSのダンプファイルです。このファイルをエンドユーザ向けの配布物に同梱する必要はありません。→ <a target="main" class="jump" href="Controller.html">コントローラ</a></dd>
+  <dd>TJS转储文件。不需要将此文件与最终用户发布的产品捆绑在一起。→ <a target="main" class="jump" href="Controller.html">控制器</a></dd>
   
 <dt>*.<a id="id140" name="id140" class="targanchor"><dfn>sli</dfn></a></dt>
-  <dd>循环调谐器输出的循环定义文件。→ <a target="main" class="jump" href="../Tools Reference/LoopTuner.html">ループチューナ</a></dd>
+  <dd>循环调谐器输出的循环定义文件。→ <a target="main" class="jump" href="../Tools Reference/LoopTuner.html">循环调谐器</a></dd>
   
 <dt>*.<a id="id141" name="id141" class="targanchor"><dfn>tft</dfn></a></dt>
-  <dd>レンダリング済みフォントデータ作成ツールが出力する、レンダリング済みフォントデータです。→ <a target="main" class="jump" href="../Tools Reference/FontMaker.html">レンダリング済みフォントデータ作成ツール</a></dd>
+  <dd>字体渲染工具输出的渲染字体数据。→ <a target="main" class="jump" href="../Tools Reference/FontMaker.html">字体渲染工具</a></dd>
   
 <dt>*.png *.jpeg *.jpg *.tlg *.bmp</dt>
   <dd>图像文件。→ <a target="main" class="jump" href="GraphicSystem.html">关于图形与图像</a></dd>
   
 <dt>*.wav *.tcw *.ogg</dt>
-  <dd>音乐文件す。→ <a target="main" class="jump" href="SoundSystem.html">サウンドシステム</a></dd>
+  <dd>音乐文件。→ <a target="main" class="jump" href="SoundSystem.html">关于音频文件的使用（Sound System）</a></dd>
   
 <dt>*.wmv *.mpg</dt>
-  <dd>视频文件。→ <a target="main" class="jump" href="../Class Reference/VideoOverlay/f_VideoOverlay.html">VideoOverlayクラス</a></dd>
+  <dd>视频文件。→ <a target="main" class="jump" href="../Class Reference/VideoOverlay/f_VideoOverlay.html">VideoOverlay类</a></dd>
   
 <dt>*.ks</dt>
-  <dd>KAGのシナリオファイルです。</dd>
+  <dd>KAG的脚本文件。</dd>
   
 <dt>*.ksd *.kdt</dt>
   <dd>KAG存档文件。</dd>

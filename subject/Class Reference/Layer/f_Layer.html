@@ -28,15 +28,15 @@
 <a class="jump" href="Methods/f_Layer_adjustGamma.html">adjustGamma</a> ( gamma值修正 )<br />
 <a class="jump" href="Methods/f_Layer_affineBlend.html">affineBlend</a> ( 仿射变换叠加 )<br />
 <a class="jump" href="Methods/f_Layer_affineCopy.html">affineCopy</a> ( 仿射变换复制替换 )<br />
-<a class="jump" href="Methods/f_Layer_affinePile.html">affinePile</a> ( 仿射变换-阿尔法通道像素混合叠加 )（旧功能，已被 <a class="jump" href="Methods/f_Layer_operateStretch.html">operateStretch</a> 取代）<br />
+<a class="jump" href="Methods/f_Layer_affinePile.html">affinePile</a> ( 仿射变换像素alpha混合叠加 )（旧功能，已被 <a class="jump" href="Methods/f_Layer_operateStretch.html">operateStretch</a> 取代）<br />
 <a class="jump" href="Methods/f_Layer_assignImages.html">assignImages</a> ( 复制图像 )<br />
-<a class="jump" href="Methods/f_Layer_beginTransition.html">beginTransition</a> ( 开始图层间的过渡效果 )<br />
+<a class="jump" href="Methods/f_Layer_beginTransition.html">beginTransition</a> ( 开始图层间的渐变效果 )<br />
 <a class="jump" href="Methods/f_Layer_blendRect.html">blendRect</a> ( 叠加矩形区域 )<br />
 <a class="jump" href="Methods/f_Layer_bringToBack.html">bringToBack</a> ( 将图层移至同级图层的最底层 )<br />
 <a class="jump" href="Methods/f_Layer_bringToFront.html">bringToFront</a> ( 将图层移至同级图层的最顶层 )<br />
 <a class="jump" href="Methods/f_Layer_colorRect.html">colorRect</a> ( 绘制颜色透明度可控的矩形区域 )<br />
-<a class="jump" href="Methods/f_Layer_convertType.html">convertType</a> ( レイヤ画像表現形式の変換 )<br />
-<a class="jump" href="Methods/f_Layer_copyRect.html">copyRect</a> ( 复制并替换矩形区域 )<br />
+<a class="jump" href="Methods/f_Layer_convertType.html">convertType</a> ( 转换层图像表示形式 )<br />
+<a class="jump" href="Methods/f_Layer_copyRect.html">copyRect</a> ( 复制矩形 )<br />
 <a class="jump" href="Methods/f_Layer_doBoxBlur.html">doBoxBlur</a> ( 图层定向模糊 )<br />
 <a class="jump" href="Methods/f_Layer_doGrayScale.html">doGrayScale</a> ( 灰度变换（图像去色） )<br />
 <a class="jump" href="Methods/f_Layer_drawText.html">drawText</a> ( 绘制文字 )<br />
@@ -50,8 +50,8 @@
 <a class="jump" href="Methods/f_Layer_getMainPixel.html">getMainPixel</a> ( 获取主图像指定坐标的色值 )<br />
 <a class="jump" href="Methods/f_Layer_getMaskPixel.html">getMaskPixel</a> ( 获取遮罩图像指定坐标的的色值 )<br />
 <a class="jump" href="Methods/f_Layer_getProvincePixel.html">getProvincePixel</a> ( 获取领域图像定坐标的的色值)<br />
-<a class="jump" href="Methods/f_Layer_independMainImage.html">independMainImage</a> ( メイン画像の共有の解除 )<br />
-<a class="jump" href="Methods/f_Layer_independProvinceImage.html">independProvinceImage</a> ( 領域画像の共有の解除 )<br />
+<a class="jump" href="Methods/f_Layer_independMainImage.html">independMainImage</a> ( 取消共享主图像 )<br />
+<a class="jump" href="Methods/f_Layer_independProvinceImage.html">independProvinceImage</a> ( 取消共享领域图像 )<br />
 <a class="jump" href="Methods/f_Layer_loadImages.html">loadImages</a> ( 载入图像 )<br />
 <a class="jump" href="Methods/f_Layer_loadProvinceImage.html">loadProvinceImage</a> ( 载入领域图像 )<br />
 <a class="jump" href="Methods/f_Layer_moveBefore.html">moveBefore</a> ( 将图层移至指定图层的前面 )<br />
@@ -70,13 +70,13 @@
 <a class="jump" href="Methods/f_Layer_setImagePos.html">setImagePos</a> ( 设置图像左上角坐标相对于所在图层原点的偏移值 )<br />
 <a class="jump" href="Methods/f_Layer_setImageSize.html">setImageSize</a> ( 重定义图像的尺寸 )<br />
 <a class="jump" href="Methods/f_Layer_setMainPixel.html">setMainPixel</a> ( 设定主图像上指定坐标的色值 )<br />
-<a class="jump" href="Methods/f_Layer_setMaskPixel.html">setMaskPixel</a> ( 设置Mask图像上指定坐标的色值 )<br />
+<a class="jump" href="Methods/f_Layer_setMaskPixel.html">setMaskPixel</a> ( 设置遮罩图像上指定坐标的色值 )<br />
 <a class="jump" href="Methods/f_Layer_setMode.html">setMode</a> ( 将图层设为模态 )<br />
 <a class="jump" href="Methods/f_Layer_setPos.html">setPos</a> ( 设置图层相对于父层的显示位置 )<br />
 <a class="jump" href="Methods/f_Layer_setProvincePixel.html">setProvincePixel</a> ( 设定领域图像的编号 )<br />
 <a class="jump" href="Methods/f_Layer_setSize.html">setSize</a> ( 设定图像的显示尺寸（即指定图层的实际尺寸） )<br />
 <a class="jump" href="Methods/f_Layer_setSizeToImageSize.html">setSizeToImageSize</a> ( 设置图层尺寸为该层绘制的图像尺寸（图层尺寸贴合被加载图像的尺寸） )<br />
-<a class="jump" href="Methods/f_Layer_stopTransition.html">stopTransition</a> ( 停止图层间的过渡效果 )<br />
+<a class="jump" href="Methods/f_Layer_stopTransition.html">stopTransition</a> ( 停止图层间的渐变效果 )<br />
 <a class="jump" href="Methods/f_Layer_stretchBlend.html">stretchBlend</a> ( 将图层缩放后进行合成运算 )（旧功能，已被 <a class="jump" href="Methods/f_Layer_operateStretch.html">operateStretch</a> 取代）<br />
 <a class="jump" href="Methods/f_Layer_stretchCopy.html">stretchCopy</a> ( 缩放图层上指定位置的图像并复制，以其替换另一图层上指定位置的图像 )<br />
 <a class="jump" href="Methods/f_Layer_stretchPile.html">stretchPile</a> ( 缩放变换-阿尔法通道像素混合叠加 )（旧功能，已被 <a class="jump" href="Methods/f_Layer_operateStretch.html">operateStretch</a> 取代）<br />
@@ -136,7 +136,7 @@
 <a class="jump" href="Properties/f_Layer_showParentHint.html">showParentHint</a> ( 是否继承显示父层的提示文字 )<br />
 <a class="jump" href="Properties/f_Layer_top.html">top</a> ( 图层的顶端位置 )<br />
 <a class="jump" href="Properties/f_Layer_type.html">type</a> ( 图层的显示类型 )<br />
-<a class="jump" href="Properties/f_Layer_useAttention.html">useAttention</a> ( 注視情報を使用するかどうか )<br />
+<a class="jump" href="Properties/f_Layer_useAttention.html">useAttention</a> ( 是否使用插入符号 )<br />
 <a class="jump" href="Properties/f_Layer_visible.html">visible</a> ( 图层是否可见 )<br />
 <a class="jump" href="Properties/f_Layer_width.html">width</a> ( 图层的宽度 )<br />
 <a class="jump" href="Properties/f_Layer_window.html">window</a> ( 窗口对象 )<br />

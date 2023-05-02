@@ -14,33 +14,54 @@
     <link href="mailto:dee@kikyou.info" rev="Made" />
 </head>
 <body>
-<h1><a id="id252" name="id252">サウンドシステムについて</a>
+<h1><a id="id252" name="id252">关于声音系统</a>
 </h1><div class="para"><div>
-　吉里吉里のサウンドシステムは MIDI、CD-DA、Wave (PCM) を再生できます。<br />
+<!-- 　吉里吉里のサウンドシステムは MIDI、CD-DA、Wave (PCM) を再生できます。<br />
 　MIDI 再生はシーケンサを内蔵しており、再生チャンネルが重ならなければ同時再生できます。<br />
 　CD-DA 再生は再生ドライブが重ならなければ同時再生でき、CD-ROM ドライブそれ自体に対して音量を制御することもできます。<br />
-　Wave 再生は複数を同時再生でき、ストリーミング再生 (長いサウンドを少しずつ読み込みながら再生) をすることができるほか、サウンドループ情報ファイル (.sli ファイル) を用いて、つぎめを感じさせないシームレスなループ再生を実現できます (サウンドループ情報ファイルはループチューナで作成します)。<br />
+　Wave 再生は複数を同時再生でき、ストリーミング再生 (長いサウンドを少しずつ読み込みながら再生) をすることができるほか、サウンドループ情報ファイル (.sli ファイル) を用いて、つぎめを感じさせないシームレスなループ再生を実現できます (サウンドループ情報ファイルはループチューナで作成します)。<br /> -->
+　吉里吉里的声音系统可以播放MIDI、CD-DA、Wave（PCM）。<br />
+　MIDI播放内置了音序器，如果播放声道不重叠的话可以同时播放。<br />
+　CCD-DA播放只要播放驱动器不重叠就可以同时播放，也可以控制CD-ROM驱动器本身音量。<br />
+　Wave播放可以同时播放多个音频，除了可以进行流式播放（一边读入音频文件一边播放）之外，还可以使用音乐循环信息文件（.sli文件）实现无缝的循环播放（使用循环调谐器创建声音循环信息文件）。<br />
 </div></div>
 
-<h1><a id="id253" name="id253">WaveSoundBuffer で再生可能な形式</a>
+<h1><a id="id253" name="id253">WaveSoundBuffer 可以播放的格式</a>
 </h1><div class="para"><div>
-　<a target="main" class="jump" href="f_WaveSoundBuffer.html">WaveSoundBuffer</a> では、標準で無圧縮の RIFF Wave 形式 ( 拡張は .wav で、Windows 標準形式 ) を再生することができます。受け付けられる形式は以下の通りです。<br />
+<!-- 　<a target="main" class="jump" href="f_WaveSoundBuffer.html">WaveSoundBuffer</a> では、標準で無圧縮の RIFF Wave 形式 ( 拡張は .wav で、Windows 標準形式 ) を再生することができます。受け付けられる形式は以下の通りです。<br />
 <br />
 <ul><li>WAVE_FORMAT_PCM 形式で、8bit 以上 32bit 以下の整数 PCM、かつチャンネル数が 1(モノラル)、2(ステレオ), 4(quadraphonic)、6(5.1ch) のもの</li><li>WAVE_FORMAT_IEEE_FLOAT 形式で、32bit の浮動小数点数 PCM、かつチャンネル数が 1(モノラル)、2(ステレオ), 4(quadraphonic)、6(5.1ch) のもの</li><li>WAVE_FORMAT_EXTENSIBLE 形式で、サブタイプが KSDATAFORMAT_SUBTYPE_PCM 形式で8bit 以上 32bit 以下の整数 PCM</li><li>WAVE_FORMAT_EXTENSIBLE 形式で、サブタイプが KSDATAFORMAT_SUBTYPE_IEEE_FLOAT 形式の 32bit 浮動小数点数 PCM</li></ul><br />
 　16bit を越える整数 PCM (24bit PCM など) や 浮動小数点数 PCM、ステレオを越えるチャンネル数のサウンド ( 4chサウンドや5.1chサウンドなど ) の再生は、WDM 系のサウンドドライバを使用しているシステム ( Windows2000, XP 以降、 Windows 98/98SE/ME で WDM ドライバ使用のシステム ) でのみのサポートとなります。<br />
 <br />
-　また、WaveSoundBuffer で再生可能な形式は、プラグインによって拡張することができます。<br />
+　また、WaveSoundBuffer で再生可能な形式は、プラグインによって拡張することができます。<br /> -->
+
+
+　<a target="main" class="jump" href="f_WaveSoundBuffer.html">WaveSoundBuffer</a> 可以播放标准的无压缩RIFF Wave格式( 扩展名为.wav，Windows标准格式 ) 。可接受的格式如下。<br />
+<br />
+<ul>
+	<li>WAVE_FORMAT_以PCM格式，8bit以上32bit以下整数PCM，且声道数为1（单声道）、2（立体声）、4（quadraphonic）、6（5.1ch） </li>
+	<li>WAVE_FORMAT_IEEE_FLOAT格式，32bit的浮点数PCM，且通道数为1（单声道）、2（立体声）、4（quadraphonic）、6（5.1ch）</li>
+	<li>WAVE_FORMAT_EXTENSIBLE格式，子类型为KSDATAFORMAT_SUBTYPE_PCM 格式的8bit以上32bit以下整数PCM</li>
+	<li>WAVE_FORMAT_EXTENSIBLE格式，子类型为KSDATAFORMAT_SUBTYPE_IEEE_FLOAT 格式的32bit浮点数PCM</li>
+</ul><br />
+　仅在WDM系统（Windows2000、XP或更高版本的Windows98/98SE/ME中使用WDM驱动程序的系统）中支持超过16bit的整数PCM（例如24bit PCM）、浮点PCM和超过双声道的音乐（例如4ch音乐和5.1ch音乐）的播放。<br />
+<br />
+　此外，WaveSoundBuffer可播放的格式可通过插件扩展。<br />
 </div></div>
-<h1><a id="id254" name="id254">WaveSoundBuffer での 4ch および 6ch の扱い</a>
+<h1><a id="id254" name="id254">WaveSoundBuffer 的  4ch 以及 6ch 的处理</a>
 </h1><div class="para"><div>
-　WAVE_FORMAT_EXTENSIBLE は、データ内に「どのチャンネルがどのスピーカーに割り当てられているか」の情報を持っていますが、WAVE_FORMAT_PCM や WAVE_FORMAT_IEEE_FLOAT の場合はその情報を持っていません。吉里吉里が WAVE_FORMAT_PCM や WAVE_FORMAT_IEEE_FLOAT で 4ch や 6ch のデータを扱うときは次のように解釈します。<br />
+<!-- 　WAVE_FORMAT_EXTENSIBLE は、データ内に「どのチャンネルがどのスピーカーに割り当てられているか」の情報を持っていますが、WAVE_FORMAT_PCM や WAVE_FORMAT_IEEE_FLOAT の場合はその情報を持っていません。吉里吉里が WAVE_FORMAT_PCM や WAVE_FORMAT_IEEE_FLOAT で 4ch や 6ch のデータを扱うときは次のように解釈します。<br /> -->
+
+　WAVE_FORMAT_EXTENSIBLE在数据中有“哪个声道被分配给哪个扬声器”的信息，但是WAVE_FORMAT_PCM或WAVE_FORMAT_IEEE_FLOAT的情况下没有此信息。吉里吉里处理WAVE_FORMAT_PCM或WAVE_FORMAT_IEEE_FLOAT的4ch或6ch数据时，解释如下。<br />
 <br />
 <dl>
-<dt>4chのとき</dt>
-<dd>チャンネルの先頭から、それぞれ、前左、前右、後左、後右のスピーカー用データであると見なされます</dd>
-<dt>6chのとき</dt>
-<dd>チャンネルの先頭から、それぞれ、前左、前中央、前右、後左、後右、低周波のスピーカー用データであると見なされます</dd></dl><br />
-また、OggVorbis で 4ch や 6ch のサウンドを再生するときにもこれと同じルールが適用されます。<br />
+<dt>4ch的时候</dt>
+<!-- <dd>チャンネルの先頭から、それぞれ、前左、前右、後左、後右のスピーカー用データであると見なされます</dd> -->
+<dd>从声道的开头开始，分别被认为是前左、前右、后左、后右扬声器用的数据</dd>
+<dt>6ch的时候</dt>
+<dd>从声道的开头开始，分别被认为是前左、前中央、前右、后左、后右、重低音扬声器的数据</dd></dl><br />
+<!-- また、OggVorbis で 4ch や 6ch のサウンドを再生するときにもこれと同じルールが適用されます。<br /> -->
+另外，在OggVorbis中播放4ch或6ch的声音时也适用同样的规则。<br />
 </div></div>
 	<script type="text/javascript" charset="UTF-8" src="../../js/documentid.js" ></script>
 	<script type="text/javascript" charset="UTF-8" src="../../js/postcontent.js" ></script>

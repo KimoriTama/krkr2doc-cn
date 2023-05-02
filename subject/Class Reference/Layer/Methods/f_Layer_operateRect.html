@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-矩形演算合成</dd>
+矩形运算混合</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,58 +32,60 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="operateRect の引数">
 <tr><td valign="top"><span class="argname">dleft</span></td>
-<td>				　演算先の矩形の左端位置を ( 演算先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定运算来源矩形的左端位置（在目标层的图像坐标位置处）（以像素为单位）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dtop</span></td>
-<td>				　演算先の矩形の上端位置を ( 演算先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定运算来源矩形的顶端位置（在目标层的图像坐标位置处）（以像素为单位）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">src</span></td>
-<td>				　演算元のレイヤオブジェクトを指定します。<br />
+<td>				　指定运算来源的图层对象。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sleft</span></td>
-<td>				　演算する矩形の左端位置を ( 演算元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定运算矩形的左端位置（在来源层的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">stop</span></td>
-<td>				　演算する矩形の上端位置を ( 演算元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定运算矩形的顶端位置（在来源层的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">swidth</span></td>
-<td>				　演算する矩形の横幅を ( 演算元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定运算矩形的宽度（在来源层中的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sheight</span></td>
-<td>				　演算する矩形の縦幅を ( 演算元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定运算矩形的高度（在来源层中的图像坐标位置处）。<br />
 			</td></tr>
+
+
 <tr><td valign="top"><span class="argname">mode</span></td>
-<td>				　演算のモードを指定します。<br />
-				<span class="script"><a class="targanchor" name="id100" id="id100">omAuto</a></span> が指定された場合は演算元レイヤの<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>プロパティに従って演算の種類が自動的に決定されます。<br />
-				<span class="script"><a class="targanchor" name="id101" id="id101">omPsNormal</a></span> が指定された場合はPhotoshop互換のアルファ合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id102" id="id102">omPsAdditive</a></span> が指定された場合はPhotoshop互換の覆い焼き(リニア)合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id103" id="id103">omPsSubtractive</a></span> が指定された場合はPhotoshop互換の焼き込み(リニア)合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id104" id="id104">omPsMultiplicative</a></span> が指定された場合はPhotoshop互換の乗算合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id105" id="id105">omPsScreen</a></span> が指定された場合はPhotoshop互換のスクリーン合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id106" id="id106">omPsOverlay</a></span> が指定された場合はPhotoshop互換のオーバーレイ合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id107" id="id107">omPsHardLight</a></span> が指定された場合はPhotoshop互換のハードライト合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id108" id="id108">omPsSoftLight</a></span> が指定された場合はPhotoshop互換のソフトライト合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id109" id="id109">omPsColorDodge</a></span> が指定された場合はPhotoshop互換の覆い焼きカラー合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id110" id="id110">omPsColorDodge5</a></span> が指定された場合はPhotoshopのバージョン5.x 以下と互換の覆い焼きカラー合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id111" id="id111">omPsColorBurn</a></span> が指定された場合はPhotoshop互換の焼き込みカラー合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id112" id="id112">omPsLighten</a></span> が指定された場合はPhotoshop互換の比較(明)合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id113" id="id113">omPsDarken</a></span> が指定された場合はPhotoshop互換の比較(暗)合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id114" id="id114">omPsDifference</a></span> が指定された場合はPhotoshop互換の差の絶対値合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id115" id="id115">omPsDifference5</a></span> が指定された場合はPhotoshopのバージョン 5.x 以下と互換の差の絶対値合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id116" id="id116">omPsExclusion</a></span> が指定された場合はPhotoshop互換の除外合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id117" id="id117">omAdditive</a></span> が指定された場合は加算合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id118" id="id118">omSubtractive</a></span> が指定された場合は減算合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id119" id="id119">omMultiplicative</a></span> が指定された場合は乗算合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id120" id="id120">omDodge</a></span> が指定された場合は覆い焼き合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id121" id="id121">omDarken</a></span> が指定された場合は比較(暗)合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id122" id="id122">omLighten</a></span> が指定された場合は比較(明)合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id123" id="id123">omScreen</a></span> が指定された場合はスクリーン乗算合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id124" id="id124">omAlpha</a></span> が指定された場合はアルファ合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id125" id="id125">omAddAlpha</a></span> が指定された場合は加算アルファ合成が行われます。<br />
-				<span class="script"><a class="targanchor" name="id126" id="id126">omOpaque</a></span> が指定された場合は src のアルファ情報は無視され、src は常に完全不透明であると見なされます。<br />
+<td>				　指定运算的模式。<br />
+	<span class="script">如果指定为<a class="targanchor" name="id202" id="id202">omAuto</a></span> ，则会根据运算来源层的<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>属性自动确定运算类型。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id203" id="id203">omPsNormal</a></span> ，则进行Photoshop兼容的alpha混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id204" id="id204">omPsAdditive</a></span> ，则会进行Photoshop兼容的颜色减淡（线性）混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id205" id="id205">omPsSubtractive</a></span>，则执行Photoshop兼容的颜色加深（线性）混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id206" id="id206">omPsMultiplicative</a></span> ，则执行Photoshop兼容的乘法混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id207" id="id207">omPsScreen</a></span> ，则会进行Photoshop兼容的屏幕混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id208" id="id208">omPsOverlay</a></span> ，则会进行Photoshop兼容的叠加混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id209" id="id209">omPsHardLight</a></span> ，则会进行Photoshop兼容的硬光混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id210" id="id210">omPsSoftLight</a></span> ，则会进行Photoshop兼容的柔光混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id211" id="id211">omPsColorDodge</a></span> 则会进行Photoshop兼容的颜色减淡混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id212" id="id212">omPsColorDodge5</a></span> 则会进行与Photoshop版本5.x以下兼容的颜色减淡混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id213" id="id213">omPsColorBurn</a></span> 则会进行Photoshop兼容的颜色加深混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id214" id="id214">omPsLighten</a></span> ，则进行Photoshop兼容的变亮混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id215" id="id215">omPsDarken</a></span> ，则进行Photoshop兼容的变暗混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id216" id="id216">omPsDifference</a></span> ，则会进行Photoshop兼容的差异混合（Difference Blend Mode）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id217" id="id217">omPsDifference5</a></span> ，则Photoshop的版本5.x以下会进行兼容的差异混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id218" id="id218">omPsExclusion</a></span> 则会执行与Photoshop兼容的排除混合（Exclusion Blend Mode）（当前版本尚未实现）。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id219" id="id219">omAdditive</a></span> ，则进行加法混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id220" id="id220">omSubtractive</a></span> ，则进行减法混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id221" id="id221">omMultiplicative</a></span> ，则执行乘法混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id222" id="id222">omDodge</a></span> ，则会进行颜色减淡混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id223" id="id223">omDarken</a></span> ，则进行变暗混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id224" id="id224">omLighten</a></span> ，则进行变亮混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id225" id="id225">omScreen</a></span>，则进行屏幕乘法混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id226" id="id226">omAlpha</a></span> ，则进行alpha混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id227" id="id227">omAddAlpha</a></span> 则进行加法alpha混合。<br />
+				<span class="script">如果指定为<a class="targanchor" name="id126" id="id126">omOpaque</a></span> 则忽略src的alpha信息，src始终被视为完全不透明。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">opa</span></td>
-<td>				　演算の強度 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定运算的强度（0-255）。<br />
 			</td></tr>
 </table>
 </dd>
@@ -93,10 +95,13 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定された演算元レイヤの矩形部分を自分のレイヤの指定位置に指定のモードで演算合成します。<br />
+		<!-- 　指定された演算元レイヤの矩形部分を自分のレイヤの指定位置に指定のモードで演算合成します。<br />
 		　演算先の ( メソッドを実行する ) レイヤや演算元のレイヤの <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティの値
 		は無視されます。<br />
-		　mode に omAuto を指定した場合は、演算元レイヤの<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>プロパティに従って演算の種類が自動的に決定されます。<br />
+		　mode に omAuto を指定した場合は、演算元レイヤの<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>プロパティに従って演算の種類が自動的に決定されます。<br /> -->
+　在指定模式下，将指定运算来源层的矩形部分运算混合到自己层的指定位置。<br />
+　忽略运算目标（执行方法的）层和运算来源层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性值。<br />
+　如果为mode指定了omAuto，则运算类型将根据运算来源层的<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>属性自动确定。<br />
 	</dd>
 </dl>
 </div></div>

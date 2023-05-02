@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-レイヤ画像表現形式の変換</dd>
+	转换层图像表示形式</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,7 +32,7 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="convertType の引数">
 <tr><td valign="top"><span class="argname">from</span></td>
-<td>				変換元となる描画方式タイプを指定します。
+<td>				指定要转换的绘图方式类型。
 			</td></tr>
 </table>
 </dd>
@@ -42,13 +42,21 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　レイヤ画像の形式を変換します。<br />
+		<!-- 　レイヤ画像の形式を変換します。<br />
 		　このメソッドは、ltAlpha (dfAlpha) と ltAddAlpha (dfAddAlpha) のように、「レイヤの画像表現形式が異なるが同様の表現が可能なタイプ」間での画像表現形式の変換を行います。<br />
 		　たとえば、ltAlpha で表示しているレイヤのタイプをそのまま ltAddAlpha に変更しただけでは、アルファチャンネルと色情報の扱いが異なるので正常に表示されません。そのため、このメソッドを用い、dfAlpha から dfAddAlpha に変換を行う必要があります。<br />
 		　このメソッドでは、変換先の画像表現形式は <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティで指定した描画方式に対応した形式になります (<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>で指定するレイヤタイプではなくて、描画方式であることに注意してください )。<br />
 		　from 引数には、変換元の画像表現形式に対応する描画方式(dfで始まる定数; <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>参照)を指定します。from 引数には <span class="script">dfAuto</span> は指定できません。<br />
 		　現在サポートされている変換は、dfAlpha→dfAddAlpha と dfAddAlpha→dfAlpha の変換です。dfAddAlpha→dfAlphaでは、変換により色情報が失われる場合があります。<br />
-		　このメソッドは、描画クリップ矩形の影響を受けません ( 常にレイヤ画像全体が影響を受けます )。<br />
+		　このメソッドは、描画クリップ矩形の影響を受けません ( 常にレイヤ画像全体が影響を受けます )。<br /> -->
+	
+　转换层图像的格式。<br />
+　该方法在“层的图像表现形式不同但可以进行同样表现的类型”之间转换图像表现形式，如ltAlpha（dfAlpha）和ltAddAlpha（dfAddAlpha）。<br />
+　例如，如果将在ltAlpha中显示的层的类型直接更改为ltAddAlpha，则无法正常显示，因为与阿尔法通道的颜色信息处理不同。因此，必须使用此方法将dfAlpha转换为dfAddAlpha。<br />
+　在该方法中，目标图像表示形式对应于在 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性中指定的绘制方式 (请注意，这不是在<a class="jump" href="../Properties/f_Layer_type.html">Layer.type</a>中指定的层类型，而是绘制方式 )。<br />
+　from参数指定与源图像表示形式相对应的绘制方式(以df开头的常量；参见 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>。from 参数不能为 <span class="script">dfAuto</span> 。<br />
+　当前支持的转换是 dfAlpha→dfAddAlpha 和 dfAddAlpha→dfAlpha的转换。在dfAddAlpha→dfAlpha中，转换可能会丢失颜色信息。<br />
+　此方法不受绘制裁剪矩形的影响( 始终影响整个层图像 )。<br />
 	</dd>
 </dl>
 </div></div>

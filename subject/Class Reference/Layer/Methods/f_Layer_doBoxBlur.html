@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-矩形ブラーをかける</dd>
+	矩形模糊</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,10 +32,10 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="doBoxBlur の引数">
 <tr><td valign="top"><span class="argname">xblur</span></td>
-<td>				横方向のブラーの範囲を指定します。
+<td>				指定横向模糊范围。
 			</td></tr>
 <tr><td valign="top"><span class="argname">yblur</span></td>
-<td>				縦方向のブラーの範囲を指定します。
+<td>				指定纵向模糊范围。
 			</td></tr>
 </table>
 </dd>
@@ -45,10 +45,14 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　ブラー(ぼかし)をかけます。アルゴリズムは「矩形ブラー」(box blur)です。<br />
+		<!-- 　ブラー(ぼかし)をかけます。アルゴリズムは「矩形ブラー」(box blur)です。<br />
 		　矩形ブラーは、xblurとyblurの２つのパラメータによって表現される「範囲」中のピクセルの輝度の平均値をとる物です。たとえば xblur=10 yblur=2 の場合は、対象のピクセルを中心に、横方向は -10～10、縦方向は -2～2 の矩形範囲のピクセルの輝度の平均をとり、それが最終的なそのピクセルの輝度となります。<br />
 		　範囲の面積は (xblur×2+1) × (yblur×2+1) で計算することができます。現バージョンではこの面積が 256 未満 の場合は、面積が256以上の場合よりも高速なアルゴリズムが採用されます。<br />
-		　<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティが dfAlpha の場合は、アルファ合成用の特別なアルゴリズムを使用しますので、少々遅くなります。dfAddAlpha や他の描画方式の場合は、より高速なアルゴリズムとなります。<br />
+		　<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティが dfAlpha の場合は、アルファ合成用の特別なアルゴリズムを使用しますので、少々遅くなります。dfAddAlpha や他の描画方式の場合は、より高速なアルゴリズムとなります。<br /> -->
+		　施加模糊。算法为「矩形模糊」(box blur)。<br />
+		　矩形模糊是“范围”中像素亮度的平均值，由xblur和yblur两个参数表示。如果 xblur=10 yblur=2 ，则以目标像素为中心，取矩形范围（水平范围-10到10，垂直范围-2到2）内的像素的平均亮度，即该像素的最终亮度。<br />
+		　范围的面积可以通过 (xblur×2+1) × (yblur×2+1) 来计算。在当前版本中，如果该面积小于256，将采用比面积大于256时的算法更快的算法。<br />
+		　如果<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性为dfAlpha，则速度稍慢，因为它使用特殊的Alpha混合算法。对于dfAddAlpha和其他绘制方法，算法更快。<br />
 	</dd>
 </dl>
 </div></div>

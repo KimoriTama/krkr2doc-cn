@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-拡大縮小ピクセルアルファブレンド重ね合わせ</dd>
+	缩放像素alpha混合叠加</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,49 +32,45 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="stretchPile の引数">
 <tr><td valign="top"><span class="argname">dleft</span></td>
-<td>				　重ね合わせ先の矩形の左端位置を ( 重ね合わせ先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要叠加的矩形的左端位置（在目标层的图像坐标位置处）（以像素为单位）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dtop</span></td>
-<td>				　重ね合わせ先の矩形の上端位置を ( 重ね合わせ先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要叠加的矩形的顶端位置（在目标层的图像坐标位置处）（以像素为单位）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dwidth</span></td>
-<td>				　重ね合わせ先の矩形の横幅を ( 重ね合わせ先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定叠加目标矩形的宽度（以像素为单位）（位于叠加目标层的图像位置）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dheight</span></td>
-<td>				　重ね合わせ先の矩形の縦幅を ( 重ね合わせ先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定叠加目标矩形的高度（以像素为单位）（位于叠加目标层的图像位置）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">src</span></td>
-<td>				　重ね合わせ元のレイヤオブジェクトを指定します。<br />
+<td>				　指定要叠加的图层对象。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sleft</span></td>
-<td>				　重ね合わせる矩形の左端位置を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定叠加矩形的左端位置（在来源层的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">stop</span></td>
-<td>				　重ね合わせる矩形の上端位置を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定叠加矩形的顶端位置（在来源层的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">swidth</span></td>
-<td>				　重ね合わせる矩形の横幅を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定叠加矩形的宽度（在来源层中的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sheight</span></td>
-<td>				　重ね合わせる矩形の縦幅を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定叠加矩形的高度（在来源层中的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">opa</span></td>
-<td>				　重ね合わせの不透明度 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定叠加的不透明度(0 ~ 255)。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">type</span></td>
-<td>				　拡大縮小のタイプを指定します。<br />
-				<span class="script"><a class="targanchor" name="id131" id="id131">stNearest</a>    </span> : 最近傍点法が用いられます<br />
-				<span class="script"><a class="targanchor" name="id132" id="id132">stFastLinear</a> </span> : 低精度の線形補間が用いられます(未実装)<br />
-				<span class="script"><a class="targanchor" name="id133" id="id133">stLinear</a>     </span> : 線形補間が用いられます(未実装)<br />
-				<span class="script"><a class="targanchor" name="id134" id="id134">stCubic</a>      </span> : ３次元補間が用いられます(未実装)<br />
-				　速度は stNearest &gt; stFastLinear &gt; stLinear &gt; stCubic の順に高速ですが、画質は速度が
-				速ければ速いタイプほど低画質になります。<br />
-				　stFastLinear や stLinear, stCubic に対しては、stRefNoClip をビット論理和で追加指定
-				することができ、この場合は、コピーするビットマップの領域外を参照して色を合成することを
-				許可します。これを指定しない場合は、転送元ビットマップの周囲に余裕があったとしても、
-				転送元ビットマップの範囲外を参照することはありません(範囲外の色はもっとも近い位置にある
-				範囲内のピクセルの色と見なされます)。<br />
-			</td></tr>
+			<td>				　指定缩放的类型。<br />
+				<span class="script"><a class="targanchor" name="id180" id="id180">stNearest</a>    </span> : 使用最邻近点法<br />
+				<span class="script"><a class="targanchor" name="id181" id="id181">stFastLinear</a> </span> : 使用低精度线性插值（部分实现）<br />
+				<span class="script"><a class="targanchor" name="id182" id="id182">stLinear</a>     </span> : 使用线性插值（未实现）<br />
+				<span class="script"><a class="targanchor" name="id183" id="id183">stCubic</a>      </span> : 使用三维插值（未实现）<br />
+				　速度按 stNearest &gt; stFastLinear &gt; stLinear &gt; stCubic 的顺序由高到低，而画质随速度提高而降低。<br />
+				　对于stFastLinear、stLinear、stCubic，可以和stRefNoClip进行按位或运算进行旗标追加，在这种情况下，允许参照要复制的位图的区域外的部分来合成颜色。如果未指定，则即使源位图周围有余量，也不会参照源位图的范围外（超出范围的颜色将被视为最接近的像素颜色）的颜色。<br />
+		</td></tr>
+
 </table>
 </dd>
 <dt>返回值</dt>
@@ -83,18 +79,22 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定された重ね合わせ元レイヤの矩形を、重ね合わせ先 ( メソッドを実行するレイヤ ) の矩形に
+		<!-- 　指定された重ね合わせ元レイヤの矩形を、重ね合わせ先 ( メソッドを実行するレイヤ ) の矩形に
 		重ね合わせます。重ね合わせ元矩形と重ね合わせ先矩形のサイズが異なる場合は拡大または縮小が
 		行われます。<br />
 		　ピクセルごとの不透明度 ( ピクセルアルファ ) を用いた重ね合わせを行うことができます。<br />
 		　現バージョンでは mode には stNearest のみ指定できます。<br />
 		　重ね合わされる画像は、重ね合わせ先の ( メソッドを実行する ) レイ
-		ヤの <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティの値によって変わります。<br />
-		<span class="script"><a class="targanchor" name="id135" id="id135">dfAlpha</a> (または<a class="targanchor" name="id136" id="id136">dfBoth</a>)    </span> : 重ね合わせ先の不透明度を考慮した重ね合わせが行われます<br />
-		<span class="script"><a class="targanchor" name="id137" id="id137">dfOpaque</a> (または<a class="targanchor" name="id138" id="id138">dfMain</a>)   </span> : 重ね合わせ先の不透明度を無視した重ね合わせが行われます(重ね合わせ先は全面完全不透明として扱われます)<br />
-		<span class="script"><a class="targanchor" name="id139" id="id139">それ以外</a>  </span>                 : できません ( 例外が発生します )<br />
+		ヤの <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティの値によって変わります。<br /> -->
+　将指定的叠加来源层的矩形与叠加目标（执行方法的层）的矩形重合。如果来源矩形与目标矩形的大小不同，则放大或缩小。<br />
+　可以使用每个像素的不透明度（像素alpha）进行叠加。<br />
+　在当前版本中，mode只能指定stNearest。<br />
+　叠加的图像会根据叠加目标（执行方法）的层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性的值而变化。<br />
+		<span class="script"><a class="targanchor" name="id135" id="id135">dfAlpha</a> (或是<a class="targanchor" name="id136" id="id136">dfBoth</a>)    </span> :叠加时考虑到要叠加的目标层的不透明度<br />
+		<span class="script"><a class="targanchor" name="id137" id="id137">dfOpaque</a> (或是<a class="targanchor" name="id138" id="id138">dfMain</a>)   </span> : 叠加时忽略目标层的不透明度（将目标层视为完全不透明）<br />
+		<span class="script"><a class="targanchor" name="id139" id="id139">其他</a>  </span>                 : 无法调用（出现异常）<br />
 		<br />
-		　このメソッドは旧式になりました。代わりに <a class="jump" href="f_Layer_operateStretch.html">Layer.operateStretch</a> を使用してください。演算のモードに omAlpha か omAddAlpha を指定すると同じ効果になります(omAlphaを指定するのかomAddAlphaを指定するのかはsrcのアルファタイプによって異なります。omAutoを指定すればsrcのレイヤタイプに従って自動的に決定されます)。<br />
+		　此方法已过时。请改用 <a class="jump" href="f_Layer_operateStretch.html">Layer.operateStretch</a> 。指定omAlpha或omAddAlpha作为运算模式具有相同的效果（指定omAlpha还是omAddAlpha取决于src的Alpha类型。如果指定omAuto，则根据src层类型自动确定。<br />
 	</dd>
 </dl>
 </div></div>

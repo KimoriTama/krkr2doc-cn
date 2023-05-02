@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-伽马修正</dd>
+伽马校正</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,31 +32,31 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="adjustGamma の引数">
 <tr><td valign="top"><span class="argname">rgamma</span></td>
-<td>				　赤成分のガンマ値 ( 0.0 ～ 1.0 ～ 9.0 ) を指定します。<br />
+<td>				　指定红色分量的Gamma值 ( 0.0 ～ 1.0 ～ 9.0 ) 。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">rfloor</span></td>
-<td>				　赤成分の出力最低値 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定红色分量的最小输出值 ( 0 ～ 255 ) 。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">rceil</span></td>
-<td>				　赤成分の出力最大値 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定红色分量的最大输出值  ( 0 ～ 255 ) 。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">ggamma</span></td>
-<td>				　緑成分のガンマ値 ( 0.0 ～ 1.0 ～ 9.0 ) を指定します。<br />
+<td>				　指定绿色分量的Gamma值 ( 0.0 ～ 1.0 ～ 9.0 ) 。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">gfloor</span></td>
-<td>				　緑成分の出力最低値 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定绿色分量的最小输出值 ( 0 ～ 255 ) 。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">gceil</span></td>
-<td>				　緑成分の出力最大値 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定绿色分量的最大输出值 ( 0 ～ 255 ) 。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">bgamma</span></td>
-<td>				　青成分のガンマ値 ( 0.0 ～ 1.0 ～ 9.0 ) を指定します。<br />
+<td>				　指定蓝色分量的Gamma值 ( 0.0 ～ 1.0 ～ 9.0 ) 。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">bfloor</span></td>
-<td>				　青成分の出力最低値 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定红色分量的最小输出值 ( 0 ～ 255 ) 。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">bceil</span></td>
-<td>				　青成分の出力最大値 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定蓝色分量的最大输出值 ( 0 ～ 255 ) 。<br />
 			</td></tr>
 </table>
 </dd>
@@ -66,12 +66,17 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　画像に対してガンマ補正を実行します。<br />
+		<!-- 　画像に対してガンマ補正を実行します。<br />
 		　ガンマ値には 1.0 を指定するとガンマ曲線が直線になります。<br />
 		　出力最低値と出力最高値は各成分の輝度の最低値と最高値を指定するものです。<br />
 		　最高値に最低値よりも低い値を設定すると画像を反転させることができます。<br />
 		　このメソッドは<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>プロパティを参照します。これが dfAddAlpha の場合、このメソッドは
-		加算アルファ合成用の特別なガンマ補正ルーチンを用います。このルーチンは加算アルファ合成のうち、アルファ合成に相当する成分に対してはガンマ補正を行いますが、加算合成に相当する成分に対してはガンマ補正を行いません。<br />
+		加算アルファ合成用の特別なガンマ補正ルーチンを用います。このルーチンは加算アルファ合成のうち、アルファ合成に相当する成分に対してはガンマ補正を行いますが、加算合成に相当する成分に対してはガンマ補正を行いません。<br /> -->
+　对图像执行Gamma校正。<br />
+　如果Gamma值为1.0，则Gamma曲线将变为直线。<br />
+　“输出最低值”和“输出最高值”指定每个分量的亮度最低值和最高值。<br />
+　如果将最大值设置为低于最小值，则可以反转图像。<br />
+　此方法参照<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>属性。对于dfAddAlpha，此方法使用特殊的Gamma校正例程进行加法Alpha混合。对于加法Alpha混合，此例程对相当于Alpha混合的分量执行Gamma校正，但对相当于加法合成的分量不执行Gamma校正。<br />
 	</dd>
 </dl>
 </div></div>

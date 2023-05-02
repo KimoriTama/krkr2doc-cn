@@ -14,17 +14,24 @@
     <link href="mailto:dee@kikyou.info" rev="Made" />
 </head>
 <body>
-<h1><a id="id242" name="id242">キー・署名ツールについて</a>
+<h1><a id="id242" name="id242">关于密匙与签名工具</a>
 </h1><div class="para"><div>
-　キー・署名ツールは、配布するデータに対し、簡単な<a id="id243" name="id243" class="targanchor"><dfn>電子署名</dfn></a>を行うためのツールです。<br />
+<!-- 　キー・署名ツールは、配布するデータに対し、簡単な<a id="id243" name="id243" class="targanchor"><dfn>電子署名</dfn></a>を行うためのツールです。<br />
 　電子署名を使えば、ファイルが正当な制作者によって作成された物であることのチェック、ファイルの改ざんチェック、破損チェックを行うことができます。<br />
 　現在では、<a target="main" class="jump" href="FileChkTool.html">ファイル破損チェックツール</a>がこの署名を利用します。<br />
+</div></div> -->
+
+　密钥签名工具是对分发的数据进行简单<a id="id243" name="id243" class="targanchor"><dfn>数字签名</dfn></a>的工具。<br />
+　使用数字签名，您可以检查文件是否由合法的作者创建，检查文件是否被篡改或损坏。<br />
+　现在，<a target="main" class="jump" href="FileChkTool.html">文件损坏分析工具</a>使用此签名。<br />
 </div></div>
 
-<h1><a id="id244" name="id244">公開鍵・秘密鍵について</a>
+<h1><a id="id244" name="id244">关于公钥和私钥</a>
 </h1><div class="para"><div>
-　キー・署名ツールを使うためには、このツールを使って「<a id="id245" name="id245" class="targanchor"><dfn>公開鍵</dfn></a>」(public key)と「<a id="id246" name="id246" class="targanchor"><dfn>秘密鍵</dfn></a>」(private key)という２つの対になる(ペアになる)キー(<a id="id247" name="id247" class="targanchor"><dfn>キーペア</dfn></a>)を作成する必要があります。<br />
-　鍵といっても、実体は以下のような形式の文字列です。<br />
+<!-- 　キー・署名ツールを使うためには、このツールを使って「<a id="id245" name="id245" class="targanchor"><dfn>公開鍵</dfn></a>」(public key)と「<a id="id246" name="id246" class="targanchor"><dfn>秘密鍵</dfn></a>」(private key)という２つの対になる(ペアになる)キー(<a id="id247" name="id247" class="targanchor"><dfn>キーペア</dfn></a>)を作成する必要があります。<br />
+　鍵といっても、実体は以下のような形式の文字列です。<br /> -->
+　要使用密钥签名工具，必须使用该工具创建两个成对的密钥（<a id="id247" name="id247" class="targanchor"><dfn>密钥对</dfn></a>）：「<a id="id245" name="id245" class="targanchor"><dfn>公钥</dfn></a>」(public key)和「<a id="id246" name="id246" class="targanchor"><dfn>私钥</dfn></a>」(private key)。<br />
+　密钥其本体也是以下形式的字符串。<br />
 
 <br />
 <code class="bq">-----BEGIN&nbsp;PUBLIC&nbsp;KEY-----<br />
@@ -34,8 +41,7 @@ hDSiXfXz7KmfMXppM0CjofvH+IL7BJ3/GcLFcuEw3hEnzoajIm1TAgMBAAE=<br />
 -----END&nbsp;PUBLIC&nbsp;KEY-----<br />
 </code>
 <br />
-
-　公開鍵は公開してもかまわないキー、秘密鍵は公開してはならないキーです。<br />
+<!-- 　公開鍵は公開してもかまわないキー、秘密鍵は公開してはならないキーです。<br />
 　署名を行うときには秘密鍵を用います。電子署名は、その秘密鍵を使って生成します。<br />
 　その署名を確認するときには公開鍵を用います。秘密鍵と公開鍵は常に対になり、該当する秘密鍵を使って行った署名のみが、その秘密鍵と対になる公開鍵で正常に確認できます。<br />
 　秘密鍵を知らない者が他の秘密鍵で署名しても、正当な公開鍵では署名を確認できないことになります。公開鍵から秘密鍵を推測することは不可能ですので、秘密鍵を持っている人しか正当な署名ができないことになります。<br />
@@ -44,18 +50,34 @@ hDSiXfXz7KmfMXppM0CjofvH+IL7BJ3/GcLFcuEw3hEnzoajIm1TAgMBAAE=<br />
 <br /><div class="note"><div class="notehead"><span class="noteheadspan">Note</span></div>
 吉里吉里のキー・署名ツールが用いる暗号方式は2.25beta7でECC(楕円曲線暗号)からRSAに変更になりました。<br />
 吉里吉里のキー・署名ツールが生成するRSAキーの長さは1024ビットです。また、秘密鍵はパスフレーズでの保護は行われません。<br />
-吉里吉里のキー・署名ツールが生成するRSA公開鍵・秘密鍵は他のソフトウェアのPEM形式のキーと互換性がありますが、キー・署名ツール以外で生成したキーを使った場合、あるいはキー・署名ツールで生成したキーを他のソフトウェアで使用した場合の動作はサポート外です。<br />
+吉里吉里のキー・署名ツールが生成するRSA公開鍵・秘密鍵は他のソフトウェアのPEM形式のキーと互換性がありますが、キー・署名ツール以外で生成したキーを使った場合、あるいはキー・署名ツールで生成したキーを他のソフトウェアで使用した場合の動作はサポート外です。<br /> -->
+
+
+　公钥是可以公开的密钥，私钥是不能公开的密钥。<br />
+　签名时使用私钥。使用私钥生成数字签名。<br />
+　确认签名时使用公钥。私钥和公钥始终配对，只有使用该私钥进行的签名才能通过与该私钥配对的公钥成功验证。<br />
+　如果不知道私钥的人使用其他私钥签名，则合法的公钥将无法验证签名。从公钥中推断私钥是不可能的，这意味着只有拥有私钥的人才能合法签名。<br />
+<br /><div class="note"><div class="notehead"><span class="noteheadspan">Note</span></div>
+通常，当「公钥」公开时，您需要确保它是合法的。如果不知道「公钥」原本是否合法，则电子签名的意义就会变得淡薄。但是，吉里吉里的密钥签名工具并没有考虑到这一点。。</div><br />
+<br /><div class="note"><div class="notehead"><span class="noteheadspan">Note</span></div>
+吉里吉里的密钥签名工具使用的算法，从2.25 beta7开始由从ECC（椭圆加密算法）更改为RSA。<br />
+吉里吉里的密钥签名工具生成的RSA密钥长度为1024位。此外，私钥不受密码短语保护。<br />
+吉里吉里的密钥签名工具生成的RSA公钥和私钥与其他软件的PEM格式密钥兼容，但不支持使用非密钥签名工具生成的密钥或在其他软件中使用密钥签名工具生成的密钥。<br />
 </div><br />
 </div></div>
-<h1><a id="id248" name="id248"><a id="id248" name="id248" class="targanchor"><dfn>キー生成</dfn></a>のしかた</a>
+<h1><a id="id248" name="id248"><a id="id248" name="id248" class="targanchor"><dfn>密钥生成</dfn></a>方式</a>
 </h1><div class="para"><div>
 <br />
-　キー・署名ツール(tools フォルダにある krkrsign.exe)を起動すると最初に表示されるのはキー生成の画面です。<br />
+　当您启动密钥签名工具（位于tools文件夹中的krkrsign.exe）时，您首先看到的是密钥生成画面。<br />
+<b class="uko"><div class="note">
+	<div class="notehead"><span class="noteheadspan">译注</span></div>
+	此工具没有找到汉化版本，名词保留日语原文。
+</div></b>
 <img width="375" height="416" alt="sign0.png" src="../../images/sign0.png" /><br />
 <br />
 <br />
 <dl>
-<dt>「生成する」ボタン</dt>
+<!-- <dt>「生成する」按钮</dt>
 <dd>　クリックするとキーペアの生成が始まります。最初に「エントロピーを収集中」というウィンドウが現れ、マウスをでたらめに動かすことを要求されるので、指示に従ってください(他人に推測されないキーを生成する為に必要です)。<br />
 　ウィンドウが閉じると、下の「生成された公開鍵」と「生成された秘密鍵」の欄に、生成されたキーペアが表示されます。<br />
 </dd>
@@ -64,63 +86,76 @@ hDSiXfXz7KmfMXppM0CjofvH+IL7BJ3/GcLFcuEw3hEnzoajIm1TAgMBAAE=<br />
 <dt>生成された秘密鍵</dt>
 <dd>　生成された秘密鍵が表示されます。横の「コピー」ボタンを押すと、鍵をクリップボードにコピーすることができます。<br />
 　セキュリティの都合上、このウィンドウを閉じるときにクリップボードの内容はクリアされるので注意してください。<br />
+</dd></dl></div></div> -->
+
+<dt>「生成する」按钮</dt>
+<dd>　点击后将开始生成密钥对。首先会出现一个“正在收集熵”的窗口，要求您随意移动鼠标，因此请按照指示操作（这是为了生成不会被他人猜测的密钥所必需的）。<br />
+	　窗口关闭后，生成的密钥对出现在下面的「生成された公開鍵」和「生成された秘密鍵」栏中。<br />
+</dd>
+<dt>生成された公開鍵</dt>
+<dd>　显示生成的公钥。按旁边的「コピー」按钮，可以将钥匙复制到剪贴板。</dd>
+<dt>生成された秘密鍵</dt>
+<dd>　显示生成的私钥。按旁边的「コピー」按钮，可以将钥匙复制到剪贴板。<br />
+	　为了安全起见，请注意，关闭此窗口时将清除剪贴板内容。<br />
 </dd></dl></div></div>
 
-<h1><a id="id249" name="id249"><a id="id249" name="id249" class="targanchor"><dfn>署名</dfn></a>のしかた</a>
+<h1><a id="id249" name="id249"><a id="id249" name="id249" class="targanchor"><dfn>签名</dfn></a>方式</a>
 </h1><div class="para"><div>
 <br />
-　「署名」タブをクリックすると、署名の画面が表示されます。<br />
+　单击「署名」标签以显示签名画面。<br />
 <img width="375" height="416" alt="sign1.png" src="../../images/sign1.png" /><br />
 <br />
 <br />
 <dl>
 <dt>秘密鍵</dt>
-<dd>　秘密鍵を指定してください。</dd>
+<dd>　请指定私钥。</dd>
 <dt>対象ファイル</dt>
-<dd>　署名の対象となるファイルを指定することができます。<br />
-　「参照」ボタンを押すと、ファイル参照ダイアログボックスが開くので、対象とするファイルを指定してください。<br />
-　このウィンドウに対象とするファイルをドロップすることでも、対象ファイルを指定することができます(現バージョンでは複数ファイルを一度に署名することはできません)。<br />
+<dd>　您可以指定要签名的文件。<br />
+　「参照」按钮将打开“浏览文件”对话框，您可以在其中指定文件。<br />
+　也可以通过将目标文件拖放到此窗口来指定目标文件（当前版本不允许一次签名多个文件）。<br />
 </dd>
-<dt>「署名する」ボタン</dt>
-<dd>　対象となるファイルを署名します。<br />
-　署名ファイルは、対象ファイルのファイル名に、拡張子 .sig が付加されたファイル名になりますが、例外的に吉里吉里本体の場合は、本体に署名が埋め込まれます。<br />
+<dt>「署名する」按钮</dt>
+<dd>　签名目标文件。<br />
+	　签名文件是目标文件的文件名后附加扩展名.sig的文件名，但如果是吉里吉里本体，则会在主体中嵌入签名。<br />
 </dd></dl></div></div>
-<h1><a id="id250" name="id250"><a id="id250" name="id250" class="targanchor"><dfn>署名確認</dfn></a>のしかた</a>
+<h1><a id="id250" name="id250"><a id="id250" name="id250" class="targanchor"><dfn>签名确认</dfn></a>方式</a>
 </h1><div class="para"><div>
 <br />
-　「署名確認」タブをクリックすると、署名の画面が表示されます。<br />
+　单击「署名確認」选项卡以显示签名画面。<br />
 <img width="375" height="416" alt="sign2.png" src="../../images/sign2.png" /><br />
 <br />
 <br />
 <dl>
 <dt>公開鍵</dt>
-<dd>　公開鍵を指定してください。</dd>
+<dd>　请指定公钥。</dd>
 <dt>対象ファイル</dt>
-<dd>　署名確認の対象となるファイルを指定することができます。<br />
-　「参照」ボタンを押すと、ファイル参照ダイアログボックスが開くので、対象とするファイルを指定してください。<br />
-　このウィンドウに対象とするファイルをドロップすることでも、対象ファイルを指定することができます(現バージョンでは、このツールで複数ファイルの署名を一度に確認することはできません)。<br />
+<dd>　允许您指定要验证签名的文件。<br />
+　单击「参照」按钮将打开“浏览文件”对话框，您必须指定所需的文件。<br />
+　也可以通过将目标文件拖放到此窗口来指定目标文件（当前版本不允许一次确认多个签名文件）。<br />
 </dd>
-<dt>「チェック」ボタン</dt>
-<dd>　対象ファイルの署名を確認します。<br />
-　結果はメッセージボックスで通知されます。</dd></dl></div></div>
+<dt>「チェック」按钮</dt>
+<dd>　验证目标文件的签名。<br />
+	　结果将在消息框中通知。</dd></dl></div></div>
 
-<h1><a id="id251" name="id251">コマンドラインからの使用法</a>
+<h1><a id="id251" name="id251">命令行的使用方法</a>
 </h1><div class="para"><div>
-　コマンドラインからキー・署名ツールを使用することにより、ファイルに署名を行うことができます。これはmakeなどのツールと組み合わせて使うときに便利です。<br />
-　以下の書式で指定します。<br />
+	
+	　您可以从命令行使用密钥签名工具对文件进行签名。这在与make等工具配合使用时很有用。<br />
+	　指定以下格式。<br />
 
 <br />
-<code class="bq">krkrsign&nbsp;-sign&nbsp;&quot;対象ファイル名&quot;&nbsp;&quot;秘密鍵ファイル名&quot;</code>
+<code class="bq">krkrsign&nbsp;-sign&nbsp;&quot;对象文件名&quot;&nbsp;&quot;私钥文件名&quot;</code>
 <br />
+<br/>
 
-秘密鍵ファイル名には、秘密鍵をテキストとして保存したファイルを指定してください。<br />
-たとえば、game.eXe に署名する場合は<br />
+私钥文件名必须是私钥保存为文本的文件。<br />
+例如，如果要签名game.eXe，则指定<br />
 
 <br />
 <code class="bq">krkrsign&nbsp;-sign&nbsp;&quot;game.eXe&quot;&nbsp;&quot;key.priv&quot;</code>
 <br />
 
-　と指定します。一回の呼び出しでは一個のファイルしか署名できません。</div></div>
+　一次调用只能签名一个文件。</div></div>
 
 
 

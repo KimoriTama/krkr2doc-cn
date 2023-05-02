@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-拡大縮小コピー</dd>
+	缩放复制</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,46 +32,42 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="stretchCopy の引数">
 <tr><td valign="top"><span class="argname">dleft</span></td>
-<td>				　コピー先の矩形の左端位置を ( コピー先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定复制目标矩形的左端位置（目标层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dtop</span></td>
-<td>				　コピー先の矩形の上端位置を ( コピー先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定复制目标矩形的顶端位置（目标层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dwidth</span></td>
-<td>				　コピー先の矩形の横幅を ( コピー先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定目标矩形的宽度（目标层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dheight</span></td>
-<td>				　コピー先の矩形の縦幅を ( コピー先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定目标矩形的高度（目标层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">src</span></td>
-<td>				　コピー元のレイヤオブジェクトを指定します。<br />
+<td>				　指定要复制的层对象。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sleft</span></td>
-<td>				　コピーする矩形の左端位置を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+	
+<td>				　指定要复制的矩形的左端位置（在来源图层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">stop</span></td>
-<td>				　コピーする矩形の上端位置を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的顶端位置（在来源图层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">swidth</span></td>
-<td>				　コピーする矩形の横幅を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的宽度（在来源层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sheight</span></td>
-<td>				　コピーする矩形の縦幅を ( コピー元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的高度（在来源层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">type</span></td>
-<td>				　拡大縮小のタイプを指定します。<br />
-				<span class="script"><a class="targanchor" name="id127" id="id127">stNearest</a>    </span> : 最近傍点法が用いられます<br />
-				<span class="script"><a class="targanchor" name="id128" id="id128">stFastLinear</a> </span> : 低精度の線形補間が用いられます(一部実装)<br />
-				<span class="script"><a class="targanchor" name="id129" id="id129">stLinear</a>     </span> : 線形補間が用いられます(一部実装)<br />
-				<span class="script"><a class="targanchor" name="id130" id="id130">stCubic</a>      </span> : ３次元補間が用いられます(一部実装)<br />
-				　速度は stNearest &gt; stFastLinear &gt; stLinear &gt; stCubic の順に高速ですが、画質は速度が
-				速ければ速いタイプほど低画質になります。<br />
-				　stFastLinear や stLinear, stCubic に対しては、stRefNoClip をビット論理和で追加指定
-				することができ、この場合は、コピーするビットマップの領域外を参照して色を合成することを
-				許可します。これを指定しない場合は、転送元ビットマップの周囲に余裕があったとしても、
-				転送元ビットマップの範囲外を参照することはありません(範囲外の色はもっとも近い位置にある
-				範囲内のピクセルの色と見なされます)。<br />
-			</td></tr>
+			<td>				　指定缩放的类型。<br />
+				<span class="script"><a class="targanchor" name="id180" id="id180">stNearest</a>    </span> : 使用最邻近点法<br />
+				<span class="script"><a class="targanchor" name="id181" id="id181">stFastLinear</a> </span> : 使用低精度线性插值（部分实现）<br />
+				<span class="script"><a class="targanchor" name="id182" id="id182">stLinear</a>     </span> : 使用线性插值（未实现）<br />
+				<span class="script"><a class="targanchor" name="id183" id="id183">stCubic</a>      </span> : 使用三维插值（未实现）<br />
+				　速度按 stNearest &gt; stFastLinear &gt; stLinear &gt; stCubic 的顺序由高到低，而画质随速度提高而降低。<br />
+				　对于stFastLinear、stLinear、stCubic，可以和stRefNoClip进行按位或运算进行旗标追加，在这种情况下，允许参照要复制的位图的区域外的部分来合成颜色。如果未指定，则即使源位图周围有余量，也不会参照源位图的范围外（超出范围的颜色将被视为最接近的像素颜色）的颜色。<br />
+		</td></tr>
 </table>
 </dd>
 <dt>返回值</dt>
@@ -80,7 +76,7 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定されたコピー元レイヤの矩形を、コピー先 ( メソッドを実行するレイヤ ) の矩形に
+		<!-- 　指定されたコピー元レイヤの矩形を、コピー先 ( メソッドを実行するレイヤ ) の矩形に
 		コピーします。コピー元矩形とコピー先矩形のサイズが異なる場合は拡大または縮小が
 		行われます。<br />
 		　現バージョンでは stFastLinear の指定で線形補間が効くのは、重ね合わせ先の ( メソッドを実行する ) レイヤの <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティが dfAlpha (または dfBoth) または dfAddAlpha の場合です。また、Layer.face プロパティが dfOpaque で、<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> プロパティが偽の時も線形補間が可能です。<br />
@@ -88,7 +84,14 @@
 		伴わず、コピー先矩形がレイヤをはみ出さない場合のみです。<br />
 		　重ね合わせ先の ( メソッドを実行する ) レイヤの <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティが
 		dfAlpha (または dfBoth) または dfAddAlpha の場合は、メイン画像とマスク画像の両方がコピーされます。<br />
-		　dfOpaque (または dfMain) の場合は、<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> プロパティが真の時はメイン画像のみがコピーされ、偽の時はメイン画像とマスク画像の両方がコピーされます。<br />
+		　dfOpaque (または dfMain) の場合は、<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> プロパティが真の時はメイン画像のみがコピーされ、偽の時はメイン画像とマスク画像の両方がコピーされます。<br /> -->
+		
+　将指定的来源层矩形复制到目标（执行方法的层）矩形。如果来源矩形和目标矩形的大小不同，则放大或缩小。<br />
+　在当前版本中，stFastLinear中的线性插值的起作用的是，叠加层（执行方法）的<a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性为dfAlpha（或dfBoth）或dfAddAlpha的情况。此外，当Layer.face 属性为 dfOpaque 且<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a> 属性为假值时，也可以进行线性插值。<br />
+　此外，在当前版本中，指定stLinear或stCubic仅在目标矩形不出现在图层之外时，且不存在水平/垂直翻转才有效。<br />
+　如果目标（执行方法）层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性为
+		dfAlpha (或是 dfBoth) 或是 dfAddAlpha，则同时复制主图像和遮罩图像。<br />
+		　对于dfOpaque (或是 dfMain) ，<a class="jump" href="../Properties/f_Layer_holdAlpha.html">Layer.holdAlpha</a>属性为真值时仅复制主图像，为假值时同时复制主图像和遮罩图像。 <br />
 	</dd>
 </dl>
 </div></div>

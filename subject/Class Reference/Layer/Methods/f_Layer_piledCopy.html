@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-レイヤを重ね合わせた画像をコピー</dd>
+	复制层叠加图像</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,25 +32,27 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="piledCopy の引数">
 <tr><td valign="top"><span class="argname">dleft</span></td>
-<td>				　コピー先の矩形の左端位置を ( コピー先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+	
+<td>				　指定复制目标矩形的左端位置（目标层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dtop</span></td>
-<td>				　コピー先の矩形の上端位置を ( コピー先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定复制目标矩形的顶端位置（目标层的图像坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">src</span></td>
-<td>				　コピー元のレイヤオブジェクトを指定します。<br />
+<td>				　指定要复制的层对象。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sleft</span></td>
-<td>				　コピーする矩形の左端位置を ( コピー元レイヤの表示位置における ) ピクセル単位で指定します。<br />
+	
+<td>				　指定要复制的矩形的左端位置（来源层的显示坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">stop</span></td>
-<td>				　コピーする矩形の上端位置を ( コピー元レイヤの表示位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的顶端位置（来源层的显示坐标位置），以像素为单位。<br />
 			</td></tr>
-<tr><td valign="top"><span class="argname">swidth</span></td>
-<td>				　コピーする矩形の横幅を ( コピー元レイヤの表示位置における ) ピクセル単位で指定します。<br />
+<tr><td valign="top"><span class="argname">swidth</span></td>指
+<td>				　指定要复制的矩形的宽度（在来源层的显示坐标位置），以像素为单位。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sheight</span></td>
-<td>				　コピーする矩形の縦幅を ( コピー元レイヤの表示位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要复制的矩形的高度（在来源层的显示坐标位置），以像素为单位。<br />
 			</td></tr>
 </table>
 </dd>
@@ -60,10 +62,12 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定されたコピー元レイヤの指定された矩形部分を、子レイヤも含めて重ね合わせ、その
+		<!-- 　指定されたコピー元レイヤの指定された矩形部分を、子レイヤも含めて重ね合わせ、その
 		結果の画像を、自分のレイヤの指定位置にコピーします。<br />
 		　このメソッドは、コピー元レイヤやコピー先レイヤの <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> プロパティには
-		影響されません。
+		影響されません。 -->
+		　将指定复制来源层的指定矩形部分（包括子层）叠加，并将结果图像复制到自己层的指定位置。<br />
+　此方法不影响来源层或目标层的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a> 属性。
 	</dd>
 </dl>
 </div></div>

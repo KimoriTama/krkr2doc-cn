@@ -19,7 +19,7 @@
 <dl>
 <dt>功能/含义</dt>
 <dd>
-矩形重ね合わせ</dd>
+	矩形叠加</dd>
 <dt>类型</dt>
 <dd>
 <a class="jump" href="../f_Layer.html">Layer类</a>的成员方法<br />
@@ -32,28 +32,28 @@
 <dd>
 <table rules="all" frame="box" cellpadding="3" summary="blendRect の引数">
 <tr><td valign="top"><span class="argname">dleft</span></td>
-<td>				　重ね合わせ先の矩形の左端位置を ( 重ね合わせ先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要叠加的矩形的左端位置（在目标层的图像坐标位置处）（以像素为单位）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">dtop</span></td>
-<td>				　重ね合わせ先の矩形の上端位置を ( 重ね合わせ先レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　指定要叠加的矩形的顶端位置（在目标层的图像坐标位置处）（以像素为单位）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">src</span></td>
-<td>				　重ね合わせ元のレイヤオブジェクトを指定します。<br />
+<td>				　指定要叠加的图层对象。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sleft</span></td>
-<td>				　重ね合わせる矩形の左端位置を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定叠加矩形的左端位置（在来源层的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">stop</span></td>
-<td>				　重ね合わせる矩形の上端位置を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定叠加矩形的顶端位置（在来源层的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">swidth</span></td>
-<td>				　重ね合わせる矩形の横幅を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定叠加矩形的宽度（在来源层中的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">sheight</span></td>
-<td>				　重ね合わせる矩形の縦幅を ( 重ね合わせ元レイヤの画像位置における ) ピクセル単位で指定します。<br />
+<td>				　以像素为单位指定叠加矩形的高度（在来源层中的图像坐标位置处）。<br />
 			</td></tr>
 <tr><td valign="top"><span class="argname">opa</span></td>
-<td>				　重ね合わせの不透明度 ( 0 ～ 255 ) を指定します。<br />
+<td>				　指定叠加的不透明度(0 ~ 255)。<br />
 			</td></tr>
 </table>
 </dd>
@@ -63,15 +63,23 @@
 </dd>
 <dt>说明</dt>
 <dd>
-		　指定された重ね合わせ元レイヤの矩形部分を自分のレイヤの指定位置に重ね合わせます。<br />
-		　重ね合わせ元のレイヤの Layer.face プロパティは無視されますが、<a class="jump" href="f_Layer_pileRect.html">Layer.pileRect</a> と異な
+		　将指定的来源层的矩形部分叠加到该层的指定位置。<br />
+	<!-- 	　重ね合わせ元のレイヤの Layer.face プロパティは無視されますが、<a class="jump" href="f_Layer_pileRect.html">Layer.pileRect</a> と異な
 		り、重ね合わせ元のレイヤの不透明度は無視されます ( 常に完全に不透明であると見なされます )。<br />
 		　重ね合わされる画像は、重ね合わせ先の ( メソッドを実行する ) レイヤの <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>		　プロパティの値によって変わります。<br />
-		<span class="script"><a class="targanchor" name="id95" id="id95">dfAlpha</a> (または<a class="targanchor" name="id96" id="id96">dfBoth</a>)    </span> : 重ね合わせ先の不透明度を考慮した重ね合わせが行われます<br />
-		<span class="script"><a class="targanchor" name="id97" id="id97">dfOpaque</a> (または<a class="targanchor" name="id98" id="id98">dfMain</a>)   </span> : 重ね合わせ先の不透明度を無視した重ね合わせが行われます(重ね合わせ先は全面完全不透明として扱われます)<br />
-		<span class="script"><a class="targanchor" name="id99" id="id99">それ以外</a>  </span>                 : できません ( 例外が発生します )<br />
+		<span class="script"><a class="targanchor" name="id95" id="id95">dfAlpha</a> (または<a class="targanchor" name="id96" id="id96">dfBoth</a>)    </span> :叠加时考虑到要叠加的目标层的不透明度<br />
+		<span class="script"><a class="targanchor" name="id97" id="id97">dfOpaque</a> (または<a class="targanchor" name="id98" id="id98">dfMain</a>)   </span> : 叠加时忽略目标层的不透明度（将目标层视为完全不透明）<br />
+		<span class="script"><a class="targanchor" name="id99" id="id99">それ以外</a>  </span>                 : 无法调用（出现异常）<br />
 		<br />
-		　このメソッドは旧式になりました。代わりに <a class="jump" href="f_Layer_operateRect.html">Layer.operateRect</a> を使用してください。演算のモードに omOpaque を指定すると同じ効果になります。<br />
+		　此方法已过时。请改用 <a class="jump" href="f_Layer_operateRect.html">Layer.operateRect</a> 。将运算模式指定为omOpaque可以产生相同的效果。
+。<br /> -->
+		　忽略来源重叠层的 Layer.face 属性。但与<a class="jump" href="f_Layer_pileRect.html">Layer.pileRect</a> 不同的是，会忽略来源重叠层的不透明度（始终将其视为完全不透明）。<br />
+		　叠加的图像取决于所叠加的图层（执行该方法的图层）的 <a class="jump" href="../Properties/f_Layer_face.html">Layer.face</a>		　属性的值。<br />
+		<span class="script"><a class="targanchor" name="id95" id="id95">dfAlpha</a> (或是<a class="targanchor" name="id96" id="id96">dfBoth</a>)    </span> :叠加时考虑到要叠加的目标层的不透明度<br />
+		<span class="script"><a class="targanchor" name="id97" id="id97">dfOpaque</a> (或是<a class="targanchor" name="id98" id="id98">dfMain</a>)   </span> : 叠加时忽略目标层的不透明度（将目标层视为完全不透明）<br />
+		<span class="script"><a class="targanchor" name="id99" id="id99">其他</a>  </span>                 : 无法调用（出现异常）<br />
+		<br />
+		　此方法已过时。请改用 <a class="jump" href="f_Layer_operateRect.html">Layer.operateRect</a> 。将运算模式指定为omOpaque可以产生相同的效果。<br />
 	</dd>
 </dl>
 </div></div>
